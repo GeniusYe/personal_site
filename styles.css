@@ -63,24 +63,6 @@ h1 { margin: 0; font-family: var(--serif); font-weight: 400; line-height: .98; l
 .name { display: block; font-size: clamp(66px, 6.9vw, 83px); }
 .name-dot { color: var(--gold); }
 .bio { margin: 16px 0 0; font-size: 14px; line-height: 1.7; max-width: 350px; color: var(--muted); }
-.website-card { display: grid; grid-template-columns: 104px minmax(0, 1fr) 18px; gap: 17px; align-items: center; padding: 18px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); transition: transform .2s, box-shadow .2s, border-color .2s; }
-.website-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px -18px #304d3570; border-color: #bbc5b3; }
-.website-thumbnail { position: relative; width: 100%; min-width: 0; min-height: 102px; align-self: stretch; overflow: hidden; border: 1px solid #dfdacd; border-radius: 7px; background: #e8e3d6; }
-.browser-bar { display: flex; gap: 3px; align-items: center; height: 15px; padding: 0 6px; background: #fffdf6; border-bottom: 1px solid #dedace; }
-.browser-bar i { width: 3px; height: 3px; border-radius: 50%; background: #c9c9bd; }
-.browser-bar span { margin-left: auto; font-size: 5px; color: #74766a; }
-.thumbnail-content { position: absolute; inset: 15px 0 0; display: grid; grid-template-columns: .9fr 1.1fr; align-items: stretch; }
-.thumbnail-type { align-self: center; padding: 7px 5px 7px 7px; color: #4a4134; font: 9px/1.2 var(--serif); }
-.thumbnail-type b { display: block; width: 100%; height: 2px; margin-top: 3px; background: #b3ad9f; opacity: .7; }
-.thumbnail-type b:first-of-type { margin-top: 10px; }
-.thumbnail-type b:last-of-type { width: 65%; }
-.thumbnail-content img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 32%; }
-.card-eyebrow { display: block; color: #69715e; font-size: 9px; letter-spacing: 1.7px; margin-bottom: 5px; }
-.website-copy { min-width: 0; }
-.website-copy h2 { font-family: var(--serif); margin: 0; font-weight: 400; font-size: 23px; line-height: 1.16; letter-spacing: -.6px; }
-.website-copy p { margin: 6px 0 0; font-size: 11px; line-height: 1.5; color: var(--muted); }
-.website-domain { display: block; margin-top: 6px; font-size: 10px; color: #657759; font-weight: 500; }
-.outbound-arrow { align-self: start; font-size: 21px; line-height: 1; color: #718264; padding-top: 1px; }
 .music-section { margin-top: 26px; }
 .section-heading { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin-bottom: 11px; }
 .section-heading h2 { margin: 0; font: 24px/1.2 var(--serif); letter-spacing: -.6px; }
@@ -180,9 +162,6 @@ dialog::backdrop { background: #11261dc2; backdrop-filter: blur(7px); -webkit-ba
   .page-shell { padding-inline: 30px; }
   .main-grid { gap: 36px; grid-template-columns: minmax(0, .8fr) minmax(0, 1.1fr); }
   .portrait-frame { aspect-ratio: .72; }
-  .website-card { grid-template-columns: 82px minmax(0, 1fr) 15px; gap: 12px; padding: 15px; }
-  .website-copy h2 { font-size: 21px; }
-  .website-copy p { display: none; }
   .music-card { grid-template-columns: 67px minmax(0, 1fr) 36px; gap: 12px; padding: 17px; }
   .song-title { font-size: 22px; }
   .play-button { width: 36px; height: 36px; }
@@ -208,11 +187,6 @@ dialog::backdrop { background: #11261dc2; backdrop-filter: blur(7px); -webkit-ba
   h1 { letter-spacing: -1.5px; }
   .greeting, .name { display: inline; font-size: 45px; line-height: 1.1; letter-spacing: -1.7px; }
   .bio { font-size: 12px; line-height: 1.65; margin: 12px auto 0; max-width: 290px; }
-  .website-card { grid-template-columns: 91px minmax(0, 1fr) 15px; padding: 15px; gap: 13px; border-radius: 15px; }
-  .website-copy h2 { font-size: 22px; }
-  .website-copy p { font-size: 10px; }
-  .website-domain { font-size: 9px; }
-  .card-eyebrow { font-size: 8px; letter-spacing: 1.3px; }
   .music-section { margin-top: 23px; }
   .section-heading h2 { font-size: 23px; }
   .section-heading > span { font-size: 11px; }
@@ -244,9 +218,6 @@ dialog::backdrop { background: #11261dc2; backdrop-filter: blur(7px); -webkit-ba
 @media (max-width: 360px) {
   .page-shell { padding-inline: 17px; }
   .greeting, .name { font-size: 40px; }
-  .website-card { grid-template-columns: 75px minmax(0, 1fr) 14px; gap: 11px; padding: 13px; }
-  .website-copy h2 { font-size: 20px; }
-  .website-copy p { display: none; }
   .music-card { grid-template-columns: 62px minmax(0, 1fr) 33px; padding: 15px; gap: 11px; }
   .song-title { font-size: 21px; }
   .play-button { width: 33px; height: 33px; }

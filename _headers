@@ -11,3 +11,12 @@
 
 /README.md
   X-Robots-Tag: noindex
+
+/bodypositive*
+  X-Robots-Tag: noindex, nofollow, noimageindex
+
+/assets/bodypositive/*
+  X-Robots-Tag: noindex, noimageindex
+
+/SOURCES.md
+  X-Robots-Tag: noindex

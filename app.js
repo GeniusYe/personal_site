@@ -43,6 +43,7 @@
   /** Accept local files/relative paths for images, but no executable schemes. */
   function imageURL(value) {
     if (typeof value !== "string" || !value.trim()) return null;
+    if (/^data:image\/(?:webp|png|jpeg|gif|svg\+xml);base64,/i.test(value)) return value;
     try {
       const url = new URL(value, location.href);
       return ["https:", "http:", "file:"].includes(url.protocol) ? url.href : null;
@@ -95,11 +96,15 @@
     if (!scrollLocks || --scrollLocks !== 0) return;
     document.body.classList.remove("modal-open");
     document.body.style.removeProperty("--scroll-offset");
+    const html = document.documentElement;
+    const previousBehavior = html.style.scrollBehavior;
+    html.style.scrollBehavior = "auto";
     window.scrollTo(0, savedScroll);
+    html.style.scrollBehavior = previousBehavior;
   }
   function notify(message) {
     clearTimeout(toastTimer);
-    const host = shareDialog.open ? shareDialog : musicDialog.open ? musicDialog : document.body;
+    const host = shareDialog.open ? shareDialog : document.querySelector("dialog[open]") || document.body;
     host.append(toast);
     toast.textContent = message;
     toast.classList.add("visible");
@@ -268,6 +273,9 @@
   // Require both pointer-down and pointer-up outside, so dragging from inside
   // the dialog doesn't accidentally close it. Padding inside isn't a backdrop.
   function backdropClose(dialog) {
+    dialog.addEventListener("keydown", e => {
+      if (e.key === "Escape") { e.preventDefault(); dialog.close(); }
+    });
     let beganOutside = false;
     const outside = event => {
       if (event.target !== dialog) return false;
@@ -345,17 +353,6 @@
     $("#email-link").href = `mailto:${encodeURIComponent(profile.email).replace(/%40/g, "@")}`;
   } else $("#email-link").hidden = true;
 
-  const website = config.website || {};
-  const websiteURL = webURL(website.url);
-  if (websiteURL) {
-    $("#website-link").href = websiteURL;
-    setText("#website-title", website.title);
-    setText("#website-description", website.description);
-    setText("#website-domain", website.label || new URL(websiteURL).hostname);
-    setText(".browser-bar span", website.label || new URL(websiteURL).hostname);
-    setImage($("#website-image"), website.thumbnail);
-  } else $(".website-section").hidden = true;
-
   const songs = config.songs.filter(song => song && /^[a-z0-9-]+$/.test(song.id) && song.title && song.artist);
   const songList = $("#song-list");
   for (const song of songs) {
@@ -365,6 +362,7 @@
     setText(".song-title", song.title, card);
     setText(".song-eyebrow", song.eyebrow || "Single", card);
     setText(".song-meta", [song.artist, song.duration].filter(Boolean).join(" · "), card);
+    setText(".song-card-description", song.description || "", card);
     setImage($(".song-artwork", card), song.artwork);
     card.addEventListener("click", () => openSong(song, card));
     songList.append(card);
@@ -380,6 +378,326 @@
       openSong(song, opener, false);
     } else if (!song && musicDialog.open) musicDialog.close();
   }
-  window.addEventListener("popstate", openSharedSong);
-  openSharedSong();
+  // ---- The scrolling story, travel journal, and project gallery. ----
+  const galleryDialog = $("#gallery-dialog");
+  const project = config.project || {};
+  const travel = config.travel || {};
+  const travelPhotos = (Array.isArray(travel.photos) ? travel.photos : []).filter(p => p && imageURL(p.src));
+  const projectPhotos = (Array.isArray(project.photos) ? project.photos : []).filter(p => p && imageURL(p.src));
+  let galleryState = { items: [], index: 0, mode: "travel", opener: null };
+  let travelRendered = 0;
+  let travelObserver = null;
+
+  function element(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = String(text ?? "");
+    return node;
+  }
+  function outgoingLink(href, text, className = "") {
+    const a = element("a", className, text);
+    a.href = href;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    return a;
+  }
+  function updateProjectURL(id) {
+    if (!["http:", "https:"].includes(location.protocol)) return;
+    try {
+      const url = new URL(location.href);
+      if (id) { url.searchParams.set("project", id); url.searchParams.delete("song"); }
+      else url.searchParams.delete("project");
+      history.replaceState(history.state, "", url);
+    } catch { /* File previews still have fully usable dialogs. */ }
+  }
+  function renderGalleryImage() {
+    const { items, index, mode } = galleryState;
+    const photo = items[index];
+    if (!photo) return;
+    $("#gallery-image-error").hidden = true;
+    setImage($("#gallery-image"), photo.src, photo.alt || photo.title || "Photograph");
+    setText("#gallery-photo-title", photo.title || "");
+    setText("#gallery-photo-caption", photo.caption || photo.date || "");
+    setText("#gallery-count", `${index + 1} / ${items.length}`);
+    $("#gallery-count").hidden = items.length < 2;
+    const credit = $("#gallery-credit");
+    const creditURL = webURL(photo.creditUrl);
+    credit.hidden = !photo.credit;
+    credit.textContent = mode === "map" ? (photo.credit || "") : (photo.credit ? `Photo: @${photo.credit}` : "");
+    if (creditURL) credit.href = creditURL;
+    else credit.removeAttribute("href");
+    const fullSize = imageURL(photo.src);
+    $("#gallery-original").hidden = !fullSize;
+    if (fullSize) $("#gallery-original").href = fullSize;
+    setText("#gallery-original", mode === "map" ? "Open the original map ↗" : "Open full-size photograph ↗");
+    $(".gallery-controls", galleryDialog).hidden = items.length < 2;
+    $("#gallery-key-hint").hidden = items.length < 2;
+    for (const [i, thumb] of [...$("#gallery-thumbnails").children].entries()) {
+      thumb.setAttribute("aria-pressed", String(i === index));
+    }
+  }
+  $("#gallery-image").addEventListener("error", () => { $("#gallery-image-error").hidden = false; });
+  $("#gallery-image").addEventListener("load", () => { $("#gallery-image-error").hidden = true; });
+
+  function moveGallery(offset) {
+    const n = galleryState.items.length;
+    if (n < 2) return;
+    galleryState.index = (galleryState.index + offset + n) % n;
+    renderGalleryImage();
+  }
+  function openGallery(items, index, mode, opener = null, syncURL = true) {
+    if (!items.length || typeof galleryDialog.showModal !== "function") return false;
+    galleryState = { items, index: Math.max(0, Math.min(index, items.length - 1)), mode,
+      opener: opener || document.activeElement };
+    galleryDialog.classList.toggle("is-project", mode === "project");
+    galleryDialog.classList.toggle("is-map", mode === "map");
+    setText("#gallery-eyebrow", mode === "project" ? "Behind the scenes" : mode === "map" ? "The places so far" : "The photo journal");
+    setText("#gallery-title", mode === "project" ? project.title : mode === "map" ? travel.map.title : "Postcards from the road");
+    setText("#gallery-subtitle", mode === "project" ? [project.season, project.format, project.location].filter(Boolean).join(" · ") : mode === "map" ? `As of ${travel.asOf || ""} · ${travel.qualifier || ""}` : "A few moments, from a world of places.");
+    $("#project-details").hidden = mode !== "project";
+    const thumbnails = $("#gallery-thumbnails");
+    thumbnails.replaceChildren();
+    thumbnails.hidden = mode !== "project";
+    if (mode === "project") {
+      items.forEach((photo, i) => {
+        const button = element("button", "gallery-thumbnail");
+        button.type = "button";
+        button.setAttribute("aria-label", `Show ${photo.title || `photograph ${i + 1}`}`);
+        const img = element("img");
+        img.width = 300; img.height = 200; img.loading = "lazy";
+        setImage(img, photo.thumbnail || photo.src, "");
+        button.append(img, element("span", "", photo.title || `Photograph ${i + 1}`));
+        button.addEventListener("click", () => { galleryState.index = i; renderGalleryImage(); });
+        thumbnails.append(button);
+      });
+    }
+    renderGalleryImage();
+    if (!galleryDialog.open) { lockScroll(); galleryDialog.showModal(); }
+    galleryDialog.scrollTop = 0;
+    $("#close-gallery").focus({ preventScroll: true });
+    if (mode === "project" && syncURL) updateProjectURL(project.id);
+    return true;
+  }
+  $("#close-gallery").addEventListener("click", () => galleryDialog.close());
+  galleryDialog.addEventListener("close", () => {
+    toast.classList.remove("visible");
+    document.body.append(toast);
+    unlockScroll();
+    if (galleryState.mode === "project") updateProjectURL(null);
+    galleryState.opener?.focus?.({ preventScroll: true });
+  });
+  backdropClose(galleryDialog);
+  $("#gallery-prev").addEventListener("click", () => moveGallery(-1));
+  $("#gallery-next").addEventListener("click", () => moveGallery(1));
+  galleryDialog.addEventListener("keydown", event => {
+    if (event.altKey || event.ctrlKey || event.metaKey || /INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) return;
+    if (event.key === "ArrowLeft") { event.preventDefault(); moveGallery(-1); }
+    if (event.key === "ArrowRight") { event.preventDefault(); moveGallery(1); }
+  });
+  let touchStart = null;
+  $("#gallery-stage").addEventListener("touchstart", event => {
+    touchStart = event.touches.length === 1 ? { x: event.touches[0].clientX, y: event.touches[0].clientY } : null;
+  }, { passive: true });
+  $("#gallery-stage").addEventListener("touchend", event => {
+    if (!touchStart || !event.changedTouches.length) return;
+    const dx = event.changedTouches[0].clientX - touchStart.x;
+    const dy = event.changedTouches[0].clientY - touchStart.y;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.7) moveGallery(dx < 0 ? 1 : -1);
+    touchStart = null;
+  }, { passive: true });
+  $("#gallery-stage").addEventListener("touchcancel", () => { touchStart = null; }, { passive: true });
+
+  // Render the editable timeline. Unspecified historical dates are not invented.
+  if (Array.isArray(config.story?.timeline)) {
+    const list = $("#story-timeline");
+    list.replaceChildren();
+    config.story.timeline.forEach(item => {
+      const li = element("li", "timeline-item");
+      const dot = element("span", "timeline-dot"); dot.setAttribute("aria-hidden", "true");
+      const meta = element("div", "timeline-meta");
+      meta.append(element("span", "", item.when), element("span", "", item.place));
+      li.append(dot, meta, element("h3", "", item.title), element("p", "", item.text));
+      list.append(li);
+    });
+  }
+  setText("#travel-count", travel.count);
+  setText("#travel-unit", travel.unit);
+  setText("#travel-qualifier", travel.qualifier);
+  setText("#travel-date", `As of ${travel.asOf || ""}`);
+  setText("#latest-stops-date", travel.latestDate);
+  const latest = $("#latest-stops-list"); latest.replaceChildren();
+  (Array.isArray(travel.latest) ? travel.latest : []).forEach(place => latest.append(element("span", "", place)));
+  $(".latest-stops").hidden = latest.childElementCount === 0;
+  const map = travel.map;
+  if (map && imageURL(map.src)) {
+    setImage($("#travel-map"), map.src, map.alt);
+    $("#open-map").href = imageURL(map.src);
+    $("#open-map").addEventListener("click", event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      if (openGallery([map], 0, "map", event.currentTarget)) event.preventDefault();
+    });
+    if (webURL(map.creditUrl)) $("#map-credit-link").href = webURL(map.creditUrl);
+    setText("#map-credit-link", `${map.credit || "Map source"} ↗`);
+  } else $(".world-map-card").hidden = true;
+  if (instagram) {
+    $("#travel-instagram").href = instagram;
+  } else $("#travel-instagram").hidden = true;
+
+  function makePostcard(photo, index) {
+    const figure = element("figure", `postcard${photo.wide ? " postcard-wide" : ""}`);
+    const link = outgoingLink(imageURL(photo.src), undefined, "postcard-open");
+    link.setAttribute("aria-haspopup", "dialog");
+    link.setAttribute("aria-controls", "gallery-dialog");
+    link.setAttribute("aria-label", `View ${photo.title} photograph and details`);
+    const frame = element("span", "postcard-image image-frame");
+    const placeholder = element("span", "image-placeholder", (photo.title || "Travel").split(",")[0]);
+    placeholder.setAttribute("aria-hidden", "true");
+    const img = element("img");
+    img.width = Number(photo.width) || 800; img.height = Number(photo.height) || 1000;
+    img.loading = "lazy"; img.decoding = "async";
+    setImage(img, photo.src, photo.alt || photo.title);
+    const expand = element("span", "photo-expand", "↗"); expand.setAttribute("aria-hidden", "true");
+    frame.append(placeholder, img, expand);
+    const caption = element("span", "postcard-caption");
+    caption.append(element("strong", "", photo.title), element("span", "", photo.date));
+    link.append(frame, caption);
+    link.addEventListener("click", event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      if (openGallery(travelPhotos, index, "travel", link)) event.preventDefault();
+    });
+    figure.append(link);
+    if (photo.credit) {
+      const credit = element("figcaption", "photo-credit", "Photo: ");
+      const url = webURL(photo.creditUrl);
+      credit.append(url ? outgoingLink(url, `@${photo.credit}`) : element("span", "", photo.credit));
+      figure.append(credit);
+    }
+    return figure;
+  }
+  // A finite, honest collection with infinite-scroll-style progressive loading.
+  // Adding more travel.photos makes the feed longer; nothing is repeated.
+  function addTravelBatch(size, announce = true) {
+    const count = Math.max(1, Math.min(Number(size) || 3, 100));
+    const end = Math.min(travelPhotos.length, travelRendered + count);
+    const fragment = document.createDocumentFragment();
+    for (let i = travelRendered; i < end; i++) fragment.append(makePostcard(travelPhotos[i], i));
+    $("#travel-photos").append(fragment);
+    const added = end - travelRendered;
+    travelRendered = end;
+    const more = travelRendered < travelPhotos.length;
+    $("#travel-sentinel").hidden = !more;
+    if (announce) setText("#travel-load-status", `${added} more photographs loaded. ${travelRendered} of ${travelPhotos.length} shown.`);
+    if (!more) travelObserver?.disconnect();
+    scheduleReadingUpdate();
+  }
+  $("#travel-photos").replaceChildren();
+  $("#load-more-photos").addEventListener("click", () => {
+    const firstNew = travelRendered;
+    addTravelBatch(travel.batchSize);
+    // Keep keyboard users in the collection after the load-more button disappears.
+    const nextLink = $("#travel-photos").children[firstNew]?.querySelector("a");
+    nextLink?.focus({ preventScroll: true });
+  });
+  addTravelBatch(travel.initialPhotos || 5, false);
+  if ("IntersectionObserver" in window && travelRendered < travelPhotos.length) {
+    travelObserver = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting) && !document.body.classList.contains("modal-open")) addTravelBatch(travel.batchSize);
+    }, { rootMargin: "280px 0px" });
+    travelObserver.observe($("#travel-sentinel"));
+  }
+
+  // The new series feature is one cover on the page, not a wall of photographs.
+  const projectCard = $("#project-card");
+  if (projectPhotos.length) {
+    const cover = projectPhotos[0];
+    setImage($("#project-cover"), cover.thumbnail || cover.src, cover.alt);
+    $("#project-cover").width = Number(cover.width) || 1429;
+    $("#project-cover").height = Number(cover.height) || 1056;
+    projectCard.href = imageURL(cover.src);
+    projectCard.setAttribute("aria-label", `Explore ${project.title} ${project.season}: details and ${projectPhotos.length} photographs`);
+    projectCard.addEventListener("click", event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      if (openGallery(projectPhotos, 0, "project", projectCard)) event.preventDefault();
+    });
+    setText("#project-photo-count", `${projectPhotos.length} photos`);
+    setText("#project-card-title", project.title);
+    setText("#project-season", project.season);
+    setText("#project-status", `${project.status || "Upcoming"} series`);
+    setText("#project-format", [project.format, project.location].filter(Boolean).join(" · "));
+    setText("#project-tagline", project.tagline);
+    setText("#project-role", project.role);
+    setText("#project-release-note", project.releaseNote);
+    setText("#project-details-title", [project.title, project.season].filter(Boolean).join(" · "));
+    setText("#detail-status", project.status);
+    setText("#project-description", project.description);
+    setText("#project-personal-note", project.personalNote);
+    setText("#detail-role", project.role);
+    setText("#detail-format", project.format);
+    setText("#detail-release", project.releaseNote);
+    for (const [selector, value] of [["#project-trailer", project.trailerUrl], ["#project-watch", project.watchUrl], ["#project-updates", project.updatesUrl]]) {
+      const url = webURL(value);
+      $(selector).hidden = !url;
+      if (url) $(selector).href = url;
+    }
+  } else $("#screen").hidden = true;
+  $("#copy-project").addEventListener("click", () => {
+    const base = publicShareURL();
+    if (!base) { notify("Publish this page first to share its public link."); return; }
+    const url = new URL(base);
+    url.searchParams.set("project", project.id);
+    url.hash = "screen";
+    void copyLink(url.href);
+  });
+  const contact = config.contact || {};
+  if (contact.title) setText("#closing-title", contact.title);
+  if (contact.subtitle) setText("#closing-subtitle", contact.subtitle);
+  const contactEmail = contact.email || profile.email;
+  if (typeof contactEmail === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactEmail)) {
+    $("#closing-email").href = `mailto:${encodeURIComponent(contactEmail).replace(/%40/g, "@")}`;
+  } else $("#closing-email").hidden = true;
+
+  // Scrolling remains completely native: no scroll hijacking or fullscreen panels.
+  // A thin progress line and a current-chapter indicator provide orientation.
+  function updateReading() {
+    if (document.body.classList.contains("modal-open") || document.body.classList.contains("consent-open")) return;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = max > 0 ? Math.max(0, Math.min(1, window.scrollY / max)) : 0;
+    $("#reading-progress").style.transform = `scaleX(${progress})`;
+    let current = "home";
+    const threshold = window.innerWidth <= 700 ? 190 : 180;
+    for (const id of ["home", "story", "world", "body-positive"]) {
+      const node = document.getElementById(id);
+      if (node && !node.hidden && node.getBoundingClientRect().top <= threshold) current = id;
+    }
+    for (const link of document.querySelectorAll(".chapter-nav a")) {
+      const active = link.hash === `#${current}`;
+      link.classList.toggle("is-active", active);
+      if (active) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    }
+  }
+  function scheduleReadingUpdate() {
+    // Function property avoids temporal-dead-zone issues during initial rendering.
+    if (scheduleReadingUpdate.pending) return;
+    scheduleReadingUpdate.pending = true;
+    requestAnimationFrame(() => { scheduleReadingUpdate.pending = false; updateReading(); });
+  }
+  window.addEventListener("scroll", scheduleReadingUpdate, { passive: true });
+  window.addEventListener("resize", scheduleReadingUpdate, { passive: true });
+  if ("ResizeObserver" in window) new ResizeObserver(scheduleReadingUpdate).observe(document.body);
+  scheduleReadingUpdate();
+
+  function openSharedContent() {
+    const id = new URL(location.href).searchParams.get("project");
+    if (id && id === project.id && projectPhotos.length) {
+      if (musicDialog.open) musicDialog.close();
+      if (!galleryDialog.open || galleryState.mode !== "project") openGallery(projectPhotos, 0, "project", projectCard, false);
+    } else {
+      if (galleryDialog.open && galleryState.mode === "project") galleryDialog.close();
+      openSharedSong();
+    }
+  }
+  window.addEventListener("popstate", openSharedContent);
+  openSharedContent();
+
 })();

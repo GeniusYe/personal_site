@@ -1,113 +1,70 @@
-# JiaJie — A little of everything
+# JiaJie — A life beyond one label
 
-A small, responsive personal link page. Plain HTML, CSS, and JavaScript. No build step, framework, package installation, backend, database, or API key.
+A static, two-page personal website. No framework, package install, backend, or build step.
 
-## Preview
+## This revision
 
-Extract the ZIP, then open `index.html` in your browser. Internet access is needed for the existing photo/artwork URLs and SoundCloud. You can also run `python -m http.server 8000` in this folder and visit `http://localhost:8000`.
+- The outbound “my website” card has been removed. This is the main website.
+- Music and Boys Like Us Season 2 sit together in the welcome section, side by side on desktop and stacked on mobile.
+- The film still opens a dialog with project details and the three supplied production photographs.
+- The story timeline, travel map, progressively loaded travel gallery, music player, and contact links remain.
+- A small, image-free “Not safe for work photos” card appears after the travel section. The Photos navigation item leads to it.
+- The card opens an explicit 18+ content warning. Approval navigates to `bodypositive.html` on the same website, not back to the former website.
+- The separate gallery references the 19 images on the original Body Positive page, preserving available shoot dates and photographer credits. No unprovided dates or photographer names were added.
 
-A separate, single-file `jiajie-preview.html` is supplied alongside the ZIP for a quick look. That file is a snapshot; edit the ZIP's source files for ongoing changes.
+## Deploy / preview
 
-## Publish on Cloudflare Pages
-
-In Cloudflare, open **Workers & Pages → Create application → Get started → Drag and drop your files**. Choose Pages if the interface first asks for an application type. Name the project, upload the ZIP (or the extracted site folder), and choose **Deploy site**. `index.html` is already at the ZIP root. No build is required.
-
-For subsequent changes, use **Create a new deployment** in the same project.
-
-CLI alternative, from this folder:
-
-```sh
-npx wrangler pages deploy .
-```
-
-Direct Upload projects cannot later be switched to Git integration; create a Git-integrated project from the outset when automatic repository deployments are important.
-
-Official references:
-- https://developers.cloudflare.com/pages/get-started/direct-upload/
-- https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/
-
-## Change your content
-
-Edit `site-config.js`. It contains your name, bio, image URLs, personal website, Instagram, email, and songs.
-
-To change the visual design, edit `styles.css`. The palette is in `:root`; all fonts are system fonts. To change the greeting, caption, section headings, or no-JavaScript fallback, edit `index.html`.
-
-After publishing, you may set `siteUrl` to your final public URL for consistent sharing. Left blank, it uses the page's current public URL. Local previews do not share local filesystem paths. Update the static Open Graph title, description, and image in `index.html` when changing the site's branding; social crawlers may not execute JavaScript.
-
-## Music: what is wired up
-
-The featured song is **Arise O’ Compatriots — JiaJie**. The SoundCloud embed uses track **2333675186**, the same ID linked from the personal website. The dialog loads the iframe only on opening, never autoplays, and removes it on closing so no audio continues invisibly. The native dialog supports Escape, backdrop dismissal, focus containment, and focus return.
-
-The SoundCloud player itself and the link beneath it provide SoundCloud access. Amazon Music and Anghami have direct release destinations. **Apple Music, Spotify, YouTube, and YouTube Music currently open clearly labeled searches**, because their exact release URLs were not recoverable from the publicly readable source pages. Search buttons do not imply that the recording is available on those services.
-
-To replace a search button, paste the exact release URL into its `url` field:
-
-```js
-{ id: "spotify", label: "Spotify", url: "PASTE_THE_ACTUAL_RELEASE_URL_HERE" }
-```
-
-Use a full `https://…` URL. The button automatically changes from **Search** to **Listen**, and an all-direct set of links hides the search notice. Delete a platform object to hide its button. Unsupported platforms without a configured URL are omitted, not rendered as dead buttons.
-
-To add a song, duplicate the song object in the `songs` array and use a unique lowercase, hyphenated `id`. Supply the title, artist, artwork, public SoundCloud track URL (or the API track URL used by its official embed), and platform URLs. Duration and year are optional display metadata. The new song automatically gets a card and its own dialog content.
-
-Shared links can include `?song=arise-o-compatriots` to open the song dialog. Copying a song link does not start playback.
-
-SoundCloud's official widget documentation:
-https://developers.soundcloud.com/docs/api/html5-widget
-
-## Photos and artwork
-
-The default page references the existing images on their original public hosts:
-- Portrait: the image currently used on the supplied Linktree page.
-- Website thumbnail: a designed miniature website card using the homepage's actual hero photograph. It is **not a screenshot capture** of the website.
-- Release artwork: the artwork displayed by Anghami for this recording.
-
-These images could stop loading if removed from their original hosts. Graceful initials/music-note placeholders appear when an image cannot load. No alternate person's photo or fabricated album artwork is substituted.
-
-### Optional: host the images on Pages too
-
-With Python 3.9+ and internet access, run:
+Upload all site files together to your Cloudflare Pages project. `index.html` and `bodypositive.html` are at the root. For a local preview, unzip and open `index.html` in a browser, or run:
 
 ```sh
+python -m http.server 8080
+```
+
+Then open `http://localhost:8080/`. Keep the files and folders together. Internet is required for the remotely hosted photographs and SoundCloud.
+
+The home page sharing helper uses its current URL by default. `siteUrl` in `site-config.js` can optionally hold your final, absolute home URL. The body gallery has generic sharing metadata; no NSFW photograph is used as a social thumbnail.
+
+## IMPORTANT: the image migration is not finished until the remote images are copied
+
+The three production photos and favicon are bundled locally. Your existing portrait, map, travel photos, music artwork, and body-positive photos still reference their existing public image hosts. They do not depend on the old `/bodypositive` web page, but they DO depend on the source image host continuing to serve those files.
+
+Before canceling or deleting the old Squarespace hosting, copy the images into the site using the included standard-library helper on an internet-connected computer:
+
+```sh
+python tools/localize_images.py --dry-run
 python tools/localize_images.py
 ```
 
-This standard-library-only helper downloads the configured images into `assets/` and updates their references in `site-config.js` and `index.html`. It does not publish anything or change the configuration unless all downloads succeed. Then upload the updated folder. Use an absolute URL to the local portrait in the `og:image` meta tag once your final domain is known. The standalone preview snapshot is not updated by this helper.
+It downloads the configured images, updates both configuration files and HTML fallbacks, and keeps backups in `tools/backups/`. Body-positive images go into `assets/bodypositive/`; ordinary images go into `assets/remote/`. Unsuccessful downloads keep the remote URL, print a warning, and return a nonzero exit status. Upload the updated folder and verify both galleries before removing the old host.
 
-Alternatively, use your own files in `assets/` and update the corresponding image paths. Do not include private images or other sensitive files in the folder you upload: static files are publicly retrievable.
+After localization, replace the homepage `og:image` meta URL with the absolute public URL of its new local image on your final domain for the most reliable social preview. Never use a body-positive photo as the homepage sharing thumbnail.
 
-## Privacy and loading behavior
+## Content warning behavior
 
-The page contains no analytics script or advertising SDK. Image hosts receive normal image requests; opening the music dialog creates a third-party SoundCloud iframe. SoundCloud controls its own player, availability, and any third-party behavior inside it. Playback needs internet access and may be affected by browser privacy settings or content blockers. A direct player link is always available as a fallback.
+The homepage contains no body-positive thumbnails, blurred previews, photo requests, or body-gallery data script. Only explicit approval follows the gallery link. Cancel, Escape, or clicking the backdrop leaves the visitor on the main page.
 
-`_headers` contains a restrictive page content-security policy and basic security headers for Cloudflare Pages. Adding new iframe providers or external scripts requires updating that policy. The optional image downloader is a local Python utility, not a server function.
+A one-use timestamp in same-tab `sessionStorage` (valid for one minute) carries that approval to the gallery. The gallery immediately consumes it, so arriving by a direct link in a fresh tab still presents the warning. Approval is not permanently remembered. Browsers blocking session storage may ask again after navigation; they fail closed rather than reveal photos automatically.
 
-## Validation
+On direct entry the page has no image `src` values. The photo configuration and renderer are loaded after approval, and then images are lazy-loaded. With JavaScript disabled no photos are displayed. Navigating away hides and clears the collection before a browser back/forward-cache snapshot; a restored gallery asks again.
 
-The responsive layout and dialog were exercised in offline Chromium at 320, 390, 768, 1280, and 1920 pixels wide. Checks covered horizontal overflow, thumbnail/text overlap, modal size, correct player URL, no initial iframe, no autoplay setting, Escape/backdrop closing, iframe removal, restored focus/scrolling, explicit search labels, adding another song, and the no-JavaScript fallback. No JavaScript exceptions were observed in those UI tests.
+This is a **viewing-consent warning, not password protection or verified age checking**. Static image URLs remain public. `noindex` and `noimageindex` are indexing requests, not access control, and do not restrict copies on the original image host. Do not use this mechanism to protect confidential photographs.
 
-External network access was unavailable in the test browser. **Live SoundCloud playback, image delivery, deployment, browser-history deep-link integration, and Safari/Firefox behavior were not tested.** The image downloader was syntax-checked but could not be exercised against the live image hosts here. Confirm the live player and your destination links after publishing.
+## Editing
 
-## Source provenance
+- `site-config.js`: profile, songs/platform links, timeline, travel collection, film details, and contact information.
+- `bodypositive-data.js`: the separate photography collection, groups, dates, photographer credits, and accessible image descriptions.
+- `index.html`: homepage markup and content-warning text.
+- `bodypositive.html`: gallery entry page and the matching warning text. Keep the two warnings consistent when editing.
+- `styles.css`, `scroll.css`, `revision.css`: shared visual design and homepage additions.
+- `bodypositive.css`: photography-page layout.
+- `app.js`: homepage interactions.
+- `consent.js`: the shared warning and navigation behavior.
+- `bodypositive.js`: the consent-only gallery renderer, keyboard navigation, and photo dialog.
 
-Public source pages used to populate this site:
+Blank Spotify/Apple Music/YouTube links remain clearly labeled search links from the earlier version. Replace the empty URLs in `site-config.js` with verified release URLs to make those direct listening links. Trailer and series-watch links stay hidden until real URLs are configured.
 
-- https://linktr.ee/everything.jiajie
-- https://www.geniusye.com/
-- https://play.anghami.com/song/1281914505
-- https://www.amazon.com/Arise-Compatriots-JiaJie/dp/B0H4P1LQ5R
+## Verification
 
-These are content references, not dependencies on the original Linktree page's layout or scripts. Image rights remain with their respective owners.
+The layouts and interactive DOM behavior were tested in Chromium at 1440, 1024, 768, 390, and 320 pixels: desktop card alignment, no horizontal overflow, music and film dialogs, warning accept/cancel, one-use consent handling, direct-entry gating, and the gallery lightbox. Browser navigation is disabled in the build environment, so the offline tests mocked navigation, storage, and local script delivery. End-to-end navigation on a deployed origin has not been verified here.
 
-## Files
-
-```text
-index.html                 Page markup, metadata, dialog, fallback content
-styles.css                 Responsive design and interaction styles
-site-config.js             Editable profile, website, and song data
-app.js                     Dialog, iframe lifecycle, sharing, safe link rendering
-_headers                   Cloudflare Pages response headers
-assets/favicon.svg         Small site icon; local images can also go here
-tools/localize_images.py   Optional local image-copy helper
-README.md                  This guide
-```
+Not every source image could be fetched in this environment; source image references were preserved rather than replaced with invented photographs. Live CDN image loading and SoundCloud playback must be checked after deployment.
