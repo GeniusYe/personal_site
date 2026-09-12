@@ -35,7 +35,9 @@ assets/
   movie/         Boys Like Us production photographs and small thumbnails
   music/         Release artwork
   profile/       Homepage portrait
-  favicon.svg    Site icon
+  favicon.svg    Outlined 葉 site icon; no font dependency
+  favicon.ico    Small-size browser fallbacks
+  apple-touch-icon.png  Home-screen icon
 ```
 
 All 30 previously remote images have been copied into these folders alongside the six existing production images and thumbnails. Both configuration files and the homepage HTML fallbacks use local paths, including image links and the sharing thumbnail. No image depends on Squarespace or Anghami's CDN.

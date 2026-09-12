@@ -109,7 +109,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 118px; }
 .project-caption { display: flex; justify-content: space-between; gap: 15px; margin-top: 14px; color: var(--muted); font-size: 10px; }
 .project-caption > span:first-child { font: italic 13px var(--serif); }
 .closing-chapter { position: relative; margin-top: 0; text-align: center; border-top: 1px solid var(--line); padding: 64px 20px 44px; }
-.closing-mark { display: inline-grid; place-items: center; width: 51px; height: 51px; border: 1px solid #c5cdb8; border-radius: 50%; font: italic 30px var(--serif); letter-spacing: -3px; padding: 0 4px 4px 0; margin-bottom: 27px; }
+.closing-mark { display: inline-grid; place-items: center; min-height: 51px; border: 1px solid #c5cdb8; border-radius: 30px; font: italic 30px/1 var(--serif); letter-spacing: -1px; padding: 9px 20px 11px; margin-bottom: 27px; white-space: nowrap; }
 .closing-chapter > .eyebrow { color: #717c61; font-size: 8px; }
 .closing-chapter h2 { font: 50px/1.1 var(--serif); letter-spacing: -1.6px; margin: 17px 0 0; }
 .closing-chapter > p:not(.eyebrow) { font-size: 12px; color: var(--muted); margin-top: 15px; }
@@ -250,7 +250,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 118px; }
  .closing-chapter h2 { font-size:41px; }
  .closing-chapter > .eyebrow { font-size:7px; letter-spacing:1.3px; }
  .closing-chapter > p:not(.eyebrow) { font-size:11px; }
- .closing-mark { width:44px; height:44px; font-size:27px; margin-bottom:23px; }
+ .closing-mark { min-height:44px; font-size:27px; padding:8px 18px 10px; margin-bottom:23px; }
  .gallery-dialog { width:calc(100% - 18px); max-height:calc(100dvh - 18px); border-radius:18px; }
  .gallery-dialog .dialog-toolbar { padding:10px 12px 6px 18px; }
  .gallery-body { padding:12px 16px 20px; }

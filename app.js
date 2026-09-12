@@ -58,7 +58,7 @@
       img.dataset.imageStatus = "loaded";
     };
     img.onerror = () => {
-      // The CSS initials/music-note placeholder remains visible underneath.
+      // The CSS name/music-note placeholder remains visible underneath.
       img.classList.add("image-unavailable");
       img.dataset.imageStatus = "unavailable";
     };
@@ -340,7 +340,7 @@
   const profile = config.profile;
   setText("#profile-name", profile.name);
   setText("#footer-name", profile.name);
-  setText("#profile-handle", profile.handle);
+  setText("#profile-wordmark", profile.name);
   setText("#profile-roles", profile.roles);
   setText("#profile-bio", profile.bio);
   setText("#instagram-handle", profile.instagramHandle);
