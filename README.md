@@ -26,7 +26,7 @@ The existing Cloudflare project uses Workers Builds. Run Wrangler from the repos
 - **Production deploy command:** `npx wrangler deploy`.
 - **Preview version command:** `npx wrangler versions upload`.
 
-The committed root `wrangler.jsonc` identifies the `linktree` Worker and sets `assets.directory` to `./public`. Wrangler uses that configuration for both commands; no Worker script is required. The configuration itself is not a public asset. Files such as `README.md`, `SOURCES.md`, and `PHOTO-CREDITS-AUDIT.md` remain outside the published directory.
+The committed root `wrangler.jsonc` identifies the `personal-site` Worker and sets `assets.directory` to `./public`. Wrangler uses that configuration for both commands; no Worker script is required. The configuration itself is not a public asset. Files such as `README.md`, `SOURCES.md`, and `PHOTO-CREDITS-AUDIT.md` remain outside the published directory.
 
 For a local preview, open `public/index.html` in a browser, or run from the repository root:
 
