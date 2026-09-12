@@ -83,6 +83,7 @@ This is a **viewing-consent warning, not password protection or verified age che
 The site filenames below are relative to `public/`; `PHOTO-CREDITS-AUDIT.md` remains at the repository root. Keep image URLs relative to the site (for example, `assets/profile/portrait.jpg`), without a `public/` prefix.
 
 - `site-config.js`: profile, songs/platform links, timeline, clothing and travel collections, film details, and contact information.
+- Each song's `credits` entries use `role`, `name`, and `url` fields and appear in the music dialog. “Arise O’ Compatriots” credits music production to @realpaulallison.
 - `project.credits` stores linked creator, director, and producer credits. `project.photos` contains both production and behind-the-scenes media; BTS entries use `group: "bts"`. Video entries also use `type: "video"`, a local `src`, a `poster`, and a small `thumbnail`. Keep the displayed dimensions matched to the local asset and retain the legacy `blu-cast-and-crew` filenames for the photograph now labeled “Crew.”
 - Photo `credits` lists can contain separate `{ "role": "Photographer", "name": "@handle", "url": "https://www.instagram.com/handle/" }` entries for each contributor. Omit `url` for a verified name without a verified account. `creditSources` records the supporting Instagram posts. Credits appear on collection cards and in the photo viewer; keep the matching `index.html` fallback captions in sync when editing. See `PHOTO-CREDITS-AUDIT.md` for the review and unresolved cases.
 - `bodypositive-data.js`: the separate photography collection, groups, dates, photographer credits, and accessible image descriptions.
@@ -94,7 +95,7 @@ The site filenames below are relative to `public/`; `PHOTO-CREDITS-AUDIT.md` rem
 - `consent.js`: the shared warning and navigation behavior.
 - `bodypositive.js`: the consent-only gallery renderer, keyboard navigation, and photo dialog.
 
-Blank Spotify/Apple Music/YouTube links remain clearly labeled search links from the earlier version. Replace the empty URLs in `site-config.js` with verified release URLs to make those direct listening links. Trailer and series-watch links stay hidden until real URLs are configured.
+“Arise O’ Compatriots” links directly to its verified Spotify, Apple Music, YouTube, and YouTube Music pages. For future releases, blank URLs on platforms with search support remain labeled as search links. Trailer and series-watch links stay hidden until real URLs are configured.
 
 ## Verification
 

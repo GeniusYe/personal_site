@@ -25,6 +25,13 @@ window.JIAJIE_SITE = {
       "duration": "3:14",
       "eyebrow": "Featured single",
       "description": "My rendition of Nigeria’s former national anthem.",
+      "credits": [
+        {
+          "role": "Music production",
+          "name": "@realpaulallison",
+          "url": "https://www.instagram.com/realpaulallison/"
+        }
+      ],
       "artwork": "assets/music/arise-o-compatriots-artwork.jpg",
       "soundcloudTrack": "https://api.soundcloud.com/tracks/2333675186",
       "soundcloudPage": "",
@@ -33,22 +40,22 @@ window.JIAJIE_SITE = {
         {
           "id": "spotify",
           "label": "Spotify",
-          "url": ""
+          "url": "https://open.spotify.com/track/4LkmD5IaiM5hZSLY1Nyqbo"
         },
         {
           "id": "apple",
           "label": "Apple Music",
-          "url": ""
+          "url": "https://music.apple.com/us/song/arise-o-compatriots/6788196829"
         },
         {
           "id": "youtube",
           "label": "YouTube",
-          "url": ""
+          "url": "https://www.youtube.com/watch?v=OQnRSwWDuuI"
         },
         {
           "id": "youtubeMusic",
           "label": "YouTube Music",
-          "url": ""
+          "url": "https://music.youtube.com/watch?v=OQnRSwWDuuI"
         },
         {
           "id": "amazon",

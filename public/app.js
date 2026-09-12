@@ -222,6 +222,7 @@
     setText("#dialog-eyebrow", song.eyebrow || "Single");
     setText("#dialog-byline", [song.artist, song.year, song.duration].filter(Boolean).join(" · "));
     setText("#dialog-description", song.description || `Listen to ${song.title} by ${song.artist}.`);
+    renderPhotoCredits($("#dialog-credits"), song, "music");
     setImage($("#dialog-artwork"), song.artwork);
     renderPlatforms(song);
 

@@ -25,6 +25,12 @@ The content-warning page is new copy; the gallery introduction is a light rewrit
 Cloudflare deployment reference:
 https://developers.cloudflare.com/pages/get-started/direct-upload/
 
+## Music release links and credit
+
+The direct platform links were verified against the official pages for “Arise O’ Compatriots” by JiaJie, released June 26, 2026: [Spotify](https://open.spotify.com/track/4LkmD5IaiM5hZSLY1Nyqbo), [Apple Music](https://music.apple.com/us/song/arise-o-compatriots/6788196829), [YouTube](https://www.youtube.com/watch?v=OQnRSwWDuuI), and [YouTube Music](https://music.youtube.com/watch?v=OQnRSwWDuuI).
+
+The owner supplied the music production credit [@realpaulallison](https://www.instagram.com/realpaulallison/). It is stored in the song's `credits` list with the role “Music production” and displayed in the music dialog.
+
 ## Clothing caption references
 
 The owner reviewed and approved the exact caption wording before publication. Charles&M and Thread King captions are editorial appreciations of contemporary Ivorian and Nigerian design, based on the owner's maker identifications; the caftan caption reflects the owner-provided West African style and Kigali provenance. These do not assign historic ceremonial symbolism to the individual designs.
