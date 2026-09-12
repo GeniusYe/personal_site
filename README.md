@@ -20,24 +20,37 @@ Upload all site files together to your Cloudflare Pages project. `index.html` an
 python -m http.server 8080
 ```
 
-Then open `http://localhost:8080/`. Keep the files and folders together. Internet is required for the remotely hosted photographs and SoundCloud.
+Then open `http://localhost:8080/`. Keep the files and folders together. All photographs, music artwork, the travel map, scripts, styles, and icons are bundled locally. Both pages and their photo galleries work without access to third-party hosts. SoundCloud playback and outbound links still require internet access.
 
 The home page sharing helper uses its current URL by default. `siteUrl` in `site-config.js` can optionally hold your final, absolute home URL. The body gallery has generic sharing metadata; no NSFW photograph is used as a social thumbnail.
 
-## IMPORTANT: the image migration is not finished until the remote images are copied
+## Local assets
 
-The three production photos and favicon are bundled locally. Your existing portrait, map, travel photos, music artwork, and body-positive photos still reference their existing public image hosts. They do not depend on the old `/bodypositive` web page, but they DO depend on the source image host continuing to serve those files.
+All images are bundled locally and organized by the part of the site that uses them:
 
-Before canceling or deleting the old Squarespace hosting, copy the images into the site using the included standard-library helper on an internet-connected computer:
-
-```sh
-python tools/localize_images.py --dry-run
-python tools/localize_images.py
+```text
+assets/
+  bodypositive/  Gallery photographs, named by session and photo number
+  postcards/     Travel photographs named by destination, plus travel-map.png
+  movie/         Boys Like Us production photographs and small thumbnails
+  music/         Release artwork
+  profile/       Homepage portrait
+  favicon.svg    Site icon
 ```
 
-It downloads the configured images, updates both configuration files and HTML fallbacks, and keeps backups in `tools/backups/`. Body-positive images go into `assets/bodypositive/`; ordinary images go into `assets/remote/`. Unsuccessful downloads keep the remote URL, print a warning, and return a nonzero exit status. Upload the updated folder and verify both galleries before removing the old host.
+All 30 previously remote images have been copied into these folders alongside the six existing production images and thumbnails. Both configuration files and the homepage HTML fallbacks use local paths, including image links and the sharing thumbnail. No image depends on Squarespace or Anghami's CDN.
 
-After localization, replace the homepage `og:image` meta URL with the absolute public URL of its new local image on your final domain for the most reliable social preview. Never use a body-positive photo as the homepage sharing thumbnail.
+Check local asset references before deployment with Python 3.10+ (no packages or network required):
+
+```sh
+python tools/check_local_assets.py
+```
+
+Upload both HTML pages, all root JavaScript/CSS files, `_headers`, and the entire `assets/` folder together. Development tools and `tools/backups/` are not needed in the deployed site. The host's content security policy allows images only from the site itself or embedded data.
+
+For future imports, `python tools/localize_images.py` downloads configured remote images into the matching content folders above, updates configuration and HTML references, and keeps ignored backups in `tools/backups/`. Failed downloads retain their original URL and return a nonzero exit status; the asset check will also flag them. Prefer adding new files directly to the matching asset folder with descriptive filenames and referencing their local paths.
+
+For the most reliable social preview, set the homepage `og:image` to the absolute URL of its bundled portrait on your final domain. Never use a body-positive photo as the homepage sharing thumbnail.
 
 ## Content warning behavior
 
@@ -47,7 +60,7 @@ A one-use timestamp in same-tab `sessionStorage` (valid for one minute) carries 
 
 On direct entry the page has no image `src` values. The photo configuration and renderer are loaded after approval, and then images are lazy-loaded. With JavaScript disabled no photos are displayed. Navigating away hides and clears the collection before a browser back/forward-cache snapshot; a restored gallery asks again.
 
-This is a **viewing-consent warning, not password protection or verified age checking**. Static image URLs remain public. `noindex` and `noimageindex` are indexing requests, not access control, and do not restrict copies on the original image host. Do not use this mechanism to protect confidential photographs.
+This is a **viewing-consent warning, not password protection or verified age checking**. Static image URLs remain public. `noindex` and `noimageindex` are indexing requests, not access control. Do not use this mechanism to protect confidential photographs.
 
 ## Editing
 
@@ -65,6 +78,6 @@ Blank Spotify/Apple Music/YouTube links remain clearly labeled search links from
 
 ## Verification
 
-The layouts and interactive DOM behavior were tested in Chromium at 1440, 1024, 768, 390, and 320 pixels: desktop card alignment, no horizontal overflow, music and film dialogs, warning accept/cancel, one-use consent handling, direct-entry gating, and the gallery lightbox. Browser navigation is disabled in the build environment, so the offline tests mocked navigation, storage, and local script delivery. End-to-end navigation on a deployed origin has not been verified here.
+The migration was verified in headless Chromium against a local HTTP server using the site's content security policy, with all requests to other origins blocked. The homepage images, travel map, all eight travel lightbox photos, all 19 separate gallery photos and their lightbox, warning accept/cancel, one-use consent navigation, and fresh-entry gating passed. No gallery data or photographs were requested before consent. The homepage HTML image fallbacks also loaded with JavaScript disabled. There were no script errors or failed local HTTP responses. Opening the music dialog requested only its expected external SoundCloud player; its artwork loaded locally.
 
-Not every source image could be fetched in this environment; source image references were preserved rather than replaced with invented photographs. Live CDN image loading and SoundCloud playback must be checked after deployment.
+The asset migration downloaded all 30 remote images successfully. All 36 raster files, including the existing production photographs and thumbnails, were checked for valid image data. The asset checker verifies local file references. SoundCloud playback must be checked with internet access.

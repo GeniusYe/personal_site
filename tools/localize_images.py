@@ -7,6 +7,8 @@ Run from any directory with Python 3.10+ and internet access:
 
 Only standard-library modules are used. Failed downloads retain their original
 URLs and produce a nonzero exit status. Backups are stored in tools/backups/.
+Images are saved under profile/, music/, postcards/, movie/, or bodypositive/
+inside assets/, according to their content section.
 """
 from __future__ import annotations
 import argparse
@@ -19,8 +21,10 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
-CONFIGS = [('site-config.js', 'window.JIAJIE_SITE = ', 'assets/remote'),
+CONFIGS = [('site-config.js', 'window.JIAJIE_SITE = ', None),
            ('bodypositive-data.js', 'window.JIAJIE_BODY_PHOTOS = ', 'assets/bodypositive')]
+SECTION_FOLDERS = {'profile': 'assets/profile', 'songs': 'assets/music',
+                   'travel': 'assets/postcards', 'project': 'assets/movie'}
 KEYS = {'photo', 'thumbnail', 'artwork', 'src'}
 MAX_BYTES = 24 * 1024 * 1024
 EXTENSIONS = {'image/jpeg': '.jpg', 'image/png': '.png', 'image/webp': '.webp', 'image/gif': '.gif'}
@@ -38,6 +42,17 @@ def sources(value: object) -> set[str]:
         for child in value:
             found.update(sources(child))
     return found
+
+
+def destinations(value: dict, default_folder: str | None) -> dict[str, str]:
+    if default_folder:
+        return {url: default_folder for url in sources(value)}
+    folders = {url: folder for section, folder in SECTION_FOLDERS.items()
+               for url in sources(value.get(section))}
+    unrouted = sources(value) - folders.keys()
+    if unrouted:
+        raise ValueError('Add a content folder for these image sources: ' + ', '.join(sorted(unrouted)))
+    return folders
 
 
 def replace(value: object, mapping: dict[str, str]) -> object:
@@ -71,7 +86,7 @@ def main() -> int:
     args = parser.parse_args()
     replacements: dict[str, str] = {}
     failed = 0
-    for name, marker, folder in CONFIGS:
+    for name, marker, default_folder in CONFIGS:
         path = ROOT / name
         original = path.read_text(encoding='utf-8')
         if marker not in original:
@@ -81,14 +96,15 @@ def main() -> int:
             data = json.loads(raw.strip().removesuffix(';'))
         except json.JSONDecodeError as error:
             raise SystemExit(f'{name}: keep the configuration JSON-compatible: {error}') from error
-        urls = sorted(sources(data))
+        folders = destinations(data, default_folder)
+        urls = sorted(folders)
         print(f'{name}: {len(urls)} remote image(s).')
         if args.dry_run:
-            print('\n'.join(urls))
+            print('\n'.join(f'{url} -> {folders[url]}/' for url in urls))
             continue
         mapping: dict[str, str] = {}
         with ThreadPoolExecutor(max_workers=max(1, min(args.workers, 8))) as executor:
-            jobs = {executor.submit(download, url, folder): url for url in urls}
+            jobs = {executor.submit(download, url, folders[url]): url for url in urls}
             for job in as_completed(jobs):
                 url = jobs[job]
                 try:

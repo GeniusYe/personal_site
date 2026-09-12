@@ -3,8 +3,10 @@
 Home biography, dated travel map, and travel-image captions were carried over from the existing build and the owner's website:
 https://www.geniusye.com/
 
-The separate photography collection uses the public image links and available photo-session credits from:
+The separate photography collection was copied from the public image links and available photo-session credits at:
 https://www.geniusye.com/bodypositive
+
+All previously remote photographs, the travel map, and music artwork are now bundled in `assets/profile/`, `assets/postcards/`, `assets/music/`, and `assets/bodypositive/`. Production photographs and their thumbnails are in `assets/movie/`. These source links record provenance; the site does not load images from the former hosts.
 
 Photo groups: opening portrait (no explicit photographer attribution recovered); three photographs credited to @reaux_woods; Baltimore, July 2022, @unix.jpg; Miami Beach, May 2022, @kearnyrivero; Greensboro, September 2021, @lostfilmsphotography_llc; Miami, May 2021, @kearnyrivero; Atlanta, March and July 2020, @derrick_lejermon. A source caption does not establish any other personal characteristic.
 
