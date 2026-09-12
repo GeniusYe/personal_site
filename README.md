@@ -8,6 +8,7 @@ A static, two-page personal website. No framework, package install, backend, or 
 - Music and Boys Like Us Season 2 sit together in the welcome section, side by side on desktop and stacked on mobile.
 - The film still opens a dialog with project details and the three supplied production photographs.
 - The story timeline, travel map, progressively loaded travel gallery, music player, and contact links remain.
+- Cultural appreciation appears directly above the postcards, preserving all nine photographs from the original “Call me cultural connoisseur” section in their original order. The photographs open in the shared viewer and have local HTML fallbacks.
 - A small, image-free “Not safe for work photos” card appears after the travel section. The Photos navigation item leads to it.
 - The card opens an explicit 18+ content warning. Approval navigates to `bodypositive.html` on the same website, not back to the former website.
 - The separate gallery references the 19 images on the original Body Positive page, preserving available shoot dates and photographer credits. No unprovided dates or photographer names were added.
@@ -31,6 +32,7 @@ All images are bundled locally and organized by the part of the site that uses t
 ```text
 assets/
   bodypositive/  Gallery photographs, named by session and photo number
+  culture/       Nine cultural-appreciation photographs from the original site
   postcards/     Travel photographs named by destination, plus travel-map.png
   movie/         Boys Like Us production photographs and small thumbnails
   music/         Release artwork
@@ -40,7 +42,7 @@ assets/
   apple-touch-icon.png  Home-screen icon
 ```
 
-All 30 previously remote images have been copied into these folders alongside the six existing production images and thumbnails. Both configuration files and the homepage HTML fallbacks use local paths, including image links and the sharing thumbnail. No image depends on Squarespace or Anghami's CDN.
+All 39 previously remote images have been copied into these folders alongside the six existing production images and thumbnails. Both configuration files and the homepage HTML fallbacks use local paths, including image links and the sharing thumbnail. No image depends on Squarespace or Anghami's CDN.
 
 Check local asset references before deployment with Python 3.10+ (no packages or network required):
 
@@ -66,7 +68,7 @@ This is a **viewing-consent warning, not password protection or verified age che
 
 ## Editing
 
-- `site-config.js`: profile, songs/platform links, timeline, travel collection, film details, and contact information.
+- `site-config.js`: profile, songs/platform links, timeline, cultural-appreciation and travel collections, film details, and contact information.
 - `bodypositive-data.js`: the separate photography collection, groups, dates, photographer credits, and accessible image descriptions.
 - `index.html`: homepage markup and content-warning text.
 - `bodypositive.html`: gallery entry page and the matching warning text. Keep the two warnings consistent when editing.
@@ -82,4 +84,6 @@ Blank Spotify/Apple Music/YouTube links remain clearly labeled search links from
 
 The migration was verified in headless Chromium against a local HTTP server using the site's content security policy, with all requests to other origins blocked. The homepage images, travel map, all eight travel lightbox photos, all 19 separate gallery photos and their lightbox, warning accept/cancel, one-use consent navigation, and fresh-entry gating passed. No gallery data or photographs were requested before consent. The homepage HTML image fallbacks also loaded with JavaScript disabled. There were no script errors or failed local HTTP responses. Opening the music dialog requested only its expected external SoundCloud player; its artwork loaded locally.
 
-The asset migration downloaded all 30 remote images successfully. All 36 raster files, including the existing production photographs and thumbnails, were checked for valid image data. The asset checker verifies local file references. SoundCloud playback must be checked with internet access.
+The photo migrations downloaded all 39 remote images successfully. All 45 photograph, map, and artwork files, including the existing production photographs and thumbnails, were checked for valid image data. The asset checker verifies local file references. SoundCloud playback must be checked with internet access.
+
+The cultural-appreciation section was checked at 320, 390, 768, and 1440 pixels with external requests blocked: all nine photos loaded in source order above the postcards, the grid used two columns on mobile and three on larger screens without horizontal overflow, and all full-size photographs opened in the viewer. Keyboard navigation, wraparound, Escape/focus return, switching between cultural, movie, and map views, and HTML fallbacks with JavaScript disabled passed. No script errors or local HTTP failures were found.

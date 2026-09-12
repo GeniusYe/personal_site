@@ -378,12 +378,14 @@
       openSong(song, opener, false);
     } else if (!song && musicDialog.open) musicDialog.close();
   }
-  // ---- The scrolling story, travel journal, and project gallery. ----
+  // ---- The scrolling story, photo collections, and project gallery. ----
   const galleryDialog = $("#gallery-dialog");
   const project = config.project || {};
   const travel = config.travel || {};
+  const culture = config.culture || {};
   const travelPhotos = (Array.isArray(travel.photos) ? travel.photos : []).filter(p => p && imageURL(p.src));
   const projectPhotos = (Array.isArray(project.photos) ? project.photos : []).filter(p => p && imageURL(p.src));
+  const culturePhotos = (Array.isArray(culture.photos) ? culture.photos : []).filter(p => p && imageURL(p.src));
   let galleryState = { items: [], index: 0, mode: "travel", opener: null };
   let travelRendered = 0;
   let travelObserver = null;
@@ -423,7 +425,7 @@
     const credit = $("#gallery-credit");
     const creditURL = webURL(photo.creditUrl);
     credit.hidden = !photo.credit;
-    credit.textContent = mode === "map" ? (photo.credit || "") : (photo.credit ? `Photo: @${photo.credit}` : "");
+    credit.textContent = mode === "map" ? (photo.credit || "") : (photo.credit ? `Photo: ${mode === "culture" ? "" : "@"}${photo.credit}` : "");
     if (creditURL) credit.href = creditURL;
     else credit.removeAttribute("href");
     const fullSize = imageURL(photo.src);
@@ -447,13 +449,22 @@
   }
   function openGallery(items, index, mode, opener = null, syncURL = true) {
     if (!items.length || typeof galleryDialog.showModal !== "function") return false;
+    if (galleryState.mode === "project" && mode !== "project" && syncURL) updateProjectURL(null);
     galleryState = { items, index: Math.max(0, Math.min(index, items.length - 1)), mode,
       opener: opener || document.activeElement };
     galleryDialog.classList.toggle("is-project", mode === "project");
     galleryDialog.classList.toggle("is-map", mode === "map");
-    setText("#gallery-eyebrow", mode === "project" ? "Behind the scenes" : mode === "map" ? "The places so far" : "The photo journal");
-    setText("#gallery-title", mode === "project" ? project.title : mode === "map" ? travel.map.title : "Postcards from the road");
-    setText("#gallery-subtitle", mode === "project" ? [project.season, project.format, project.location].filter(Boolean).join(" · ") : mode === "map" ? `As of ${travel.asOf || ""} · ${travel.qualifier || ""}` : "A few moments, from a world of places.");
+    galleryDialog.classList.toggle("is-culture", mode === "culture");
+    const headings = {
+      project: ["Behind the scenes", project.title, [project.season, project.format, project.location].filter(Boolean).join(" · ")],
+      map: ["The places so far", travel.map?.title, `As of ${travel.asOf || ""} · ${travel.qualifier || ""}`],
+      culture: [culture.eyebrow || "Call me cultural connoisseur", culture.title || "Cultural appreciation.", culture.description || "A few moments of cultural appreciation."],
+      travel: ["The photo journal", "Postcards from the road", "A few moments, from a world of places."]
+    };
+    const [eyebrow, title, subtitle] = headings[mode] || headings.travel;
+    setText("#gallery-eyebrow", eyebrow);
+    setText("#gallery-title", title);
+    setText("#gallery-subtitle", subtitle);
     $("#project-details").hidden = mode !== "project";
     const thumbnails = $("#gallery-thumbnails");
     thumbnails.replaceChildren();
@@ -542,6 +553,50 @@
   if (instagram) {
     $("#travel-instagram").href = instagram;
   } else $("#travel-instagram").hidden = true;
+
+  function makeCultureCard(photo, index) {
+    const title = photo.title || `Photograph ${index + 1}`;
+    const figure = element("figure", "culture-card");
+    const link = outgoingLink(imageURL(photo.src), undefined, "culture-open");
+    link.setAttribute("aria-haspopup", "dialog");
+    link.setAttribute("aria-controls", "gallery-dialog");
+    link.setAttribute("aria-label", `View ${title} (${index + 1} of ${culturePhotos.length})`);
+    const frame = element("span", "culture-image image-frame");
+    const number = String(index + 1).padStart(2, "0");
+    const placeholder = element("span", "image-placeholder", number);
+    placeholder.setAttribute("aria-hidden", "true");
+    const img = element("img");
+    img.width = Number(photo.width) || 800; img.height = Number(photo.height) || 1000;
+    img.loading = "lazy"; img.decoding = "async";
+    setImage(img, photo.src, photo.alt || title);
+    const expand = element("span", "photo-expand", "↗");
+    expand.setAttribute("aria-hidden", "true");
+    frame.append(placeholder, img, expand);
+    const caption = element("span", "culture-caption");
+    const indexLabel = element("span", "culture-index", number);
+    indexLabel.setAttribute("aria-hidden", "true");
+    caption.append(indexLabel, element("strong", "", title));
+    link.append(frame, caption);
+    link.addEventListener("click", event => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      if (openGallery(culturePhotos, index, "culture", link)) event.preventDefault();
+    });
+    figure.append(link);
+    if (photo.credit) {
+      const credit = element("figcaption", "photo-credit", "Photo: ");
+      const url = webURL(photo.creditUrl);
+      credit.append(url ? outgoingLink(url, photo.credit) : element("span", "", photo.credit));
+      figure.append(credit);
+    }
+    return figure;
+  }
+  const cultureGrid = $("#culture-photos");
+  if (cultureGrid && culturePhotos.length) {
+    setText("#culture-eyebrow", culture.eyebrow || "Call me cultural connoisseur");
+    setText("#culture-title", culture.title || "Cultural appreciation.");
+    setText("#culture-description", culture.description || "A few moments of cultural appreciation.");
+    cultureGrid.replaceChildren(...culturePhotos.map(makeCultureCard));
+  }
 
   function makePostcard(photo, index) {
     const figure = element("figure", `postcard${photo.wide ? " postcard-wide" : ""}`);
