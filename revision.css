@@ -31,7 +31,7 @@
 .project-card-featured .project-discover { margin-top: auto; font-size: 9px; padding-top: 12px; gap: 8px; }
 .project-card-featured .project-arrow { width: 25px; height: 25px; font-size: 14px; }
 /* Discreet, image-free entry. There is no blurred NSFW image underneath. */
-.body-positive-entry { padding: 33px 0 41px; border-top: 1px solid var(--line); scroll-margin-top: 130px; }
+.body-positive-entry { padding: 33px 0 41px; border-top: 1px solid var(--line); scroll-margin-top: 16px; }
 .body-entry-card { display: flex; align-items: center; gap: 22px; padding: 24px 28px; border: 1px solid #d8d9ca; border-radius: 17px; background: #edece2; transition: background .2s, border-color .2s; }
 .body-entry-card:hover { background: #e7e8db; border-color: #b6bea6; }
 .body-entry-symbol { display: grid; place-items: center; flex-shrink: 0; width: 61px; height: 72px; border: 1px solid #bfc6ae; border-radius: 32px 32px 11px 11px; color: #697958; background: #e4e7d9; }

@@ -727,11 +727,13 @@
     const progress = max > 0 ? Math.max(0, Math.min(1, window.scrollY / max)) : 0;
     $("#reading-progress").style.transform = `scaleX(${progress})`;
     let current = "home";
-    const threshold = window.innerWidth <= 700 ? 190 : 180;
-    for (const id of ["home", "story", "world", "body-positive"]) {
+    const scrollPadding = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+    const threshold = Math.max($(".masthead").getBoundingClientRect().bottom, scrollPadding) + 32;
+    for (const id of ["home", "story", "world", "culture", "postcards", "body-positive"]) {
       const node = document.getElementById(id);
       if (node && !node.hidden && node.getBoundingClientRect().top <= threshold) current = id;
     }
+    if (max > 0 && max - window.scrollY <= 1) current = "body-positive";
     for (const link of document.querySelectorAll(".chapter-nav a")) {
       const active = link.hash === `#${current}`;
       link.classList.toggle("is-active", active);

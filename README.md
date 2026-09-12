@@ -9,7 +9,8 @@ A static, two-page personal website. No framework, package install, backend, or 
 - The film still opens a dialog with project details and the three supplied production photographs.
 - The story timeline, travel map, progressively loaded travel gallery, music player, and contact links remain.
 - “Dressed for the journey.” appears directly above the postcards with garment names, places, and the owner-approved captions about cultural significance, preserving all nine photographs from the original “Call me cultural connoisseur” section in their original order and adding the Mexico City Charro suit portrait from the postcards. The landscape sarong and Charro suit photographs span two columns; all photographs open in the shared viewer and have local HTML fallbacks.
-- A small, image-free “Not safe for work photos” card appears after the travel section. The Photos navigation item leads to it.
+- Top navigation links to Home, My story, The world, Dressed for the journey, Postcards, and NSFW, with the current section highlighted while scrolling.
+- A small, image-free “Not safe for work photos” card appears after the travel section. The NSFW navigation item leads to it.
 - The card opens an explicit 18+ content warning. Approval navigates to `bodypositive.html` on the same website, not back to the former website.
 - The separate gallery references the 19 images on the original Body Positive page, preserving available shoot dates and photographer credits. No unprovided dates or photographer names were added.
 
