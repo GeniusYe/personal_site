@@ -1,5 +1,7 @@
 # Instagram photo-credit audit
 
+Local image paths below are relative to `public/`, the deployment folder.
+
 Checked **September 12, 2026**, starting with the 17 photographs in **Dressed for the journey** and **Postcards** on `origin/master` at `a5f2b29`, then updated for the owner's selected additions below.
 
 The review covered the captions surfaced for all **411 posts in the Instagram profile grid**, followed by targeted post, caption, and screenshot checks. Representative photographs from the credited posts listed below were compared with the 17 gallery photographs, all 19 Body Positive photographs, and the homepage portrait. The review did **not** inspect every image in every carousel or visually compare every older post. The tables distinguish exact images, the same outfit or shoot, similar series, and the particular absent examples that were checked.

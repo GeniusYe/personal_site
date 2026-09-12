@@ -1,5 +1,7 @@
 # Content provenance — owner reference, not a displayed page
 
+Site paths in this document are relative to `public/`, the deployment folder.
+
 Home biography, dated travel map, and travel-image captions were carried over from the existing build and the owner's website:
 https://www.geniusye.com/
 

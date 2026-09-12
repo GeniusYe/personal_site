@@ -6,9 +6,10 @@ Run from any directory with Python 3.10+ and internet access:
     python tools/localize_images.py
 
 Only standard-library modules are used. Failed downloads retain their original
-URLs and produce a nonzero exit status. Backups are stored in tools/backups/.
+URLs and produce a nonzero exit status. Backups are stored in tools/backups/
+outside the public/ deployment folder.
 Images are saved under profile/, music/, culture/, postcards/, movie/, or bodypositive/
-inside assets/, according to their content section.
+inside public/assets/, according to their content section.
 """
 from __future__ import annotations
 import argparse
@@ -20,7 +21,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from urllib.request import Request, urlopen
 
-ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[1]
+ROOT = REPO_ROOT / 'public'
+BACKUPS = REPO_ROOT / 'tools' / 'backups'
 CONFIGS = [('site-config.js', 'window.JIAJIE_SITE = ', None),
            ('bodypositive-data.js', 'window.JIAJIE_BODY_PHOTOS = ', 'assets/bodypositive')]
 SECTION_FOLDERS = {'profile': 'assets/profile', 'songs': 'assets/music',
@@ -115,7 +118,7 @@ def main() -> int:
                     failed += 1
                     print(f'FAILED; retained remote URL: {url}\n  {error}')
         if mapping:
-            backup = ROOT / 'tools' / 'backups' / name
+            backup = BACKUPS / name
             backup.parent.mkdir(parents=True, exist_ok=True)
             if not backup.exists():
                 backup.write_text(original, encoding='utf-8')
@@ -131,7 +134,7 @@ def main() -> int:
         for url, local in replacements.items():
             updated = updated.replace(html.escape(url, quote=True), local).replace(url, local)
         if updated != original:
-            backup = ROOT / 'tools' / 'backups' / path.name
+            backup = BACKUPS / path.name
             backup.parent.mkdir(parents=True, exist_ok=True)
             if not backup.exists():
                 backup.write_text(original, encoding='utf-8')
@@ -140,7 +143,7 @@ def main() -> int:
     if failed:
         print('Some images still depend on their old host. Do not retire that host yet.')
         return 1
-    print('Upload the updated site folder, including assets/. Check both pages before retiring old hosting.')
+    print('Upload the public/ folder, including assets/. Check both pages before retiring old hosting.')
     return 0
 
 
