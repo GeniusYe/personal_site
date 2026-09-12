@@ -60,6 +60,27 @@ html { scroll-behavior: smooth; scroll-padding-top: 118px; }
 #latest-stops-list { display: flex; flex-wrap: wrap; gap: 8px; }
 #latest-stops-list span { font-size: 10px; border: 1px solid #d7dbcc; padding: 5px 10px; border-radius: 30px; }
 .stops-date { font-size: 9px; color: #69715e; margin-left: auto; }
+.culture-section { margin-top: 44px; }
+.culture-section, .postcards-heading { scroll-margin-top: 16px; }
+.culture-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 19px; }
+.culture-heading .eyebrow { color: #737e64; font-size: 8px; letter-spacing: 1.4px; margin-bottom: 10px; }
+.culture-heading h3 { font: 28px/1.12 var(--serif); letter-spacing: -.8px; margin: 0; }
+.culture-heading > p { max-width: 285px; margin: 0; color: var(--muted); font-size: 11px; line-height: 1.7; }
+.culture-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px 20px; }
+.culture-card { margin: 0; min-width: 0; }
+.culture-card-wide { grid-column: span 2; }
+.culture-open { display: block; }
+.culture-image { display: block; aspect-ratio: 3 / 4; border-radius: 13px; background: #e0e4d7; border: 1px solid #d7ddcd; transition: border-color .2s, box-shadow .2s; }
+.culture-image img { width: 100%; height: 100%; object-fit: contain; }
+.culture-card-wide .culture-image { aspect-ratio: 3 / 2; }
+.culture-image .image-placeholder { font: italic 28px var(--serif); color: #6f7f66; }
+.culture-open:hover .culture-image { border-color: #96a187; box-shadow: 0 6px 18px -12px #243e3380; }
+.culture-caption { display: flex; align-items: baseline; gap: 10px; margin-top: 11px; }
+.culture-index { flex-shrink: 0; color: #7b856e; font-size: 9px; letter-spacing: 1px; font-variant-numeric: tabular-nums; }
+.culture-caption strong { font: 19px/1.25 var(--serif); letter-spacing: -.35px; overflow-wrap: anywhere; }
+.culture-details { margin-top: 7px; }
+.culture-location { margin: 0; color: #69715e; font-size: 11px; line-height: 1.6; }
+.culture-description { margin: 7px 0 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
 .postcards-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px; margin: 44px 0 19px; }
 .postcards-heading h3 { font: 28px var(--serif); margin: 0; letter-spacing: -.8px; }
 .postcards-heading > span { font-size: 10px; color: var(--muted); }
@@ -134,10 +155,12 @@ html { scroll-behavior: smooth; scroll-padding-top: 118px; }
 .gallery-stage img { width: 100%; height: 100%; min-height: 0; object-fit: contain; }
 #gallery-image-error { position: absolute; padding: 24px; color: #dfdfc9; font-size: 13px; text-align: center; }
 .gallery-caption { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; margin-top: 18px; }
+.gallery-caption > div:first-child { min-width: 0; }
 .gallery-caption strong { display: block; font: 23px var(--serif); letter-spacing: -.4px; }
 .gallery-caption p { font-size: 11px; color: #6d755f; margin: 6px 0 0; line-height: 1.7; }
 #gallery-credit { font-size: 10px; color: #627a52; display: inline-block; margin-top: 5px; text-decoration: underline; text-underline-offset: 3px; }
-.gallery-controls { display: flex; gap: 7px; }
+.gallery-controls { display: flex; flex-shrink: 0; gap: 7px; }
+.gallery-dialog.is-culture #gallery-photo-caption { font-size: 13px; }
 .gallery-controls .icon-button { width: 39px; height: 39px; font-size: 18px; border: 1px solid #d9dfcc; background: #f6f6ec; }
 .gallery-controls .icon-button:hover { background: #e2e9d6; }
 .gallery-thumbnails { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 13px; margin-top: 22px; }
@@ -163,6 +186,10 @@ html { scroll-behavior: smooth; scroll-padding-top: 118px; }
 .gallery-dialog.is-map .gallery-stage { background: #e7ece2; }
 @media (min-width:1200px) { .page-shell { padding-top:0; } .masthead { margin-bottom:44px; } }
 @media (min-width:701px) and (max-width:950px) {
+ html { scroll-padding-top:146px; }
+ .masthead { display:grid; grid-template-columns:1fr auto; gap:8px 12px; padding-block:12px 10px; }
+ .chapter-nav { grid-column:1 / -1; grid-row:2; justify-content:space-between; }
+ .share-button { justify-self:end; }
  .chapter-nav { gap:0; } .chapter-nav a { padding:9px 10px; font-size:10px; }
  .story-chapter { gap:36px; grid-template-columns:minmax(0,.8fr) minmax(0,1.1fr); }
  .chapter-title { font-size:40px; }
@@ -176,11 +203,11 @@ html { scroll-behavior: smooth; scroll-padding-top: 118px; }
  .project-tagline { margin-block:16px; }
 }
 @media (max-width:700px) {
- html { scroll-padding-top:126px; }
+ html { scroll-padding-top:164px; }
  .page-shell { max-width:600px; padding:0 22px; }
  .masthead { display:grid; grid-template-columns:1fr auto; gap:8px 12px; padding-top:16px; padding-bottom:10px; margin-bottom:24px; min-height:100px; }
  .wordmark { align-self:center; }
- .chapter-nav { grid-column:1 / -1; grid-row:2; justify-content:space-between; gap:2px; }
+ .chapter-nav { display:grid; grid-template-columns:max-content repeat(2,minmax(0,1fr)); grid-column:1 / -1; grid-row:2; gap:3px 2px; }
  .chapter-nav a { flex:1; text-align:center; font-size:10px; padding:8px 9px; }
  .share-button { justify-self:end; }
  .home-chapter { max-width:420px; margin:auto; }
@@ -217,6 +244,15 @@ html { scroll-behavior: smooth; scroll-padding-top: 118px; }
  .latest-stops > .eyebrow { font-size:7px; }
  #latest-stops-list { gap:5px; } #latest-stops-list span { font-size:9px; padding:4px 8px; }
  .stops-date { margin-left:0; font-size:8px; }
+ .culture-section { margin-top:32px; }
+ .culture-heading { display:block; margin-bottom:17px; }
+ .culture-heading h3 { font-size:26px; }
+ .culture-heading > p { margin-top:10px; font-size:10px; }
+ .culture-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 13px; }
+ .culture-image { border-radius:10px; }
+ .culture-caption { gap:7px; margin-top:9px; }
+ .culture-index { font-size:8px; }
+ .culture-caption strong { font-size:17px; }
  .postcards-heading { margin-top:32px; gap:6px; }
  .postcards-heading h3 { font-size:26px; }
  .postcards-heading > span { font-size:9px; }
