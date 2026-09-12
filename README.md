@@ -12,7 +12,8 @@ A static, two-page personal website. No framework, package install, backend, or 
 - Top navigation links to Home, My story, The world, Dressed for the journey, Postcards, and NSFW, with the current section highlighted while scrolling.
 - A small, image-free “Not safe for work photos” card appears after the travel section. The NSFW navigation item leads to it.
 - The card opens an explicit 18+ content warning. Approval navigates to `bodypositive.html` on the same website, not back to the former website.
-- The separate gallery references the 19 images on the original Body Positive page, preserving available shoot dates and photographer credits. No unprovided dates or photographer names were added.
+- The separate gallery contains 21 photographs: 18 retained from the original Body Positive page and three Chicago portraits credited to @photorsh. The opening portrait was removed from the collection at the owner's request. Unknown shoot dates remain blank.
+- The owner's selected Instagram additions bring Dressed for the journey to 11 photographs and Postcards to 13. The seven homepage additions and three Chicago portraits are bundled locally; exact post and slide references are recorded in `PHOTO-CREDITS-AUDIT.md`. Square postcards retain their full framing.
 
 ## Deploy / preview
 
@@ -33,7 +34,7 @@ All images are bundled locally and organized by the part of the site that uses t
 ```text
 assets/
   bodypositive/  Gallery photographs, named by session and photo number
-  culture/       Ten clothing photographs in “Dressed for the journey.”
+  culture/       Eleven clothing photographs in “Dressed for the journey.”
   postcards/     Travel photographs named by destination, plus travel-map.png
   movie/         Boys Like Us production photographs and small thumbnails
   music/         Release artwork
@@ -70,6 +71,7 @@ This is a **viewing-consent warning, not password protection or verified age che
 ## Editing
 
 - `site-config.js`: profile, songs/platform links, timeline, clothing and travel collections, film details, and contact information.
+- Photo `credits` lists can contain separate `{ "role": "Photographer", "name": "@handle", "url": "https://www.instagram.com/handle/" }` entries for each contributor. Omit `url` for a verified name without a verified account. `creditSources` records the supporting Instagram posts. Credits appear on collection cards and in the photo viewer; keep the matching `index.html` fallback captions in sync when editing. See `PHOTO-CREDITS-AUDIT.md` for the review and unresolved cases.
 - `bodypositive-data.js`: the separate photography collection, groups, dates, photographer credits, and accessible image descriptions.
 - `index.html`: homepage markup and content-warning text.
 - `bodypositive.html`: gallery entry page and the matching warning text. Keep the two warnings consistent when editing.

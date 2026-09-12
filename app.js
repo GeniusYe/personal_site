@@ -403,6 +403,29 @@
     a.rel = "noopener noreferrer";
     return a;
   }
+  function renderPhotoCredits(parent, photo, mode) {
+    const credits = (Array.isArray(photo.credits) ? photo.credits : [])
+      .filter(credit => credit && typeof credit.name === "string" && credit.name.trim());
+    if (!credits.length && typeof photo.credit === "string" && photo.credit.trim()) {
+      credits.push({ role: mode === "map" ? "" : "Photo", name: photo.credit, url: photo.creditUrl });
+    }
+    parent.replaceChildren();
+    for (const credit of credits) {
+      const url = webURL(credit.url);
+      let name = credit.name.trim().replace(/^@+/, "@");
+      // Instagram names use one @, whether the editable name included it or not.
+      if (url && /(^|\.)instagram\.com$/i.test(new URL(url).hostname) && /^[\w.]+$/.test(name)) {
+        name = `@${name}`;
+      }
+      const line = element("p", "photo-credit");
+      const role = typeof credit.role === "string" ? credit.role.trim() : "";
+      if (role) line.append(element("span", "photo-credit-role", `${role}: `));
+      line.append(url ? outgoingLink(url, name) : element("span", "", name));
+      parent.append(line);
+    }
+    parent.hidden = !credits.length;
+    return credits.length > 0;
+  }
   function updateProjectURL(id) {
     if (!["http:", "https:"].includes(location.protocol)) return;
     try {
@@ -424,12 +447,7 @@
     setText("#gallery-photo-caption", photo.caption || photo.date || "");
     setText("#gallery-count", `${index + 1} / ${items.length}`);
     $("#gallery-count").hidden = items.length < 2;
-    const credit = $("#gallery-credit");
-    const creditURL = webURL(photo.creditUrl);
-    credit.hidden = !photo.credit;
-    credit.textContent = mode === "map" ? (photo.credit || "") : (photo.credit ? `Photo: ${mode === "culture" ? "" : "@"}${photo.credit}` : "");
-    if (creditURL) credit.href = creditURL;
-    else credit.removeAttribute("href");
+    renderPhotoCredits($("#gallery-credit"), photo, mode);
     const fullSize = imageURL(photo.src);
     $("#gallery-original").hidden = !fullSize;
     if (fullSize) $("#gallery-original").href = fullSize;
@@ -588,12 +606,8 @@
     const details = element("figcaption", "culture-details");
     if (photo.location) details.append(element("p", "culture-location", photo.location));
     if (photo.caption) details.append(element("p", "culture-description", photo.caption));
-    if (photo.credit) {
-      const credit = element("p", "photo-credit", "Photo: ");
-      const url = webURL(photo.creditUrl);
-      credit.append(url ? outgoingLink(url, photo.credit) : element("span", "", photo.credit));
-      details.append(credit);
-    }
+    const credits = element("div", "photo-credits");
+    if (renderPhotoCredits(credits, photo, "culture")) details.append(credits);
     if (details.hasChildNodes()) figure.append(details);
     return figure;
   }
@@ -607,7 +621,7 @@
   }
 
   function makePostcard(photo, index) {
-    const figure = element("figure", `postcard${photo.wide ? " postcard-wide" : ""}`);
+    const figure = element("figure", `postcard${photo.wide ? " postcard-wide" : ""}${photo.square ? " postcard-square" : ""}`);
     const link = outgoingLink(imageURL(photo.src), undefined, "postcard-open");
     link.setAttribute("aria-haspopup", "dialog");
     link.setAttribute("aria-controls", "gallery-dialog");
@@ -629,12 +643,8 @@
       if (openGallery(travelPhotos, index, "travel", link)) event.preventDefault();
     });
     figure.append(link);
-    if (photo.credit) {
-      const credit = element("figcaption", "photo-credit", "Photo: ");
-      const url = webURL(photo.creditUrl);
-      credit.append(url ? outgoingLink(url, `@${photo.credit}`) : element("span", "", photo.credit));
-      figure.append(credit);
-    }
+    const credits = element("figcaption", "photo-credits");
+    if (renderPhotoCredits(credits, photo, "travel")) figure.append(credits);
     return figure;
   }
   // A finite, honest collection with infinite-scroll-style progressive loading.

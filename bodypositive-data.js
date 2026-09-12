@@ -7,11 +7,12 @@ window.JIAJIE_BODY_PHOTOS = {
   "intro": "It began on impulse. It became a way of learning to love my own body.",
   "groups": [
     {
-      "id": "opening",
-      "title": "An opening portrait",
+      "id": "chicago",
+      "title": "Chicago, Illinois",
       "date": "",
-      "credit": "",
-      "creditUrl": ""
+      "credit": "photorsh",
+      "creditUrl": "https://www.instagram.com/photorsh/",
+      "creditSources": ["https://www.instagram.com/p/DXhpNc-kVsd/"]
     },
     {
       "id": "in-the-light",
@@ -58,13 +59,34 @@ window.JIAJIE_BODY_PHOTOS = {
   ],
   "photos": [
     {
-      "id": "opening-1",
-      "group": "opening",
-      "src": "assets/bodypositive/opening-1.jpg",
-      "width": 667,
-      "height": 1000,
-      "alt": "A portrait from the Body Positive collection.",
-      "title": "An opening portrait · 01"
+      "id": "chicago-1",
+      "group": "chicago",
+      "src": "assets/bodypositive/chicago-1.webp",
+      "width": 1440,
+      "height": 1920,
+      "alt": "A shirtless studio portrait with folded arms and a gold chain against a black background.",
+      "title": "Chicago, Illinois · 01",
+      "sourceUrl": "https://www.instagram.com/p/DXhpNc-kVsd/?img_index=1"
+    },
+    {
+      "id": "chicago-2",
+      "group": "chicago",
+      "src": "assets/bodypositive/chicago-2.webp",
+      "width": 1440,
+      "height": 1920,
+      "alt": "A studio portrait in blue briefs, standing with hands behind the back.",
+      "title": "Chicago, Illinois · 02",
+      "sourceUrl": "https://www.instagram.com/p/DXhpNc-kVsd/?img_index=2"
+    },
+    {
+      "id": "chicago-3",
+      "group": "chicago",
+      "src": "assets/bodypositive/chicago-3.webp",
+      "width": 1440,
+      "height": 1920,
+      "alt": "A black-and-white artistic nude portrait, looking aside with one hand at the chest and the other covering the groin.",
+      "title": "Chicago, Illinois · 03",
+      "sourceUrl": "https://www.instagram.com/p/DXhpNc-kVsd/?img_index=3"
     },
     {
       "id": "in-the-light-1",
