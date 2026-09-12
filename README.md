@@ -17,15 +17,16 @@ A static, two-page personal website. No framework, package install, backend, or 
 
 ## Deploy / preview
 
-All deployable files live in `public/`. Repository documentation, screenshots in `docs/`, and development scripts in `tools/` stay outside that folder.
+All published site files live in `public/`. Repository documentation, screenshots in `docs/`, and development scripts in `tools/` stay outside that folder.
 
-For Cloudflare Pages connected to this repository, use these build settings:
+The existing Cloudflare project uses Workers Builds. Run Wrangler from the repository root with these settings:
 
 - **Root directory:** repository root (leave the field blank).
-- **Build command:** `exit 0` (no build step).
-- **Build output directory:** `public`.
+- **Build command:** leave blank; no build step is required.
+- **Production deploy command:** `npx wrangler deploy`.
+- **Preview version command:** `npx wrangler versions upload`.
 
-These settings follow Cloudflare's [static HTML deployment guide](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/). Update the existing project's build output directory before deploying this layout. For a direct upload, upload only the `public/` folder (or a ZIP of its contents), with `index.html` at the upload root. Files such as `README.md`, `SOURCES.md`, and `PHOTO-CREDITS-AUDIT.md` are excluded when only `public/` is deployed.
+The committed root `wrangler.jsonc` identifies the `linktree` Worker and sets `assets.directory` to `./public`. Wrangler uses that configuration for both commands; no Worker script is required. The configuration itself is not a public asset. Files such as `README.md`, `SOURCES.md`, and `PHOTO-CREDITS-AUDIT.md` remain outside the published directory.
 
 For a local preview, open `public/index.html` in a browser, or run from the repository root:
 
