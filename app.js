@@ -559,7 +559,7 @@
 
   function makeCultureCard(photo, index) {
     const title = photo.title || `Photograph ${index + 1}`;
-    const figure = element("figure", "culture-card");
+    const figure = element("figure", `culture-card${photo.wide ? " culture-card-wide" : ""}`);
     const link = outgoingLink(imageURL(photo.src), undefined, "culture-open");
     link.setAttribute("aria-haspopup", "dialog");
     link.setAttribute("aria-controls", "gallery-dialog");

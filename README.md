@@ -8,7 +8,7 @@ A static, two-page personal website. No framework, package install, backend, or 
 - Music and Boys Like Us Season 2 sit together in the welcome section, side by side on desktop and stacked on mobile.
 - The film still opens a dialog with project details and the three supplied production photographs.
 - The story timeline, travel map, progressively loaded travel gallery, music player, and contact links remain.
-- “Dressed for the journey.” appears directly above the postcards with garment names, places, and the owner-approved captions about cultural significance, preserving all nine photographs from the original “Call me cultural connoisseur” section in their original order. The photographs open in the shared viewer and have local HTML fallbacks.
+- “Dressed for the journey.” appears directly above the postcards with garment names, places, and the owner-approved captions about cultural significance, preserving all nine photographs from the original “Call me cultural connoisseur” section in their original order and adding the Mexico City Charro suit portrait from the postcards. The landscape sarong and Charro suit photographs span two columns; all photographs open in the shared viewer and have local HTML fallbacks.
 - A small, image-free “Not safe for work photos” card appears after the travel section. The Photos navigation item leads to it.
 - The card opens an explicit 18+ content warning. Approval navigates to `bodypositive.html` on the same website, not back to the former website.
 - The separate gallery references the 19 images on the original Body Positive page, preserving available shoot dates and photographer credits. No unprovided dates or photographer names were added.
@@ -32,7 +32,7 @@ All images are bundled locally and organized by the part of the site that uses t
 ```text
 assets/
   bodypositive/  Gallery photographs, named by session and photo number
-  culture/       Nine clothing photographs in “Dressed for the journey.”
+  culture/       Ten clothing photographs in “Dressed for the journey.”
   postcards/     Travel photographs named by destination, plus travel-map.png
   movie/         Boys Like Us production photographs and small thumbnails
   music/         Release artwork

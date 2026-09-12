@@ -67,9 +67,11 @@ html { scroll-behavior: smooth; scroll-padding-top: 118px; }
 .culture-heading > p { max-width: 285px; margin: 0; color: var(--muted); font-size: 11px; line-height: 1.7; }
 .culture-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px 20px; }
 .culture-card { margin: 0; min-width: 0; }
+.culture-card-wide { grid-column: span 2; }
 .culture-open { display: block; }
 .culture-image { display: block; aspect-ratio: 3 / 4; border-radius: 13px; background: #e0e4d7; border: 1px solid #d7ddcd; transition: border-color .2s, box-shadow .2s; }
 .culture-image img { width: 100%; height: 100%; object-fit: contain; }
+.culture-card-wide .culture-image { aspect-ratio: 3 / 2; }
 .culture-image .image-placeholder { font: italic 28px var(--serif); color: #6f7f66; }
 .culture-open:hover .culture-image { border-color: #96a187; box-shadow: 0 6px 18px -12px #243e3380; }
 .culture-caption { display: flex; align-items: baseline; gap: 10px; margin-top: 11px; }

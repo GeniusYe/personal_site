@@ -164,7 +164,8 @@ window.JIAJIE_SITE = {
         "title": "Sarong",
         "alt": "JiaJie in a white shirt and patterned sarong beside a railing, with contemporary buildings behind him.",
         "location": "Sri Lanka",
-        "caption": "The sarong keeps Sri Lankan clothing traditions part of everyday life, connecting generations through a familiar garment."
+        "caption": "The sarong keeps Sri Lankan clothing traditions part of everyday life, connecting generations through a familiar garment.",
+        "wide": true
       },
       {
         "id": "culture-06",
@@ -205,6 +206,20 @@ window.JIAJIE_SITE = {
         "alt": "JiaJie in a striped gho by a mountain overlook in Bhutan, with buildings on the cliff behind him.",
         "location": "Bhutan",
         "caption": "The gho brings Bhutan’s national identity into daily life while sustaining generations of textile craftsmanship."
+      },
+      {
+        "id": "culture-10",
+        "title": "Charro suit",
+        "date": "December 2024",
+        "src": "assets/culture/charro-suit-mexico.jpg",
+        "alt": "JiaJie in a Charro suit in Mexico City, with the Palacio de Bellas Artes in the background.",
+        "width": 1000,
+        "height": 667,
+        "credit": "@fotografia_beauty_art",
+        "creditUrl": "https://www.instagram.com/fotografia_beauty_art/",
+        "location": "Mexico City, Mexico",
+        "caption": "The Charro suit honors Mexico’s charrería tradition, where horsemanship and artisan craftsmanship express community identity.",
+        "wide": true
       }
     ]
   },
@@ -232,18 +247,6 @@ window.JIAJIE_SITE = {
     "initialPhotos": 5,
     "batchSize": 3,
     "photos": [
-      {
-        "id": "mexico-city",
-        "title": "Mexico City, Mexico",
-        "date": "December 2024",
-        "src": "assets/postcards/mexico-city.jpg",
-        "alt": "Travel portrait in Mexico City, with the Palacio de Bellas Artes in the background.",
-        "width": 1000,
-        "height": 667,
-        "credit": "fotografia_beauty_art",
-        "creditUrl": "https://www.instagram.com/fotografia_beauty_art/",
-        "wide": true
-      },
       {
         "id": "cairo",
         "title": "Cairo, Egypt",

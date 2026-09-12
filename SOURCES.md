@@ -32,3 +32,5 @@ The owner reviewed and approved the exact caption wording before publication. Ch
 - Gho: Bhutan Department of Tourism — https://bhutan.travel/journal/editorial/cultural-fabric
 
 These links document the writing; no third-party resource is downloaded by the gallery.
+
+The Mexico City portrait was moved from postcards to “Dressed for the journey.” as the tenth photograph at the owner's request, identifying the outfit as a Charro suit. The original image bytes are preserved at `assets/culture/charro-suit-mexico.jpg`; the December 2024 date and photographer credit @fotografia_beauty_art (https://www.instagram.com/fotografia_beauty_art/) were retained from the existing postcard metadata. No clothing designer was supplied for this photograph. The caption summarizes the relationship between charrería, community identity, and local craftsmanship documented by UNESCO: https://ich.unesco.org/en/RL/charreria-equestrian-tradition-in-mexico-01108 .
