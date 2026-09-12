@@ -18,7 +18,7 @@ CONFIGS = {
     'site-config.js': 'window.JIAJIE_SITE = ',
     'bodypositive-data.js': 'window.JIAJIE_BODY_PHOTOS = ',
 }
-IMAGE_KEYS = {'photo', 'thumbnail', 'artwork', 'src'}
+IMAGE_KEYS = {'photo', 'thumbnail', 'artwork', 'src', 'poster'}
 RESOURCE_LINKS = {'stylesheet', 'icon', 'apple-touch-icon', 'preload', 'modulepreload'}
 CSS_URL = re.compile(r'url\(\s*(?:"([^"]*)"|\'([^\']*)\'|([^\s)]+))\s*\)', re.I)
 CSS_IMPORT = re.compile(r'@import\s+["\']([^"\']+)["\']', re.I)

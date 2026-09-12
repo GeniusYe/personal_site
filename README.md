@@ -6,7 +6,7 @@ A static, two-page personal website. No framework, package install, backend, or 
 
 - The outbound “my website” card has been removed. This is the main website.
 - Music and Boys Like Us Season 2 sit together in the welcome section, side by side on desktop and stacked on mobile.
-- The film still opens a dialog with project details and the three supplied production photographs.
+- The film still opens a dialog with project details, linked creator/director/producer credits, and the show's Instagram account. The gallery includes the three supplied production photographs, four behind-the-scenes photographs, and one behind-the-scenes video. The third original group portrait is labeled “Crew,” following the owner's correction.
 - The story timeline, travel map, progressively loaded travel gallery, music player, and contact links remain.
 - “Dressed for the journey.” appears directly above the postcards with garment names, places, and the owner-approved captions about cultural significance, preserving all nine photographs from the original “Call me cultural connoisseur” section in their original order and adding the Mexico City Charro suit portrait from the postcards. The landscape sarong and Charro suit photographs span two columns; all photographs open in the shared viewer and have local HTML fallbacks.
 - Top navigation links to Home, My story, The world, Dressed for the journey, Postcards, and NSFW, with the current section highlighted while scrolling.
@@ -39,14 +39,14 @@ The home page sharing helper uses its current URL by default. `siteUrl` in `publ
 
 ## Local assets
 
-All images are bundled locally and organized by the part of the site that uses them:
+All images and the behind-the-scenes video are bundled locally and organized by the part of the site that uses them:
 
 ```text
 public/assets/
   bodypositive/  Gallery photographs, named by session and photo number
   culture/       Eleven clothing photographs in “Dressed for the journey.”
   postcards/     Travel photographs named by destination, plus travel-map.png
-  movie/         Boys Like Us production photographs and small thumbnails
+  movie/         Boys Like Us production/BTS photographs, thumbnails, and video
   music/         Release artwork
   profile/       Homepage portrait
   favicon.svg    Outlined 葉 site icon; no font dependency
@@ -83,6 +83,7 @@ This is a **viewing-consent warning, not password protection or verified age che
 The site filenames below are relative to `public/`; `PHOTO-CREDITS-AUDIT.md` remains at the repository root. Keep image URLs relative to the site (for example, `assets/profile/portrait.jpg`), without a `public/` prefix.
 
 - `site-config.js`: profile, songs/platform links, timeline, clothing and travel collections, film details, and contact information.
+- `project.credits` stores linked creator, director, and producer credits. `project.photos` contains both production and behind-the-scenes media; BTS entries use `group: "bts"`. Video entries also use `type: "video"`, a local `src`, a `poster`, and a small `thumbnail`. Keep the displayed dimensions matched to the local asset and retain the legacy `blu-cast-and-crew` filenames for the photograph now labeled “Crew.”
 - Photo `credits` lists can contain separate `{ "role": "Photographer", "name": "@handle", "url": "https://www.instagram.com/handle/" }` entries for each contributor. Omit `url` for a verified name without a verified account. `creditSources` records the supporting Instagram posts. Credits appear on collection cards and in the photo viewer; keep the matching `index.html` fallback captions in sync when editing. See `PHOTO-CREDITS-AUDIT.md` for the review and unresolved cases.
 - `bodypositive-data.js`: the separate photography collection, groups, dates, photographer credits, and accessible image descriptions.
 - `index.html`: homepage markup and content-warning text.

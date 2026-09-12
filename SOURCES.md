@@ -14,7 +14,11 @@ The nine photographs under “Call me cultural connoisseur” on the original ho
 
 Photo groups: opening portrait (no explicit photographer attribution recovered); three photographs credited to @reaux_woods; Baltimore, July 2022, @unix.jpg; Miami Beach, May 2022, @kearnyrivero; Greensboro, September 2021, @lostfilmsphotography_llc; Miami, May 2021, @kearnyrivero; Atlanta, March and July 2020, @derrick_lejermon. A source caption does not establish any other personal characteristic.
 
-The three Boys Like Us Season 2 images were provided directly by the owner in this conversation. Group labels follow the owner's descriptions: principal cast; above-the-line/creative team; cast and crew. No individual has been identified from a photograph and no cast/crew member's sexuality is inferred.
+The three original Boys Like Us Season 2 images were provided directly by the owner in this conversation. Group labels follow the owner's descriptions: principal cast; above-the-line/creative team; crew. The owner corrected the third label from “Cast & crew” to “Crew”; its legacy `blu-cast-and-crew.webp` and `blu-cast-and-crew-small.webp` filenames are retained. No individual has been identified from a photograph and no cast/crew member's sexuality is inferred.
+
+The owner also supplied four behind-the-scenes photographs and one production video. They are bundled in `assets/movie/` as `blu-bts-on-set-02.webp`, `blu-bts-on-set-01.webp`, `blu-bts-selfie-01.webp`, `blu-bts-selfie-02.webp`, and `blu-bts-slate-100.mp4`, in that display order. Each photograph has a small thumbnail; the video has a local poster and small poster thumbnail. Captions describe the supplied media without adding participant names or shoot dates.
+
+The Boys Like Us project credits and Instagram update link were supplied directly by the owner: created by [@carmseea](https://www.instagram.com/carmseea/), directed by [@bobothedirector](https://www.instagram.com/bobothedirector/), produced by [@preshyharry1](https://www.instagram.com/preshyharry1/), and the series account [@boyslikeustheseries](https://www.instagram.com/boyslikeustheseries/). The personal note reflects the owner's existing executive producer and actor roles for Season 2.
 
 The content-warning page is new copy; the gallery introduction is a light rewrite of the owner's expressed idea of learning to love his own body. The old page's mock menu/pricing copy is not reproduced.
 

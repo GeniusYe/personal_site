@@ -606,11 +606,28 @@ window.JIAJIE_SITE = {
     "role": "Executive producer & actor",
     "tagline": "Friendship. Ambition. The lives in between.",
     "description": "A Nigerian series following four friends through love, friendship, ambition, and the pressures of everyday life.",
-    "personalNote": "For season two, I’m part of the story both behind the production and in front of the camera, as executive producer and actor.",
+    "personalNote": "A new chapter, on screen and behind the scenes. I’m part of Boys Like Us Season 2 as an executive producer and actor.",
     "releaseNote": "Release details to be announced.",
     "trailerUrl": "",
     "watchUrl": "",
-    "updatesUrl": "https://www.instagram.com/life_of_jiajie/",
+    "updatesUrl": "https://www.instagram.com/boyslikeustheseries/",
+    "credits": [
+      {
+        "role": "Created by",
+        "name": "@carmseea",
+        "url": "https://www.instagram.com/carmseea/"
+      },
+      {
+        "role": "Directed by",
+        "name": "@bobothedirector",
+        "url": "https://www.instagram.com/bobothedirector/"
+      },
+      {
+        "role": "Produced by",
+        "name": "@preshyharry1",
+        "url": "https://www.instagram.com/preshyharry1/"
+      }
+    ],
     "photos": [
       {
         "title": "Principal cast",
@@ -631,13 +648,65 @@ window.JIAJIE_SITE = {
         "height": 1365
       },
       {
-        "title": "Cast & crew",
-        "caption": "A moment together with the wider cast and crew.",
+        "title": "Crew",
+        "caption": "A moment together with the crew.",
         "src": "assets/movie/blu-cast-and-crew.webp",
         "thumbnail": "assets/movie/blu-cast-and-crew-small.webp",
-        "alt": "A moment together with the wider cast and crew.",
+        "alt": "The crew gathered for a group photograph.",
         "width": 2048,
         "height": 1365
+      },
+      {
+        "title": "On set",
+        "caption": "A moment on set with the team.",
+        "src": "assets/movie/blu-bts-on-set-02.webp",
+        "thumbnail": "assets/movie/blu-bts-on-set-02-small.webp",
+        "alt": "JiaJie seated beside production equipment, with several people gathered around him.",
+        "width": 2000,
+        "height": 1335,
+        "group": "bts"
+      },
+      {
+        "title": "Between takes",
+        "caption": "A pause between takes.",
+        "src": "assets/movie/blu-bts-on-set-01.webp",
+        "thumbnail": "assets/movie/blu-bts-on-set-01-small.webp",
+        "alt": "JiaJie and a person wearing headphones seated together and posing for the camera.",
+        "width": 1335,
+        "height": 2000,
+        "group": "bts"
+      },
+      {
+        "title": "A moment together",
+        "caption": "A selfie from behind the scenes.",
+        "src": "assets/movie/blu-bts-selfie-01.webp",
+        "thumbnail": "assets/movie/blu-bts-selfie-01-small.webp",
+        "alt": "JiaJie and another person smiling for a selfie in the sunlight.",
+        "width": 960,
+        "height": 1280,
+        "group": "bts"
+      },
+      {
+        "title": "Behind the scenes",
+        "caption": "Another moment from behind the scenes.",
+        "src": "assets/movie/blu-bts-selfie-02.webp",
+        "thumbnail": "assets/movie/blu-bts-selfie-02-small.webp",
+        "alt": "JiaJie in glasses smiling for a selfie beside a person in a red top.",
+        "width": 1500,
+        "height": 2000,
+        "group": "bts"
+      },
+      {
+        "type": "video",
+        "title": "Slate 100 — Mark",
+        "caption": "A behind-the-scenes clip from Boys Like Us Season 2.",
+        "src": "assets/movie/blu-bts-slate-100.mp4",
+        "poster": "assets/movie/blu-bts-slate-100-poster.webp",
+        "thumbnail": "assets/movie/blu-bts-slate-100-poster-small.webp",
+        "alt": "People gathered around a production slate on the Boys Like Us Season 2 set.",
+        "width": 1280,
+        "height": 720,
+        "group": "bts"
       }
     ]
   },
