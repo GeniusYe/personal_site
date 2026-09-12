@@ -222,6 +222,7 @@
     setText("#dialog-eyebrow", song.eyebrow || "Single");
     setText("#dialog-byline", [song.artist, song.year, song.duration].filter(Boolean).join(" · "));
     setText("#dialog-description", song.description || `Listen to ${song.title} by ${song.artist}.`);
+    renderPhotoCredits($("#dialog-credits"), song, "music");
     setImage($("#dialog-artwork"), song.artwork);
     renderPlatforms(song);
 
@@ -385,6 +386,7 @@
   const culture = config.culture || {};
   const travelPhotos = (Array.isArray(travel.photos) ? travel.photos : []).filter(p => p && imageURL(p.src));
   const projectPhotos = (Array.isArray(project.photos) ? project.photos : []).filter(p => p && imageURL(p.src));
+  const galleryVideo = $("#gallery-video");
   const culturePhotos = (Array.isArray(culture.photos) ? culture.photos : []).filter(p => p && imageURL(p.src));
   let galleryState = { items: [], index: 0, mode: "travel", opener: null };
   let travelRendered = 0;
@@ -435,12 +437,35 @@
       history.replaceState(history.state, "", url);
     } catch { /* File previews still have fully usable dialogs. */ }
   }
+  function stopGalleryVideo() {
+    galleryVideo.pause();
+    if (galleryVideo.hasAttribute("src")) {
+      galleryVideo.removeAttribute("src");
+      galleryVideo.load();
+    }
+    galleryVideo.removeAttribute("poster");
+  }
   function renderGalleryImage() {
     const { items, index, mode } = galleryState;
     const photo = items[index];
     if (!photo) return;
+    const isVideo = photo.type === "video";
+    stopGalleryVideo();
     $("#gallery-image-error").hidden = true;
-    setImage($("#gallery-image"), photo.src, photo.alt || photo.title || "Photograph");
+    $("#gallery-image").hidden = isVideo;
+    galleryVideo.hidden = !isVideo;
+    galleryDialog.classList.toggle("is-video", isVideo);
+    galleryDialog.classList.toggle("is-bts", mode === "project" && photo.group === "bts");
+    if (isVideo) {
+      $("#gallery-image").removeAttribute("src");
+      galleryVideo.setAttribute("aria-label", photo.alt || photo.title || "Behind-the-scenes video");
+      const poster = imageURL(photo.poster);
+      if (poster) galleryVideo.poster = poster;
+      galleryVideo.src = imageURL(photo.src);
+    } else {
+      setImage($("#gallery-image"), photo.src, photo.alt || photo.title || "Photograph");
+    }
+    setText("#gallery-image-error", isVideo ? "This video couldn’t load. Try opening it below." : "This photo couldn’t load. Try opening the original below.");
     setText("#gallery-photo-title", photo.title || "");
     setText("#gallery-photo-location", mode === "culture" ? photo.location : "");
     $("#gallery-photo-location").hidden = mode !== "culture" || !photo.location;
@@ -451,7 +476,8 @@
     const fullSize = imageURL(photo.src);
     $("#gallery-original").hidden = !fullSize;
     if (fullSize) $("#gallery-original").href = fullSize;
-    setText("#gallery-original", mode === "map" ? "Open the original map ↗" : "Open full-size photograph ↗");
+    setText("#gallery-original", isVideo ? "Open video ↗" : mode === "map" ? "Open the original map ↗" : "Open full-size photograph ↗");
+    setText("#gallery-key-hint", isVideo ? "Press play to watch. Use the buttons to explore." : "Use the arrows or swipe to explore.");
     $(".gallery-controls", galleryDialog).hidden = items.length < 2;
     $("#gallery-key-hint").hidden = items.length < 2;
     for (const [i, thumb] of [...$("#gallery-thumbnails").children].entries()) {
@@ -460,6 +486,10 @@
   }
   $("#gallery-image").addEventListener("error", () => { $("#gallery-image-error").hidden = false; });
   $("#gallery-image").addEventListener("load", () => { $("#gallery-image-error").hidden = true; });
+  galleryVideo.addEventListener("error", () => {
+    if (galleryVideo.hasAttribute("src")) $("#gallery-image-error").hidden = false;
+  });
+  galleryVideo.addEventListener("loadeddata", () => { $("#gallery-image-error").hidden = true; });
 
   function moveGallery(offset) {
     const n = galleryState.items.length;
@@ -492,14 +522,25 @@
     thumbnails.hidden = mode !== "project";
     if (mode === "project") {
       items.forEach((photo, i) => {
-        const button = element("button", "gallery-thumbnail");
+        const button = element("button", `gallery-thumbnail${photo.group === "bts" ? " bts-thumbnail" : ""}`);
         button.type = "button";
-        button.setAttribute("aria-label", `Show ${photo.title || `photograph ${i + 1}`}`);
+        button.setAttribute("aria-label", `Show ${photo.type === "video" ? "video: " : ""}${photo.title || `photograph ${i + 1}`}`);
+        const frame = element("span", "gallery-thumbnail-frame");
         const img = element("img");
         img.width = 300; img.height = 200; img.loading = "lazy";
-        setImage(img, photo.thumbnail || photo.src, "");
-        button.append(img, element("span", "", photo.title || `Photograph ${i + 1}`));
-        button.addEventListener("click", () => { galleryState.index = i; renderGalleryImage(); });
+        setImage(img, photo.thumbnail || photo.poster || photo.src, "");
+        frame.append(img);
+        if (photo.group === "bts") {
+          const badge = element("span", "gallery-bts-badge", photo.type === "video" ? "▶ BTS" : "BTS");
+          badge.setAttribute("aria-hidden", "true");
+          frame.append(badge);
+        }
+        button.append(frame, element("span", "gallery-thumbnail-title", photo.title || `Photograph ${i + 1}`));
+        button.addEventListener("click", () => {
+          galleryState.index = i;
+          renderGalleryImage();
+          galleryDialog.scrollTop = 0;
+        });
         thumbnails.append(button);
       });
     }
@@ -512,6 +553,7 @@
   }
   $("#close-gallery").addEventListener("click", () => galleryDialog.close());
   galleryDialog.addEventListener("close", () => {
+    stopGalleryVideo();
     toast.classList.remove("visible");
     document.body.append(toast);
     unlockScroll();
@@ -522,12 +564,13 @@
   $("#gallery-prev").addEventListener("click", () => moveGallery(-1));
   $("#gallery-next").addEventListener("click", () => moveGallery(1));
   galleryDialog.addEventListener("keydown", event => {
-    if (event.altKey || event.ctrlKey || event.metaKey || /INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) return;
+    if (event.altKey || event.ctrlKey || event.metaKey || /INPUT|TEXTAREA|SELECT|VIDEO/.test(event.target.tagName)) return;
     if (event.key === "ArrowLeft") { event.preventDefault(); moveGallery(-1); }
     if (event.key === "ArrowRight") { event.preventDefault(); moveGallery(1); }
   });
   let touchStart = null;
   $("#gallery-stage").addEventListener("touchstart", event => {
+    if (!galleryVideo.hidden) { touchStart = null; return; }
     touchStart = event.touches.length === 1 ? { x: event.touches[0].clientX, y: event.touches[0].clientY } : null;
   }, { passive: true });
   $("#gallery-stage").addEventListener("touchend", event => {
@@ -682,17 +725,20 @@
   // The new series feature is one cover on the page, not a wall of photographs.
   const projectCard = $("#project-card");
   if (projectPhotos.length) {
+    const videoCount = projectPhotos.filter(item => item.type === "video").length;
+    const photoCount = projectPhotos.length - videoCount;
+    const mediaCount = [`${photoCount} photos`, videoCount ? `${videoCount} video${videoCount === 1 ? "" : "s"}` : ""].filter(Boolean).join(" + ");
     const cover = projectPhotos[0];
     setImage($("#project-cover"), cover.thumbnail || cover.src, cover.alt);
     $("#project-cover").width = Number(cover.width) || 1429;
     $("#project-cover").height = Number(cover.height) || 1056;
     projectCard.href = imageURL(cover.src);
-    projectCard.setAttribute("aria-label", `Explore ${project.title} ${project.season}: details and ${projectPhotos.length} photographs`);
+    projectCard.setAttribute("aria-label", `Explore ${project.title} ${project.season}: details, ${mediaCount}, and behind the scenes`);
     projectCard.addEventListener("click", event => {
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
       if (openGallery(projectPhotos, 0, "project", projectCard)) event.preventDefault();
     });
-    setText("#project-photo-count", `${projectPhotos.length} photos`);
+    setText("#project-photo-count", mediaCount);
     setText("#project-card-title", project.title);
     setText("#project-season", project.season);
     setText("#project-status", `${project.status || "Upcoming"} series`);
@@ -704,6 +750,7 @@
     setText("#detail-status", project.status);
     setText("#project-description", project.description);
     setText("#project-personal-note", project.personalNote);
+    renderPhotoCredits($("#project-credits"), project, "project");
     setText("#detail-role", project.role);
     setText("#detail-format", project.format);
     setText("#detail-release", project.releaseNote);

@@ -117,6 +117,9 @@ dialog::backdrop { background: #11261dc2; backdrop-filter: blur(7px); -webkit-ba
 .release-title h2 { margin: 0; font: 32px/1.08 var(--serif); letter-spacing: -.85px; text-wrap: balance; }
 .release-title > p:last-child { margin: 8px 0 0; font-size: 11px; color: #69715e; }
 .release-description { font-size: 12px; color: var(--muted); line-height: 1.6; margin: 17px 0 21px; }
+.release-credits { margin: -9px 0 21px; font-size: 11px; line-height: 1.7; color: var(--muted); }
+.release-credits .photo-credit { margin: 0; }
+.release-credits a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .player-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 9px; }
 .player-heading > .eyebrow { font-size: 9px; letter-spacing: 1.3px; color: #69715e; }
 .player-provider { display: inline-flex; align-items: center; gap: 5px; color: #737b69; font-size: 10px; }

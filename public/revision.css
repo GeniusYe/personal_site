@@ -123,3 +123,31 @@ body.consent-open { position: fixed; top: var(--consent-scroll-offset); width: 1
 .featured-pair .song-card-description { display:block; margin-top:15px; font-size:11px; line-height:1.7; color:#c6d0bc; }
 @media (max-width:700px) { .featured-pair .song-card-description { display:none; } }
 .consent-dialog:not([open]), .body-photo-dialog:not([open]) { display: none; }
+
+/* A visible clapperboard mark leads into the production and personal BTS gallery. */
+.project-card-featured .project-photo-tag { gap: 9px; padding: 9px 12px; border-radius: 11px; background: #17281feb; }
+.project-photo-tag .bts-clapperboard { width: 32px; height: 32px; flex: 0 0 32px; color: #ead8a5; }
+.project-bts-copy { display: flex; flex-direction: column; gap: 2px; }
+.project-bts-label { font-size: 18px; line-height: 1; letter-spacing: 1.6px; }
+#project-photo-count { font-size: 9px; line-height: 1.4; }
+.gallery-thumbnails { grid-template-columns: repeat(4,minmax(0,1fr)); }
+.gallery-thumbnail > .gallery-thumbnail-frame { position: relative; display: block; margin: 0; }
+.gallery-thumbnail-frame img { aspect-ratio: 4/3; object-fit: contain; background: #16241e; }
+.gallery-bts-badge { position: absolute; bottom: 5px; left: 5px; padding: 4px 7px; border: 1px solid #f5e6b55c; border-radius: 5px; background: #17281feb; color: #f5e6b5; font-size: 12px; font-weight: 700; line-height: 1.2; letter-spacing: .7px; }
+.gallery-thumbnail > .gallery-thumbnail-title { font-size: 11px; line-height: 1.4; }
+.gallery-dialog.is-bts .gallery-stage { height: min(62dvh,680px); aspect-ratio: auto; }
+.gallery-dialog.is-video .gallery-stage { height: auto; min-height: 0; aspect-ratio: 16/9; }
+.gallery-stage video { display: block; width: 100%; height: 100%; min-height: 0; max-height: 70dvh; object-fit: contain; }
+.project-credits { display: flex; flex-wrap: wrap; gap: 8px 26px; padding-block: 5px 8px; }
+.project-credits .photo-credit { margin: 0; font-size: 12px; line-height: 1.8; }
+.project-credits .photo-credit-role { display: block; color: var(--muted); font-size: 10px; }
+.project-credits a, .project-media-fallback a { text-decoration: underline; text-underline-offset: 3px; }
+.project-media-fallback { font-size: 11px; line-height: 1.8; }
+@media (max-width:700px) {
+ .gallery-thumbnails { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+ .project-card-featured .project-photo-tag { padding: 10px 13px; }
+ .project-photo-tag .bts-clapperboard { width: 36px; height: 36px; flex-basis: 36px; }
+ .project-bts-label { font-size: 20px; }
+ #project-photo-count { font-size: 10px; }
+ .project-credits { gap: 10px 20px; }
+}
