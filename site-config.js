@@ -124,7 +124,18 @@ window.JIAJIE_SITE = {
         "title": "Áo dài",
         "alt": "JiaJie in a red and gold áo dài on a leafy street.",
         "location": "Vietnam",
-        "caption": "The áo dài expresses Vietnamese identity and marks cherished occasions, from Tết celebrations to weddings."
+        "caption": "The áo dài expresses Vietnamese identity and marks cherished occasions, from Tết celebrations to weddings.",
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@imlilypg_",
+            "url": "https://www.instagram.com/imlilypg_/"
+          }
+        ],
+        "creditSources": [
+          "https://www.instagram.com/life_of_jiajie/p/DOmtIISESKN/",
+          "https://www.instagram.com/life_of_jiajie/p/DAYfqvovAn-/"
+        ]
       },
       {
         "id": "culture-02",
@@ -134,7 +145,22 @@ window.JIAJIE_SITE = {
         "title": "West African caftan",
         "alt": "JiaJie in a geometric-patterned West African caftan beneath a large canopy in an open square.",
         "location": "Made in Kigali",
-        "caption": "This caftan celebrates the exchange of dress traditions and craftsmanship between West Africa and Rwanda."
+        "caption": "This caftan celebrates the exchange of dress traditions and craftsmanship between West Africa and Rwanda.",
+        "credits": [
+          {
+            "role": "Designer",
+            "name": "@kigalikaftan",
+            "url": "https://www.instagram.com/kigalikaftan/"
+          },
+          {
+            "role": "Photographer",
+            "name": "@sympathy_studio_250",
+            "url": "https://www.instagram.com/sympathy_studio_250/"
+          }
+        ],
+        "creditSources": [
+          "https://www.instagram.com/life_of_jiajie/p/DQ6yp5EEcde/"
+        ]
       },
       {
         "id": "culture-03",
@@ -154,7 +180,21 @@ window.JIAJIE_SITE = {
         "title": "Charles&M",
         "alt": "JiaJie in a white and striped Charles&M outfit, leaning on a wooden ladder in a studio.",
         "location": "Côte d’Ivoire",
-        "caption": "This Charles&M design celebrates contemporary Ivorian creativity and fashion as a form of cultural expression."
+        "caption": "This Charles&M design celebrates contemporary Ivorian creativity and fashion as a form of cultural expression.",
+        "credits": [
+          {
+            "role": "Designer",
+            "name": "Charles&M",
+            "url": "https://www.facebook.com/CharlesEtMode"
+          },
+          {
+            "role": "Photographer",
+            "name": "78studio"
+          }
+        ],
+        "creditSources": [
+          "https://www.instagram.com/life_of_jiajie/p/DKQJ_SQTeyN/"
+        ]
       },
       {
         "id": "culture-05",
@@ -175,7 +215,17 @@ window.JIAJIE_SITE = {
         "title": "Thread King",
         "alt": "JiaJie in a colorful matching Thread King shirt and trousers at a stall filled with woven baskets.",
         "location": "Nigeria",
-        "caption": "This Thread King design celebrates Nigerian fashion as a living culture shaped by contemporary creativity."
+        "caption": "This Thread King design celebrates Nigerian fashion as a living culture shaped by contemporary creativity.",
+        "credits": [
+          {
+            "role": "Designer",
+            "name": "@threadking_studios",
+            "url": "https://www.instagram.com/threadking_studios/"
+          }
+        ],
+        "creditSources": [
+          "https://www.instagram.com/chidi_sunday1/reel/Dc20WSHggZx/"
+        ]
       },
       {
         "id": "culture-07",
@@ -195,7 +245,32 @@ window.JIAJIE_SITE = {
         "title": "Kente",
         "alt": "JiaJie in white and gold kente cloth and a black hat in a garden.",
         "location": "Côte d’Ivoire",
-        "caption": "Kente communicates identity, social standing, and inherited wisdom through patterns associated with stories and proverbs."
+        "caption": "Kente communicates identity, social standing, and inherited wisdom through patterns associated with stories and proverbs.",
+        "credits": [
+          {
+            "role": "Stylist",
+            "name": "Charles&M",
+            "url": "https://www.facebook.com/CharlesEtMode"
+          },
+          {
+            "role": "Kente",
+            "name": "@femi_kente",
+            "url": "https://www.instagram.com/femi_kente/"
+          },
+          {
+            "role": "Photographer",
+            "name": "@memoria_x_studios",
+            "url": "https://www.instagram.com/memoria_x_studios/"
+          },
+          {
+            "role": "Photo editor",
+            "name": "@sorce_usa",
+            "url": "https://www.instagram.com/sorce_usa/"
+          }
+        ],
+        "creditSources": [
+          "https://www.instagram.com/life_of_jiajie/p/DY9t6zOEXkL/"
+        ]
       },
       {
         "id": "culture-09",
@@ -215,11 +290,51 @@ window.JIAJIE_SITE = {
         "alt": "JiaJie in a Charro suit in Mexico City, with the Palacio de Bellas Artes in the background.",
         "width": 1000,
         "height": 667,
-        "credit": "@fotografia_beauty_art",
-        "creditUrl": "https://www.instagram.com/fotografia_beauty_art/",
         "location": "Mexico City, Mexico",
         "caption": "The Charro suit honors Mexico’s charrería tradition, where horsemanship and artisan craftsmanship express community identity.",
-        "wide": true
+        "wide": true,
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@fotografia_beauty_art",
+            "url": "https://www.instagram.com/fotografia_beauty_art/"
+          }
+        ],
+        "creditSources": [
+          "https://www.instagram.com/life_of_jiajie/p/DE3y52JRUfY/"
+        ]
+      },
+      {
+        "id": "agbada-lagos",
+        "src": "assets/culture/agbada-lagos.webp",
+        "width": 1440,
+        "height": 1920,
+        "title": "Agbada",
+        "date": "",
+        "alt": "JiaJie seated in a black-and-white striped embroidered agbada with a pointed ceremonial hat in a studio.",
+        "location": "Lagos, Nigeria",
+        "caption": "A flowing West African garment closely associated with Yoruba culture, worn for celebrations and formal occasions.",
+        "credits": [
+          {
+            "role": "Clothing",
+            "name": "@chidi_sunday1",
+            "url": "https://www.instagram.com/chidi_sunday1/"
+          },
+          {
+            "role": "Clothing",
+            "name": "@threadking_studios",
+            "url": "https://www.instagram.com/threadking_studios/"
+          },
+          {
+            "role": "Photographer",
+            "name": "@willens__",
+            "url": "https://www.instagram.com/willens__/"
+          }
+        ],
+        "sourceUrl": "https://www.instagram.com/p/DczBAaQmOCg/?img_index=1",
+        "creditSources": [
+          "https://www.instagram.com/p/DczBAaQmOCg/?img_index=1"
+        ]
       }
     ]
   },
@@ -255,9 +370,18 @@ window.JIAJIE_SITE = {
         "alt": "Travel photograph near a pyramid in Egypt.",
         "width": 667,
         "height": 1000,
-        "credit": "",
-        "creditUrl": "",
-        "wide": false
+        "wide": false,
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@hossam_artistic",
+            "url": "https://www.instagram.com/hossam_artistic/"
+          }
+        ],
+        "creditSources": [
+          "https://www.instagram.com/life_of_jiajie/p/DNJiolyxi85/",
+          "https://www.instagram.com/life_of_jiajie/p/C--0O6GsCV8/"
+        ]
       },
       {
         "id": "paris",
@@ -267,9 +391,28 @@ window.JIAJIE_SITE = {
         "alt": "Travel portrait beside the Louvre pyramid in Paris.",
         "width": 800,
         "height": 1000,
-        "credit": "fotografaemparis.jb",
-        "creditUrl": "https://www.instagram.com/fotografaemparis.jb/",
-        "wide": false
+        "wide": false,
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@fotografaemparis.jb",
+            "url": "https://www.instagram.com/fotografaemparis.jb/"
+          },
+          {
+            "role": "Clothing",
+            "name": "@buffalo_jackson",
+            "url": "https://www.instagram.com/buffalo_jackson/"
+          },
+          {
+            "role": "Scarf",
+            "name": "@denholmmunn",
+            "url": "https://www.instagram.com/denholmmunn/"
+          }
+        ],
+        "creditSources": [
+          "https://www.instagram.com/life_of_jiajie/p/Ci-NE6iOhtI/",
+          "https://www.instagram.com/life_of_jiajie/p/CjvmhcJuG0w/"
+        ]
       },
       {
         "id": "prague",
@@ -279,9 +422,17 @@ window.JIAJIE_SITE = {
         "alt": "Travel portrait on a cobbled street in Prague.",
         "width": 667,
         "height": 1000,
-        "credit": "pragueful",
-        "creditUrl": "https://www.instagram.com/pragueful/",
-        "wide": false
+        "wide": false,
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@pragueful",
+            "url": "https://www.instagram.com/pragueful/"
+          }
+        ],
+        "creditSources": [
+          "https://www.instagram.com/life_of_jiajie/p/C-faKnnskoa/"
+        ]
       },
       {
         "id": "mombasa",
@@ -330,6 +481,108 @@ window.JIAJIE_SITE = {
         "credit": "",
         "creditUrl": "",
         "wide": false
+      },
+      {
+        "id": "rio-patchwork-jacket",
+        "title": "Rio de Janeiro, Brazil",
+        "date": "",
+        "src": "assets/postcards/rio-patchwork-jacket.webp",
+        "alt": "JiaJie wearing a patchwork denim jacket by the Rio waterfront.",
+        "width": 1440,
+        "height": 1440,
+        "square": true,
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@soumarianamonteiro",
+            "url": "https://www.instagram.com/soumarianamonteiro/"
+          },
+          {
+            "role": "Clothing",
+            "name": "@hip_hop_cargo",
+            "url": "https://www.instagram.com/hip_hop_cargo/"
+          }
+        ],
+        "sourceUrl": "https://www.instagram.com/p/DFVne3WRSbT/?img_index=1",
+        "creditSources": [
+          "https://www.instagram.com/p/DFVne3WRSbT/?img_index=1"
+        ]
+      },
+      {
+        "id": "rio-beach",
+        "title": "Rio de Janeiro, Brazil",
+        "date": "",
+        "src": "assets/postcards/rio-beach.webp",
+        "alt": "JiaJie in colorful striped swim shorts on a beach with the Rio coastline behind him.",
+        "width": 1439,
+        "height": 1440,
+        "square": true,
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@soumarianamonteiro",
+            "url": "https://www.instagram.com/soumarianamonteiro/"
+          }
+        ],
+        "sourceUrl": "https://www.instagram.com/p/DHoF7XLxx8p/?img_index=3",
+        "creditSources": [
+          "https://www.instagram.com/p/DHoF7XLxx8p/?img_index=3"
+        ]
+      },
+      {
+        "id": "copenhagen",
+        "title": "Copenhagen, Denmark",
+        "date": "",
+        "src": "assets/postcards/copenhagen.webp",
+        "alt": "JiaJie in a white shirt and black hat beside a church with a tall stone spire.",
+        "width": 1440,
+        "height": 1440,
+        "square": true,
+        "sourceUrl": "https://www.instagram.com/p/C_DnfkssdBH/?img_index=1"
+      },
+      {
+        "id": "lisbon",
+        "title": "Lisbon, Portugal",
+        "date": "",
+        "src": "assets/postcards/lisbon.webp",
+        "alt": "JiaJie in an open patterned shirt at a viewpoint over red rooftops.",
+        "width": 1440,
+        "height": 1440,
+        "square": true,
+        "sourceUrl": "https://www.instagram.com/p/C7t8h5_xYEY/?img_index=3"
+      },
+      {
+        "id": "hawaii-coast",
+        "title": "Oahu, Hawaii",
+        "date": "",
+        "src": "assets/postcards/hawaii-coast.jpg",
+        "alt": "JiaJie wearing a pink tropical shirt and leafy lei at a coastal overlook.",
+        "width": 1440,
+        "height": 1440,
+        "square": true,
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@hawaii_daytour",
+            "url": "https://www.instagram.com/hawaii_daytour/"
+          }
+        ],
+        "sourceUrl": "https://www.instagram.com/p/CYHYqURpFhS/",
+        "creditSources": [
+          "https://www.instagram.com/p/CYHYqURpFhS/",
+          "https://www.instagram.com/p/CinPNJKj_r0/"
+        ]
+      },
+      {
+        "id": "madrid",
+        "title": "Madrid, Spain",
+        "date": "",
+        "src": "assets/postcards/madrid.webp",
+        "alt": "JiaJie in a white patterned shirt with mounted guards behind him.",
+        "width": 1440,
+        "height": 1440,
+        "square": true,
+        "sourceUrl": "https://www.instagram.com/p/CjLuW5MuBe5/"
       }
     ]
   },
