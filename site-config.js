@@ -235,7 +235,17 @@ window.JIAJIE_SITE = {
         "title": "Banja koto",
         "alt": "JiaJie in a bright geometric-patterned banja koto beside the steps of a building.",
         "location": "Suriname",
-        "caption": "The banja koto carries the textile heritage and cultural identity of Suriname’s Maroon communities."
+        "caption": "The banja koto carries the textile heritage and cultural identity of Suriname’s Maroon communities.",
+        "credits": [
+          {
+            "role": "Designer",
+            "name": "Claire Kropie",
+            "url": "https://www.facebook.com/claire.kropie.5"
+          }
+        ],
+        "creditSources": [
+          "https://www.facebook.com/claire.kropie.5"
+        ]
       },
       {
         "id": "culture-08",
