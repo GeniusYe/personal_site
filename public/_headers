@@ -6,17 +6,8 @@
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src https://w.soundcloud.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
   Cache-Control: public, max-age=0, must-revalidate
 
-/tools/*
-  X-Robots-Tag: noindex
-
-/README.md
-  X-Robots-Tag: noindex
-
 /bodypositive*
   X-Robots-Tag: noindex, nofollow, noimageindex
 
 /assets/bodypositive/*
   X-Robots-Tag: noindex, noimageindex
-
-/SOURCES.md
-  X-Robots-Tag: noindex

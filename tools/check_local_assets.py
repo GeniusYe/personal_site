@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify that the site's configured images and HTML/CSS resources are local.
+"""Verify that public/'s configured images and HTML/CSS resources are local.
 
 Run with Python 3.10+: python tools/check_local_assets.py
 Outbound navigation links and optional SoundCloud player frames are allowed.
@@ -13,7 +13,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[1] / 'public'
 CONFIGS = {
     'site-config.js': 'window.JIAJIE_SITE = ',
     'bodypositive-data.js': 'window.JIAJIE_BODY_PHOTOS = ',

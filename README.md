@@ -17,22 +17,32 @@ A static, two-page personal website. No framework, package install, backend, or 
 
 ## Deploy / preview
 
-Upload all site files together to your Cloudflare Pages project. `index.html` and `bodypositive.html` are at the root. For a local preview, unzip and open `index.html` in a browser, or run:
+All deployable files live in `public/`. Repository documentation, screenshots in `docs/`, and development scripts in `tools/` stay outside that folder.
+
+For Cloudflare Pages connected to this repository, use these build settings:
+
+- **Root directory:** repository root (leave the field blank).
+- **Build command:** `exit 0` (no build step).
+- **Build output directory:** `public`.
+
+These settings follow Cloudflare's [static HTML deployment guide](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/). Update the existing project's build output directory before deploying this layout. For a direct upload, upload only the `public/` folder (or a ZIP of its contents), with `index.html` at the upload root. Files such as `README.md`, `SOURCES.md`, and `PHOTO-CREDITS-AUDIT.md` are excluded when only `public/` is deployed.
+
+For a local preview, open `public/index.html` in a browser, or run from the repository root:
 
 ```sh
-python -m http.server 8080
+python -m http.server 8080 --directory public
 ```
 
 Then open `http://localhost:8080/`. Keep the files and folders together. All photographs, music artwork, the travel map, scripts, styles, and icons are bundled locally. Both pages and their photo galleries work without access to third-party hosts. SoundCloud playback and outbound links still require internet access.
 
-The home page sharing helper uses its current URL by default. `siteUrl` in `site-config.js` can optionally hold your final, absolute home URL. The body gallery has generic sharing metadata; no NSFW photograph is used as a social thumbnail.
+The home page sharing helper uses its current URL by default. `siteUrl` in `public/site-config.js` can optionally hold your final, absolute home URL. The body gallery has generic sharing metadata; no NSFW photograph is used as a social thumbnail.
 
 ## Local assets
 
 All images are bundled locally and organized by the part of the site that uses them:
 
 ```text
-assets/
+public/assets/
   bodypositive/  Gallery photographs, named by session and photo number
   culture/       Eleven clothing photographs in “Dressed for the journey.”
   postcards/     Travel photographs named by destination, plus travel-map.png
@@ -52,9 +62,9 @@ Check local asset references before deployment with Python 3.10+ (no packages or
 python tools/check_local_assets.py
 ```
 
-Upload both HTML pages, all root JavaScript/CSS files, `_headers`, and the entire `assets/` folder together. Development tools and `tools/backups/` are not needed in the deployed site. The host's content security policy allows images only from the site itself or embedded data.
+Deploy `public/` as a unit: both HTML pages, all JavaScript/CSS files, `_headers`, and the entire `assets/` folder inside it. The host's content security policy allows images only from the site itself or embedded data.
 
-For future imports, `python tools/localize_images.py` downloads configured remote images into the matching content folders above, updates configuration and HTML references, and keeps ignored backups in `tools/backups/`. Failed downloads retain their original URL and return a nonzero exit status; the asset check will also flag them. Prefer adding new files directly to the matching asset folder with descriptive filenames and referencing their local paths.
+For future imports, `python tools/localize_images.py` downloads configured remote images into the matching content folders under `public/assets/`, updates configuration and HTML references in `public/`, and keeps ignored backups in `tools/backups/` outside the deployment folder. Failed downloads retain their original URL and return a nonzero exit status; the asset check will also flag them. Prefer adding new files directly to the matching asset folder with descriptive filenames and referencing their local paths.
 
 For the most reliable social preview, set the homepage `og:image` to the absolute URL of its bundled portrait on your final domain. Never use a body-positive photo as the homepage sharing thumbnail.
 
@@ -69,6 +79,8 @@ On direct entry the page has no image `src` values. The photo configuration and 
 This is a **viewing-consent warning, not password protection or verified age checking**. Static image URLs remain public. `noindex` and `noimageindex` are indexing requests, not access control. Do not use this mechanism to protect confidential photographs.
 
 ## Editing
+
+The site filenames below are relative to `public/`; `PHOTO-CREDITS-AUDIT.md` remains at the repository root. Keep image URLs relative to the site (for example, `assets/profile/portrait.jpg`), without a `public/` prefix.
 
 - `site-config.js`: profile, songs/platform links, timeline, clothing and travel collections, film details, and contact information.
 - Photo `credits` lists can contain separate `{ "role": "Photographer", "name": "@handle", "url": "https://www.instagram.com/handle/" }` entries for each contributor. Omit `url` for a verified name without a verified account. `creditSources` records the supporting Instagram posts. Credits appear on collection cards and in the photo viewer; keep the matching `index.html` fallback captions in sync when editing. See `PHOTO-CREDITS-AUDIT.md` for the review and unresolved cases.
