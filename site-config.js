@@ -112,81 +112,99 @@ window.JIAJIE_SITE = {
     ]
   },
   "culture": {
-    "title": "Cultural appreciation.",
-    "eyebrow": "Call me cultural connoisseur",
-    "description": "A few moments of cultural appreciation.",
+    "title": "Dressed for the journey.",
+    "eyebrow": "Clothes & culture",
+    "description": "",
     "photos": [
       {
         "id": "culture-01",
         "src": "assets/culture/cultural-appreciation-01.jpg",
         "width": 1437,
         "height": 2560,
-        "title": "Red & gold",
-        "alt": "JiaJie in a red and gold embroidered tunic on a leafy street."
+        "title": "Áo dài",
+        "alt": "JiaJie in a red and gold áo dài on a leafy street.",
+        "location": "Vietnam",
+        "caption": "The áo dài expresses Vietnamese identity and marks cherished occasions, from Tết celebrations to weddings."
       },
       {
         "id": "culture-02",
         "src": "assets/culture/cultural-appreciation-02.jpg",
         "width": 2500,
         "height": 3746,
-        "title": "Under the canopy",
-        "alt": "JiaJie in a geometric-patterned shirt beneath a large canopy in an open square."
+        "title": "West African caftan",
+        "alt": "JiaJie in a geometric-patterned West African caftan beneath a large canopy in an open square.",
+        "location": "Made in Kigali",
+        "caption": "This caftan celebrates the exchange of dress traditions and craftsmanship between West Africa and Rwanda."
       },
       {
         "id": "culture-03",
         "src": "assets/culture/cultural-appreciation-03.jpg",
         "width": 2500,
         "height": 3750,
-        "title": "By the square",
-        "alt": "JiaJie in a dark waistcoat and light shirt in a sunlit cobbled square."
+        "title": "Veste",
+        "alt": "JiaJie in a dark Latvian veste and light shirt in a sunlit cobbled square in Estonia.",
+        "location": "Latvia · Photographed in Estonia",
+        "caption": "As part of Latvian folk dress, the veste connects regional craftsmanship with a shared sense of national identity."
       },
       {
         "id": "culture-04",
         "src": "assets/culture/cultural-appreciation-04.jpg",
         "width": 2500,
         "height": 3125,
-        "title": "Studio stripes",
-        "alt": "JiaJie in a striped waistcoat over a white shirt, leaning on a wooden ladder in a studio."
+        "title": "Charles&M",
+        "alt": "JiaJie in a white and striped Charles&M outfit, leaning on a wooden ladder in a studio.",
+        "location": "Côte d’Ivoire",
+        "caption": "This Charles&M design celebrates contemporary Ivorian creativity and fashion as a form of cultural expression."
       },
       {
         "id": "culture-05",
         "src": "assets/culture/cultural-appreciation-05.jpg",
         "width": 2500,
         "height": 1667,
-        "title": "City lines",
-        "alt": "JiaJie in a white shirt and patterned trousers beside a railing, with contemporary buildings behind him."
+        "title": "Sarong",
+        "alt": "JiaJie in a white shirt and patterned sarong beside a railing, with contemporary buildings behind him.",
+        "location": "Sri Lanka",
+        "caption": "The sarong keeps Sri Lankan clothing traditions part of everyday life, connecting generations through a familiar garment."
       },
       {
         "id": "culture-06",
         "src": "assets/culture/cultural-appreciation-06.jpg",
         "width": 2500,
         "height": 3125,
-        "title": "At the market",
-        "alt": "JiaJie in a colorful matching shirt and trousers at a stall filled with woven baskets."
+        "title": "Thread King",
+        "alt": "JiaJie in a colorful matching Thread King shirt and trousers at a stall filled with woven baskets.",
+        "location": "Nigeria",
+        "caption": "This Thread King design celebrates Nigerian fashion as a living culture shaped by contemporary creativity."
       },
       {
         "id": "culture-07",
         "src": "assets/culture/cultural-appreciation-07.jpg",
         "width": 2500,
         "height": 3750,
-        "title": "In full color",
-        "alt": "JiaJie in a bright geometric-patterned sleeveless top beside the steps of a building."
+        "title": "Banja koto",
+        "alt": "JiaJie in a bright geometric-patterned banja koto beside the steps of a building.",
+        "location": "Suriname",
+        "caption": "The banja koto carries the textile heritage and cultural identity of Suriname’s Maroon communities."
       },
       {
         "id": "culture-08",
         "src": "assets/culture/cultural-appreciation-08.jpg",
         "width": 1024,
         "height": 1536,
-        "title": "White & gold",
-        "alt": "JiaJie in a white and gold draped outfit and black hat in a garden."
+        "title": "Kente",
+        "alt": "JiaJie in white and gold kente cloth and a black hat in a garden.",
+        "location": "Côte d’Ivoire",
+        "caption": "Kente communicates identity, social standing, and inherited wisdom through patterns associated with stories and proverbs."
       },
       {
         "id": "culture-09",
         "src": "assets/culture/cultural-appreciation-09.jpg",
         "width": 2500,
         "height": 3334,
-        "title": "Mountain air",
-        "alt": "JiaJie in a striped robe by a mountain overlook, with buildings on the cliff behind him."
+        "title": "Gho",
+        "alt": "JiaJie in a striped gho by a mountain overlook in Bhutan, with buildings on the cliff behind him.",
+        "location": "Bhutan",
+        "caption": "The gho brings Bhutan’s national identity into daily life while sustaining generations of textile craftsmanship."
       }
     ]
   },

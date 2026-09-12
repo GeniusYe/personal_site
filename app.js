@@ -419,6 +419,8 @@
     $("#gallery-image-error").hidden = true;
     setImage($("#gallery-image"), photo.src, photo.alt || photo.title || "Photograph");
     setText("#gallery-photo-title", photo.title || "");
+    setText("#gallery-photo-location", mode === "culture" ? photo.location : "");
+    $("#gallery-photo-location").hidden = mode !== "culture" || !photo.location;
     setText("#gallery-photo-caption", photo.caption || photo.date || "");
     setText("#gallery-count", `${index + 1} / ${items.length}`);
     $("#gallery-count").hidden = items.length < 2;
@@ -458,13 +460,14 @@
     const headings = {
       project: ["Behind the scenes", project.title, [project.season, project.format, project.location].filter(Boolean).join(" · ")],
       map: ["The places so far", travel.map?.title, `As of ${travel.asOf || ""} · ${travel.qualifier || ""}`],
-      culture: [culture.eyebrow || "Call me cultural connoisseur", culture.title || "Cultural appreciation.", culture.description || "A few moments of cultural appreciation."],
+      culture: [culture.eyebrow || "Clothes & culture", culture.title || "Dressed for the journey.", culture.description || ""],
       travel: ["The photo journal", "Postcards from the road", "A few moments, from a world of places."]
     };
     const [eyebrow, title, subtitle] = headings[mode] || headings.travel;
     setText("#gallery-eyebrow", eyebrow);
     setText("#gallery-title", title);
     setText("#gallery-subtitle", subtitle);
+    $("#gallery-subtitle").hidden = !subtitle;
     $("#project-details").hidden = mode !== "project";
     const thumbnails = $("#gallery-thumbnails");
     thumbnails.replaceChildren();
@@ -560,7 +563,7 @@
     const link = outgoingLink(imageURL(photo.src), undefined, "culture-open");
     link.setAttribute("aria-haspopup", "dialog");
     link.setAttribute("aria-controls", "gallery-dialog");
-    link.setAttribute("aria-label", `View ${title} (${index + 1} of ${culturePhotos.length})`);
+    link.setAttribute("aria-label", `View ${[title, photo.location].filter(Boolean).join(" · ")} (${index + 1} of ${culturePhotos.length})`);
     const frame = element("span", "culture-image image-frame");
     const number = String(index + 1).padStart(2, "0");
     const placeholder = element("span", "image-placeholder", number);
@@ -582,19 +585,24 @@
       if (openGallery(culturePhotos, index, "culture", link)) event.preventDefault();
     });
     figure.append(link);
+    const details = element("figcaption", "culture-details");
+    if (photo.location) details.append(element("p", "culture-location", photo.location));
+    if (photo.caption) details.append(element("p", "culture-description", photo.caption));
     if (photo.credit) {
-      const credit = element("figcaption", "photo-credit", "Photo: ");
+      const credit = element("p", "photo-credit", "Photo: ");
       const url = webURL(photo.creditUrl);
       credit.append(url ? outgoingLink(url, photo.credit) : element("span", "", photo.credit));
-      figure.append(credit);
+      details.append(credit);
     }
+    if (details.hasChildNodes()) figure.append(details);
     return figure;
   }
   const cultureGrid = $("#culture-photos");
   if (cultureGrid && culturePhotos.length) {
-    setText("#culture-eyebrow", culture.eyebrow || "Call me cultural connoisseur");
-    setText("#culture-title", culture.title || "Cultural appreciation.");
-    setText("#culture-description", culture.description || "A few moments of cultural appreciation.");
+    setText("#culture-eyebrow", culture.eyebrow || "Clothes & culture");
+    setText("#culture-title", culture.title || "Dressed for the journey.");
+    setText("#culture-description", culture.description || "");
+    $("#culture-description").hidden = !culture.description;
     cultureGrid.replaceChildren(...culturePhotos.map(makeCultureCard));
   }
 
