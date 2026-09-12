@@ -7,7 +7,7 @@ Run from any directory with Python 3.10+ and internet access:
 
 Only standard-library modules are used. Failed downloads retain their original
 URLs and produce a nonzero exit status. Backups are stored in tools/backups/.
-Images are saved under profile/, music/, postcards/, movie/, or bodypositive/
+Images are saved under profile/, music/, culture/, postcards/, movie/, or bodypositive/
 inside assets/, according to their content section.
 """
 from __future__ import annotations
@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONFIGS = [('site-config.js', 'window.JIAJIE_SITE = ', None),
            ('bodypositive-data.js', 'window.JIAJIE_BODY_PHOTOS = ', 'assets/bodypositive')]
 SECTION_FOLDERS = {'profile': 'assets/profile', 'songs': 'assets/music',
-                   'travel': 'assets/postcards', 'project': 'assets/movie'}
+                   'culture': 'assets/culture', 'travel': 'assets/postcards', 'project': 'assets/movie'}
 KEYS = {'photo', 'thumbnail', 'artwork', 'src'}
 MAX_BYTES = 24 * 1024 * 1024
 EXTENSIONS = {'image/jpeg': '.jpg', 'image/png': '.png', 'image/webp': '.webp', 'image/gif': '.gif'}
