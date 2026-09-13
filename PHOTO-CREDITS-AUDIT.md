@@ -2,17 +2,17 @@
 
 Local image paths below are relative to `public/`, the deployment folder.
 
-Checked **September 12, 2026**, starting with the 17 photographs in **Dressed for the journey** and **Postcards** on `origin/master` at `a5f2b29`, then updated for the owner's selected additions below.
+Checked **September 12, 2026**, starting with the 17 photographs in **Dressed for the journey** and **Postcards** on `origin/master` at `a5f2b29`, then updated through **September 13, 2026** for the owner's selected additions below.
 
 The review covered the captions surfaced for all **411 posts in the Instagram profile grid**, followed by targeted post, caption, and screenshot checks. Representative photographs from the credited posts listed below were compared with the 17 gallery photographs, all 19 Body Positive photographs, and the homepage portrait. The review did **not** inspect every image in every carousel or visually compare every older post. The tables distinguish exact images, the same outfit or shoot, similar series, and the particular absent examples that were checked.
 
-After the credit updates, selected additions, owner-confirmed Banja koto designer attribution, and the owner's Agbada credit correction, **14 of the 24 homepage photographs have credits**: 23 role entries, comprising 22 links and one plain-text photographer name. The remaining **10 photographs have no verified credit to add**. A missing credit below means the review did not establish one; it does not establish that no credit exists anywhere.
+After the credit updates, selected additions, owner-confirmed Banja koto designer attribution, and the owner's Agbada credit correction, **19 of the 34 homepage photographs have credits**: 29 role entries, comprising 27 links and two plain-text photographer names. The remaining **15 photographs have no verified credit to add**. A missing credit below means the review did not establish one; it does not establish that no credit exists anywhere.
 
-The original comparison found absent examples in 28 credited posts. Agbada, both Rio shoots, Chicago, and the pink-shirt Hawaii shoot are now represented. The remaining absent examples come from **23 credited Instagram posts**, grouped into **22 rows** in the two absent-photo tables below. This counts the reviewed examples, not every absent photograph or carousel frame.
+The original comparison found absent examples in 28 credited posts. Agbada, both Rio shoots, Chicago, the pink-shirt Hawaii shoot, Marrakech, Santiago, Johannesburg, Taipei's denim-overalls series, and Barcelona are now represented. The remaining absent examples come from **18 credited Instagram posts**, grouped into **17 rows** in the two absent-photo tables below. This counts the reviewed examples, not every absent photograph or carousel frame. Taipei is represented by the owner's selected older post; the later post's linked photographer credit was not transferred to it.
 
 ## Owner-selected additions
 
-All ten selected images are bundled locally without recompression. Carousel indexes below are one-based. No shoot dates were supplied in these captions, so new date fields remain blank rather than using Instagram publication dates.
+The first ten selected images are bundled locally without recompression. Carousel indexes below are one-based. No shoot dates were supplied in these captions, so their new date fields remain blank rather than using Instagram publication dates.
 
 | Section | Local image | Exact selection |
 | --- | --- | --- |
@@ -24,6 +24,24 @@ All ten selected images are bundled locally without recompression. Carousel inde
 | Postcards | `assets/postcards/hawaii-coast.jpg` | [Hawaii · single image](https://www.instagram.com/p/CYHYqURpFhS/) |
 | Postcards | `assets/postcards/madrid.webp` | [Madrid · single image](https://www.instagram.com/p/CjLuW5MuBe5/) |
 | Body Positive | `assets/bodypositive/chicago-1.webp` through `chicago-3.webp` | [Chicago · all three images](https://www.instagram.com/p/DXhpNc-kVsd/) |
+
+The owner selected nine additional postcards on September 13, 2026. They are appended in the supplied configuration order, copied without recompression, and each measures 1440 × 1440. The exact selected images were inspected in the owner's signed-in Instagram session. Tokyo's caption explicitly says April 2024; the other new date fields remain blank.
+
+| Section | Local image | Exact selection |
+| --- | --- | --- |
+| Postcards | `assets/postcards/santiago.webp` | [Santiago · image 2](https://www.instagram.com/p/DFipzqNRaQ4/?img_index=2) |
+| Postcards | `assets/postcards/panama-city.webp` | [Panama City · image 3](https://www.instagram.com/p/DFNiYT4RPDZ/?img_index=3) |
+| Postcards | `assets/postcards/marrakech.webp` | [Marrakech · image 2](https://www.instagram.com/p/DKKrhhDPvC1/?img_index=2) |
+| Postcards | `assets/postcards/tokyo.webp` | [Tokyo · image 2](https://www.instagram.com/p/DLGWHCDR02f/?img_index=2) |
+| Postcards | `assets/postcards/salvador.webp` | [Salvador · image 3](https://www.instagram.com/p/DGqcyPDpo6p/?img_index=3) |
+| Postcards | `assets/postcards/johannesburg.webp` | [Johannesburg · image 2](https://www.instagram.com/p/DELIoCtxW3v/?img_index=2) |
+| Postcards | `assets/postcards/taipei.webp` | [Taipei · image 1](https://www.instagram.com/p/DAJJZNrvAVO/?img_index=1) |
+| Postcards | `assets/postcards/barcelona.jpg` | [Barcelona · single image](https://www.instagram.com/p/Cz7VXaFsYOM/) |
+| Postcards | `assets/postcards/amsterdam.jpg` | [Amsterdam · single image](https://www.instagram.com/p/C0VbM9YsljX/) |
+
+The owner then supplied the local Shanghai photograph `C:\Users\JiaJie Ye\OneDrive\2024\Photoshoot\0524 at Shanghai\selected\DSC02858.JPG`, copied unchanged to `assets/postcards/shanghai.jpg`. The owner confirmed Shanghai, and EXIF `DateTimeOriginal` confirms May 24, 2024 at 11:00:26 (+08:00), displayed as May 2024. The original stores 6000 × 4000 pixels with EXIF orientation 8; the page uses the upright display dimensions of 4000 × 6000. No photographer attribution was supplied.
+
+Configuration and static HTML fallback order remain editorial/source order. Live postcards shuffle once on every page load, and their viewer preserves the same shuffled order. Other galleries retain their existing order.
 
 The former opening portrait (`opening-1`) was removed from Body Positive at the owner's request. Chicago is the first group. The owner subsequently supplied eight more photographs, bringing the collection to 29 photographs:
 
@@ -58,8 +76,13 @@ These files were copied without recompression and appended in the owner's order 
 | Rio de Janeiro · Patchwork jacket (`rio-patchwork-jacket`) | Photographer: [@soumarianamonteiro](https://www.instagram.com/soumarianamonteiro/); Clothing: [@hip_hop_cargo](https://www.instagram.com/hip_hop_cargo/) | [DFVne3WRSbT, image 1](https://www.instagram.com/p/DFVne3WRSbT/?img_index=1): exact selected photograph and caption credits. |
 | Rio de Janeiro · Beach (`rio-beach`) | Photographer: [@soumarianamonteiro](https://www.instagram.com/soumarianamonteiro/) | [DHoF7XLxx8p, image 3](https://www.instagram.com/p/DHoF7XLxx8p/?img_index=3): exact selected photograph and caption credit. |
 | Oahu, Hawaii (`hawaii-coast`) | Photographer: [@hawaii_daytour](https://www.instagram.com/hawaii_daytour/) | [CYHYqURpFhS](https://www.instagram.com/p/CYHYqURpFhS/) tags the account on the image; [CinPNJKj_r0](https://www.instagram.com/p/CinPNJKj_r0/) explicitly credits the photographer for the same pink-shirt coastal-overlook shoot. Attribution uses the image tag plus this cross-post match. |
+| Santiago, Chile (`santiago`) | Photographer: [@lola_photo_art](https://www.instagram.com/lola_photo_art/) | [DFipzqNRaQ4, image 2](https://www.instagram.com/p/DFipzqNRaQ4/?img_index=2): exact owner-selected photograph and explicit caption credit. |
+| Marrakech, Morocco (`marrakech`) | Clothing: [@nkandayatu](https://www.instagram.com/nkandayatu/) | [DKKrhhDPvC1, image 2](https://www.instagram.com/p/DKKrhhDPvC1/?img_index=2): exact owner-selected photograph and explicit clothing credit. No photographer credit was supplied. |
+| Johannesburg, South Africa (`johannesburg`) | Photographer: [@tyme.media](https://www.instagram.com/tyme.media/) | [DELIoCtxW3v, image 2](https://www.instagram.com/p/DELIoCtxW3v/?img_index=2): exact owner-selected photograph and explicit caption credit. |
+| Taipei, Taiwan (`taipei`) | Photographer: @mason.tpe.photographer | [DAJJZNrvAVO, image 1](https://www.instagram.com/p/DAJJZNrvAVO/?img_index=1): the caption explicitly names `mason.tpe.photographer` without a link. The name stays unlinked; it was not equated with the linked @mason.taipei.photographer on [DQJp_jhkTqJ](https://www.instagram.com/life_of_jiajie/p/DQJp_jhkTqJ/) or with a commenter using @mason.taiwan.photographer. |
+| Barcelona, Spain (`barcelona`) | Photographer: [@whosyourbrad](https://www.instagram.com/whosyourbrad/); Barber: [@max_classic_22](https://www.instagram.com/max_classic_22/) | [Cz7VXaFsYOM](https://www.instagram.com/p/Cz7VXaFsYOM/): exact owner-selected single image; the caption identifies photography and barber roles separately. |
 
-All displayed credits now use a leading `@` at the owner's request, including Charles&M, 78studio, Claire Kropie, and the map provider beeneverywhere.net. This is a display convention; it does not establish an Instagram handle. Existing names and verified links are retained, and 78studio stays unlinked. Roles are kept separate so a clothing credit is not presented as a photography credit.
+All displayed credits now use a leading `@` at the owner's request, including Charles&M, 78studio, Claire Kropie, and the map provider beeneverywhere.net. This is a display convention; it does not establish an Instagram handle. Existing names and verified links are retained; 78studio and mason.tpe.photographer stay unlinked. Roles are kept separate so a clothing or barber credit is not presented as a photography credit.
 
 ## Site photographs without a verified credit
 
@@ -75,32 +98,29 @@ All displayed credits now use a leading `@` at the owner's request, including Ch
 | Copenhagen, Denmark (`copenhagen`) | [C_DnfkssdBH, image 1](https://www.instagram.com/p/C_DnfkssdBH/?img_index=1): exact owner-selected image, blank caption. | Photographer credit. |
 | Lisbon, Portugal (`lisbon`) | [C7t8h5_xYEY, image 3](https://www.instagram.com/p/C7t8h5_xYEY/?img_index=3): exact owner-selected image, blank caption. | Photographer credit. |
 | Madrid, Spain (`madrid`) | [CjLuW5MuBe5](https://www.instagram.com/p/CjLuW5MuBe5/): exact owner-selected image, blank caption. | Photographer credit. |
+| Panama City, Panama (`panama-city`) | [DFNiYT4RPDZ, image 3](https://www.instagram.com/p/DFNiYT4RPDZ/?img_index=3): exact owner-selected image, blank caption. | Photographer credit. |
+| Tokyo, Japan (`tokyo`) | [DLGWHCDR02f, image 2](https://www.instagram.com/p/DLGWHCDR02f/?img_index=2): exact owner-selected image; caption dates the photograph to April 2024 without credits. | Photographer credit. |
+| Salvador, Brazil (`salvador`) | [DGqcyPDpo6p, image 3](https://www.instagram.com/p/DGqcyPDpo6p/?img_index=3): exact owner-selected image of a black graphic T-shirt, blank caption. The separately credited white-robe shoot remains distinct. | Photographer credit. |
+| Amsterdam, Netherlands (`amsterdam`) | [C0VbM9YsljX](https://www.instagram.com/p/C0VbM9YsljX/): exact owner-selected single image, blank caption. | Photographer credit. |
+| Shanghai, China (`shanghai`) | Owner-supplied `DSC02858.JPG`; location confirmed by the owner and May 2024 capture date confirmed by EXIF. | Photographer credit. |
 
-Three partially credited photographs also have unresolved roles: **Thread King** and **Banja koto** have no verified photographer credits, and the **Charro Suit** has no verified designer credit. Other roles were added only when the evidence identified them.
+Four partially credited photographs also have unresolved roles: **Thread King**, **Banja koto**, and **Marrakech** have no verified photographer credits, and the **Charro Suit** has no verified designer credit. Other roles were added only when the evidence identified them.
 
 ## Credited Instagram photographs absent from the site
 
-The pictured examples from these five posts were checked visually and remain absent from the site. There is also no corresponding named shoot in the site's Body Positive collection. These are candidates for future additions. The finding concerns the examples checked, not every frame in their carousels.
+The pictured example from this post was checked visually and remains absent from the site. There is also no corresponding named shoot in the site's Body Positive collection. It is a candidate for a future addition. The finding concerns the example checked, not every frame in the carousel. The newly selected Salvador postcard is from a different shoot and outfit.
 
 | Shoot / outfit | Credits in the post | Source |
 | --- | --- | --- |
 | Salvador · White embroidered robe, January 2025 | Photo: [@lazarovencimento](https://www.instagram.com/lazarovencimento/); Clothing: [@taofik_moda_africa](https://www.instagram.com/taofik_moda_africa/) | [DNWhiBQx1LH](https://www.instagram.com/life_of_jiajie/p/DNWhiBQx1LH/) |
-| Marrakech · Blue patterned jacket | Clothing: [@nkandayatu](https://www.instagram.com/nkandayatu/) | [DKKrhhDPvC1](https://www.instagram.com/life_of_jiajie/p/DKKrhhDPvC1/) |
-| Taipei · Denim overalls | Photo: [@mason.taipei.photographer](https://www.instagram.com/mason.taipei.photographer/) | [DQJp_jhkTqJ](https://www.instagram.com/life_of_jiajie/p/DQJp_jhkTqJ/) |
-| Santiago · Black-and-white shirt | Photo: [@lola_photo_art](https://www.instagram.com/lola_photo_art/) | [DFipzqNRaQ4](https://www.instagram.com/life_of_jiajie/p/DFipzqNRaQ4/) |
-| Johannesburg · Yellow shirt / graffiti | Photo: [@tyme.media](https://www.instagram.com/tyme.media/) | [DELIoCtxW3v](https://www.instagram.com/life_of_jiajie/p/DELIoCtxW3v/) |
-
-The older Taipei post [DAJJZNrvAVO](https://www.instagram.com/life_of_jiajie/p/DAJJZNrvAVO/) contains the unlinked name `mason.tpe.photographer`. Its identity relative to the linked account above was not independently established.
-
 Alternative photographs from already represented shoots, such as Paris and Giza, are not listed as missing shoots merely because the exact alternative image is absent.
 
 ## Older credited photographs absent from the site (reviewed examples)
 
-Representative photographs in all 18 posts below were compared with both photo reference sheets, including Body Positive and the homepage portrait. The described examples are absent from the site. Other images in these older carousels were not all inspected, so this does not establish that every image from each shoot is missing. Where the table does not state a role, it preserves the caption tag without assigning one.
+Representative photographs in all 17 posts below were compared with both photo reference sheets, including Body Positive and the homepage portrait. The described examples are absent from the site. Other images in these older carousels were not all inspected, so this does not establish that every image from each shoot is missing. Where the table does not state a role, it preserves the caption tag without assigning one.
 
 | Reviewed example | Caption credit or tag | Source |
 | --- | --- | --- |
-| Barcelona · Denim hoodie jacket | Photo: [@whosyourbrad](https://www.instagram.com/whosyourbrad/) | [Cz7VXaFsYOM](https://www.instagram.com/life_of_jiajie/p/Cz7VXaFsYOM/) |
 | Aqueduct street · Checkered shirt / blue cap; Cascais, Portugal · Gray denim / pineapple | [@ksrida](https://www.instagram.com/ksrida/) | [Aqueduct street · C6l15Nhr2lX](https://www.instagram.com/life_of_jiajie/p/C6l15Nhr2lX/) and [Cascais · C5wArKXLmOg](https://www.instagram.com/life_of_jiajie/p/C5wArKXLmOg/) |
 | Colorful matching outfit at a yellow taxi display | [@mansour.world](https://www.instagram.com/mansour.world/) | [CybRl88rgFk](https://www.instagram.com/life_of_jiajie/p/CybRl88rgFk/) |
 | DUMBO, Brooklyn · Fur-trimmed jacket | Photo: [@iamchadbailey](https://www.instagram.com/iamchadbailey/); Clothing: [@jordancraigdenim](https://www.instagram.com/jordancraigdenim/) | [ClUMJVwyk0q](https://www.instagram.com/life_of_jiajie/p/ClUMJVwyk0q/) |
@@ -139,6 +159,6 @@ The separate Body Positive page now contains 21 photographs after adding Chicago
 - **No credit was transferred between different shoots.** In particular, `@willens__` is credited for the Lagos agbada shoot, not the site's red-and-green Thread King basket-stall photograph.
 - **A friend mention is not a photographer credit.** The `@markfeng9` shout-out in [DEVpSx-xTQy](https://www.instagram.com/life_of_jiajie/p/DEVpSx-xTQy/) was not used to credit the Singapore photograph.
 - Clothing brands printed on garments were not treated as caption-supported designer credits. Commenters were not assigned creative roles.
-- Tattoo, barber, musician, and friend tags outside the requested photography / clothing scope were excluded.
+- The initial photography / clothing review excluded tattoo, barber, musician, and friend tags. The later owner-selected Barcelona addition preserves its explicitly identified barber credit as a separate role; unrelated tags remain excluded.
 
 This report records evidence and unresolved matches as of the check date. It does not claim an exhaustive comparison of all 411 posts' individual images or all historical tags.
