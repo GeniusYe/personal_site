@@ -128,10 +128,10 @@ window.JIAJIE_SITE = {
         "src": "assets/culture/cultural-appreciation-01.jpg",
         "width": 1437,
         "height": 2560,
-        "title": "Áo dài",
-        "alt": "JiaJie in a red and gold áo dài on a leafy street.",
+        "title": "Áo Dài",
+        "alt": "JiaJie in a red and gold Áo Dài on a leafy street.",
         "location": "Vietnam",
-        "caption": "The áo dài expresses Vietnamese identity and marks cherished occasions, from Tết celebrations to weddings.",
+        "caption": "The **Áo Dài** expresses Vietnamese identity and marks cherished occasions, from Tết celebrations to weddings.",
         "credits": [
           {
             "role": "Photographer",
@@ -149,10 +149,10 @@ window.JIAJIE_SITE = {
         "src": "assets/culture/cultural-appreciation-02.jpg",
         "width": 2500,
         "height": 3746,
-        "title": "West African caftan",
-        "alt": "JiaJie in a geometric-patterned West African caftan beneath a large canopy in an open square.",
+        "title": "West African Kaftan",
+        "alt": "JiaJie in a geometric-patterned West African Kaftan beneath a large canopy in an open square.",
         "location": "Made in Kigali",
-        "caption": "This caftan celebrates the exchange of dress traditions and craftsmanship between West Africa and Rwanda.",
+        "caption": "This **Kaftan** celebrates the exchange of dress traditions and craftsmanship between West Africa and Rwanda.",
         "credits": [
           {
             "role": "Designer",
@@ -174,10 +174,10 @@ window.JIAJIE_SITE = {
         "src": "assets/culture/cultural-appreciation-03.jpg",
         "width": 2500,
         "height": 3750,
-        "title": "Veste",
-        "alt": "JiaJie in a dark Latvian veste and light shirt in a sunlit cobbled square in Estonia.",
+        "title": "Tautastērps",
+        "alt": "JiaJie wearing Latvian Tautastērps, with a dark vest and light shirt, in a sunlit cobbled square in Estonia.",
         "location": "Latvia · Photographed in Estonia",
-        "caption": "As part of Latvian folk dress, the veste connects regional craftsmanship with a shared sense of national identity."
+        "caption": "The **Tautastērps** connects regional craftsmanship with a shared sense of Latvian national identity."
       },
       {
         "id": "culture-04",
@@ -185,18 +185,19 @@ window.JIAJIE_SITE = {
         "width": 2500,
         "height": 3125,
         "title": "Charles&M",
+        "isBrand": true,
         "alt": "JiaJie in a white and striped Charles&M outfit, leaning on a wooden ladder in a studio.",
         "location": "Côte d’Ivoire",
         "caption": "This Charles&M design celebrates contemporary Ivorian creativity and fashion as a form of cultural expression.",
         "credits": [
           {
             "role": "Designer",
-            "name": "Charles&M",
+            "name": "@Charles&M",
             "url": "https://www.facebook.com/CharlesEtMode"
           },
           {
             "role": "Photographer",
-            "name": "78studio"
+            "name": "@78studio"
           }
         ],
         "creditSources": [
@@ -209,9 +210,9 @@ window.JIAJIE_SITE = {
         "width": 2500,
         "height": 1667,
         "title": "Sarong",
-        "alt": "JiaJie in a white shirt and patterned sarong beside a railing, with contemporary buildings behind him.",
+        "alt": "JiaJie in a white shirt and patterned Sarong beside a railing, with contemporary buildings behind him.",
         "location": "Sri Lanka",
-        "caption": "The sarong keeps Sri Lankan clothing traditions part of everyday life, connecting generations through a familiar garment.",
+        "caption": "The **Sarong** (**සරම** in Sinhala) keeps Sri Lankan clothing traditions part of everyday life, connecting generations through a familiar garment.",
         "wide": true
       },
       {
@@ -220,6 +221,7 @@ window.JIAJIE_SITE = {
         "width": 2500,
         "height": 3125,
         "title": "Thread King",
+        "isBrand": true,
         "alt": "JiaJie in a colorful matching Thread King shirt and trousers at a stall filled with woven baskets.",
         "location": "Nigeria",
         "caption": "This Thread King design celebrates Nigerian fashion as a living culture shaped by contemporary creativity.",
@@ -239,14 +241,14 @@ window.JIAJIE_SITE = {
         "src": "assets/culture/cultural-appreciation-07.jpg",
         "width": 2500,
         "height": 3750,
-        "title": "Banja koto",
-        "alt": "JiaJie in a bright geometric-patterned banja koto beside the steps of a building.",
+        "title": "Banja Koto",
+        "alt": "JiaJie in a bright geometric-patterned Banja Koto beside the steps of a building.",
         "location": "Suriname",
-        "caption": "The banja koto carries the textile heritage and cultural identity of Suriname’s Maroon communities.",
+        "caption": "The **Banja Koto** carries the textile heritage and cultural identity of Suriname’s Maroon communities.",
         "credits": [
           {
             "role": "Designer",
-            "name": "Claire Kropie",
+            "name": "@Claire Kropie",
             "url": "https://www.facebook.com/claire.kropie.5"
           }
         ],
@@ -260,13 +262,13 @@ window.JIAJIE_SITE = {
         "width": 1024,
         "height": 1536,
         "title": "Kente",
-        "alt": "JiaJie in white and gold kente cloth and a black hat in a garden.",
+        "alt": "JiaJie in white and gold Kente cloth and a black hat in a garden.",
         "location": "Côte d’Ivoire",
-        "caption": "Kente communicates identity, social standing, and inherited wisdom through patterns associated with stories and proverbs.",
+        "caption": "**Kente** communicates identity, social standing, and inherited wisdom through patterns associated with stories and proverbs.",
         "credits": [
           {
             "role": "Stylist",
-            "name": "Charles&M",
+            "name": "@Charles&M",
             "url": "https://www.facebook.com/CharlesEtMode"
           },
           {
@@ -295,20 +297,20 @@ window.JIAJIE_SITE = {
         "width": 2500,
         "height": 3334,
         "title": "Gho",
-        "alt": "JiaJie in a striped gho by a mountain overlook in Bhutan, with buildings on the cliff behind him.",
+        "alt": "JiaJie in a striped Gho by a mountain overlook in Bhutan, with buildings on the cliff behind him.",
         "location": "Bhutan",
-        "caption": "The gho brings Bhutan’s national identity into daily life while sustaining generations of textile craftsmanship."
+        "caption": "The **Gho** (**གོ** in Dzongkha) brings Bhutan’s national identity into daily life while sustaining generations of textile craftsmanship."
       },
       {
         "id": "culture-10",
-        "title": "Charro suit",
+        "title": "Charro Suit",
         "date": "December 2024",
         "src": "assets/culture/charro-suit-mexico.jpg",
-        "alt": "JiaJie in a Charro suit in Mexico City, with the Palacio de Bellas Artes in the background.",
+        "alt": "JiaJie in a Charro Suit in Mexico City, with the Palacio de Bellas Artes in the background.",
         "width": 1000,
         "height": 667,
         "location": "Mexico City, Mexico",
-        "caption": "The Charro suit honors Mexico’s charrería tradition, where horsemanship and artisan craftsmanship express community identity.",
+        "caption": "The **Charro Suit** (**Traje de Charro** in Spanish) honors Mexico’s charrería tradition, where horsemanship and artisan craftsmanship express community identity.",
         "wide": true,
         "credits": [
           {
@@ -328,15 +330,10 @@ window.JIAJIE_SITE = {
         "height": 1920,
         "title": "Agbada",
         "date": "",
-        "alt": "JiaJie seated in a black-and-white striped embroidered agbada with a pointed ceremonial hat in a studio.",
+        "alt": "JiaJie seated in a black-and-white striped embroidered Agbada with a pointed ceremonial hat in a studio.",
         "location": "Lagos, Nigeria",
-        "caption": "A flowing West African garment closely associated with Yoruba culture, worn for celebrations and formal occasions.",
+        "caption": "**Agbada** is a flowing West African garment closely associated with Yoruba culture, worn for celebrations and formal occasions.",
         "credits": [
-          {
-            "role": "Clothing",
-            "name": "@chidi_sunday1",
-            "url": "https://www.instagram.com/chidi_sunday1/"
-          },
           {
             "role": "Clothing",
             "name": "@threadking_studios",
@@ -364,7 +361,7 @@ window.JIAJIE_SITE = {
       "src": "assets/postcards/travel-map.png",
       "title": "My steps around the world",
       "alt": "My travel map, showing visited places around the world.",
-      "credit": "Map by beeneverywhere.net",
+      "credit": "Map by @beeneverywhere.net",
       "creditUrl": "https://beeneverywhere.net/",
       "date": "As shared on September 3, 2026",
       "width": 1000,

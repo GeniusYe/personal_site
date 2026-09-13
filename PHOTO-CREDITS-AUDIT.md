@@ -6,7 +6,7 @@ Checked **September 12, 2026**, starting with the 17 photographs in **Dressed fo
 
 The review covered the captions surfaced for all **411 posts in the Instagram profile grid**, followed by targeted post, caption, and screenshot checks. Representative photographs from the credited posts listed below were compared with the 17 gallery photographs, all 19 Body Positive photographs, and the homepage portrait. The review did **not** inspect every image in every carousel or visually compare every older post. The tables distinguish exact images, the same outfit or shoot, similar series, and the particular absent examples that were checked.
 
-After the credit updates, selected additions, and owner-confirmed Banja koto designer attribution, **14 of the 24 homepage photographs have credits**: 24 role entries, comprising 23 links and one plain-text photographer name. The remaining **10 photographs have no verified credit to add**. A missing credit below means the review did not establish one; it does not establish that no credit exists anywhere.
+After the credit updates, selected additions, owner-confirmed Banja koto designer attribution, and the owner's Agbada credit correction, **14 of the 24 homepage photographs have credits**: 23 role entries, comprising 22 links and one plain-text photographer name. The remaining **10 photographs have no verified credit to add**. A missing credit below means the review did not establish one; it does not establish that no credit exists anywhere.
 
 The original comparison found absent examples in 28 credited posts. Agbada, both Rio shoots, Chicago, and the pink-shirt Hawaii shoot are now represented. The remaining absent examples come from **23 credited Instagram posts**, grouped into **22 rows** in the two absent-photo tables below. This counts the reviewed examples, not every absent photograph or carousel frame.
 
@@ -25,34 +25,47 @@ All ten selected images are bundled locally without recompression. Carousel inde
 | Postcards | `assets/postcards/madrid.webp` | [Madrid · single image](https://www.instagram.com/p/CjLuW5MuBe5/) |
 | Body Positive | `assets/bodypositive/chicago-1.webp` through `chicago-3.webp` | [Chicago · all three images](https://www.instagram.com/p/DXhpNc-kVsd/) |
 
-The former opening portrait (`opening-1`) was removed from Body Positive at the owner's request. Chicago is the first group, and the collection now contains 21 photographs.
+The former opening portrait (`opening-1`) was removed from Body Positive at the owner's request. Chicago is the first group. The owner subsequently supplied eight more photographs, bringing the collection to 29 photographs:
+
+| Section | Local image | Owner-supplied file |
+| --- | --- | --- |
+| Chicago | `assets/bodypositive/chicago-4.jpg` | `RSH_JJ_18.jpg` |
+| Chicago | `assets/bodypositive/chicago-5.jpg` | `RSH_JJ_13.jpg` |
+| Chicago | `assets/bodypositive/chicago-6.jpg` | `RSH_JJ_15.jpg` |
+| Second section · Atlanta | `assets/bodypositive/in-the-light-4.jpg` | `Jiajie8.jpg` |
+| Second section · Atlanta | `assets/bodypositive/in-the-light-5.jpg` | `Jiajie5.jpg` |
+| Baltimore | `assets/bodypositive/baltimore-4.jpg` | `2.jpg` |
+| Baltimore | `assets/bodypositive/baltimore-5.jpg` | `6.jpg` |
+| Baltimore | `assets/bodypositive/baltimore-6.jpg` | `10.jpg` |
+
+These files were copied without recompression and appended in the owner's order to the existing groups. They retain their group's photographer credit. The owner corrected Chicago's date to September 2025 and the second section's heading from “In a different light.” to “Atlanta, Georgia.” The second section retains its internal `in-the-light` ID, separate from the older Atlanta group. No additional shoot date was inferred from the supplied filenames or folders.
 
 ## Credits added or retained
 
 | Site photograph | Credit on the site | Evidence and match |
 | --- | --- | --- |
 | Áo dài · Vietnam (`culture-01`) | Photographer: [@imlilypg_](https://www.instagram.com/imlilypg_/) | [DOmtIISESKN](https://www.instagram.com/life_of_jiajie/p/DOmtIISESKN/) and [DAYfqvovAn-](https://www.instagram.com/life_of_jiajie/p/DAYfqvovAn-/): the same red-and-gold áo dài shoot in Hanoi. |
-| West African caftan · Made in Kigali (`culture-02`) | Designer: [@kigalikaftan](https://www.instagram.com/kigalikaftan/); Photographer: [@sympathy_studio_250](https://www.instagram.com/sympathy_studio_250/) | [DQ6yp5EEcde](https://www.instagram.com/life_of_jiajie/p/DQ6yp5EEcde/): the same geometric beige-and-brown caftan shoot. |
-| Charles&M · Côte d’Ivoire (`culture-04`) | Designer: [Charles&M](https://www.facebook.com/CharlesEtMode); Photographer: 78studio | [DKQJ_SQTeyN](https://www.instagram.com/life_of_jiajie/p/DKQJ_SQTeyN/): the first image is the exact site image. The caption names Charles&M and 78studio without Instagram tags. Charles&M uses the existing owner-verified Facebook page; 78studio remains plain text because no account was verified. |
+| West African Kaftan · Made in Kigali (`culture-02`) | Designer: [@kigalikaftan](https://www.instagram.com/kigalikaftan/); Photographer: [@sympathy_studio_250](https://www.instagram.com/sympathy_studio_250/) | [DQ6yp5EEcde](https://www.instagram.com/life_of_jiajie/p/DQ6yp5EEcde/): the same geometric beige-and-brown caftan shoot. |
+| Charles&M · Côte d’Ivoire (`culture-04`) | Designer: [@Charles&M](https://www.facebook.com/CharlesEtMode); Photographer: @78studio | [DKQJ_SQTeyN](https://www.instagram.com/life_of_jiajie/p/DKQJ_SQTeyN/): the first image is the exact site image. The caption names Charles&M and 78studio without Instagram tags. Charles&M uses the existing owner-verified Facebook page; 78studio remains plain text because no account was verified. |
 | Thread King · Nigeria (`culture-06`) | Designer: [@threadking_studios](https://www.instagram.com/threadking_studios/) | [Collaborator reel Dc20WSHggZx](https://www.instagram.com/chidi_sunday1/reel/Dc20WSHggZx/): the same red-and-green Thread King outfit and basket-stall shoot. No photographer credit was verified for this shoot. |
-| Banja koto · Suriname (`culture-07`) | Designer: [Claire Kropie](https://www.facebook.com/claire.kropie.5) | The owner directly confirmed the designer and supplied this Facebook profile. This credit is owner-confirmed, not derived from an Instagram caption. [DPpq28nEbQv](https://www.instagram.com/life_of_jiajie/p/DPpq28nEbQv/) shows the same colorful garment and shorts in later Paramaribo carousel images, without caption credits. The photographer remains unknown. |
-| Kente · Côte d’Ivoire (`culture-08`) | Stylist: [Charles&M](https://www.facebook.com/CharlesEtMode); Kente: [@femi_kente](https://www.instagram.com/femi_kente/); Photographer: [@memoria_x_studios](https://www.instagram.com/memoria_x_studios/); Photo editor: [@sorce_usa](https://www.instagram.com/sorce_usa/) | [DY9t6zOEXkL](https://www.instagram.com/life_of_jiajie/p/DY9t6zOEXkL/): the same white-and-gold kente outfit and shoot. |
-| Charro suit · Mexico City (`culture-10`) | Photographer: [@fotografia_beauty_art](https://www.instagram.com/fotografia_beauty_art/) | [DE3y52JRUfY](https://www.instagram.com/life_of_jiajie/p/DE3y52JRUfY/): the same Charro suit / Palacio de Bellas Artes shoot. Existing photographer credit retained; no designer credit verified. |
+| Banja koto · Suriname (`culture-07`) | Designer: [@Claire Kropie](https://www.facebook.com/claire.kropie.5) | The owner directly confirmed the designer and supplied this Facebook profile. This credit is owner-confirmed, not derived from an Instagram caption. [DPpq28nEbQv](https://www.instagram.com/life_of_jiajie/p/DPpq28nEbQv/) shows the same colorful garment and shorts in later Paramaribo carousel images, without caption credits. The photographer remains unknown. |
+| Kente · Côte d’Ivoire (`culture-08`) | Stylist: [@Charles&M](https://www.facebook.com/CharlesEtMode); Kente: [@femi_kente](https://www.instagram.com/femi_kente/); Photographer: [@memoria_x_studios](https://www.instagram.com/memoria_x_studios/); Photo editor: [@sorce_usa](https://www.instagram.com/sorce_usa/) | [DY9t6zOEXkL](https://www.instagram.com/life_of_jiajie/p/DY9t6zOEXkL/): the same white-and-gold kente outfit and shoot. |
+| Charro Suit · Mexico City (`culture-10`) | Photographer: [@fotografia_beauty_art](https://www.instagram.com/fotografia_beauty_art/) | [DE3y52JRUfY](https://www.instagram.com/life_of_jiajie/p/DE3y52JRUfY/): the same Charro Suit / Palacio de Bellas Artes shoot. Existing photographer credit retained; no designer credit verified. |
 | Cairo, Egypt (`cairo`) | Photographer: [@hossam_artistic](https://www.instagram.com/hossam_artistic/) | The exact site photograph is slide 4 of [DNJiolyxi85](https://www.instagram.com/life_of_jiajie/p/DNJiolyxi85/), which has a blank caption. [C--0O6GsCV8](https://www.instagram.com/life_of_jiajie/p/C--0O6GsCV8/) credits the photographer for the same Giza shoot. This attribution relies on a cross-post match to the same shoot. |
 | Paris, France (`paris`) | Photographer: [@fotografaemparis.jb](https://www.instagram.com/fotografaemparis.jb/); Clothing: [@buffalo_jackson](https://www.instagram.com/buffalo_jackson/); Scarf: [@denholmmunn](https://www.instagram.com/denholmmunn/) | [Ci-NE6iOhtI](https://www.instagram.com/life_of_jiajie/p/Ci-NE6iOhtI/) and [CjvmhcJuG0w](https://www.instagram.com/life_of_jiajie/p/CjvmhcJuG0w/): the same leather-jacket / Louvre shoot. Existing photographer credit retained; clothing and scarf credits added. |
 | Prague, Czech Republic (`prague`) | Photographer: [@pragueful](https://www.instagram.com/pragueful/) | [C-faKnnskoa](https://www.instagram.com/life_of_jiajie/p/C-faKnnskoa/): the same beige-shirt Prague series. Existing photographer credit retained. |
-| Agbada · Lagos, Nigeria (`agbada-lagos`) | Clothing: [@chidi_sunday1](https://www.instagram.com/chidi_sunday1/) and [@threadking_studios](https://www.instagram.com/threadking_studios/); Photographer: [@willens__](https://www.instagram.com/willens__/) | [DczBAaQmOCg, image 1](https://www.instagram.com/p/DczBAaQmOCg/?img_index=1): exact owner-selected photograph and explicit caption credits. |
+| Agbada · Lagos, Nigeria (`agbada-lagos`) | Clothing: [@threadking_studios](https://www.instagram.com/threadking_studios/); Photographer: [@willens__](https://www.instagram.com/willens__/) | [DczBAaQmOCg, image 1](https://www.instagram.com/p/DczBAaQmOCg/?img_index=1): exact owner-selected photograph and explicit caption credits. The owner subsequently removed @chidi_sunday1 from this photograph's displayed clothing credits and retained @threadking_studios and photographer @willens__. |
 | Rio de Janeiro · Patchwork jacket (`rio-patchwork-jacket`) | Photographer: [@soumarianamonteiro](https://www.instagram.com/soumarianamonteiro/); Clothing: [@hip_hop_cargo](https://www.instagram.com/hip_hop_cargo/) | [DFVne3WRSbT, image 1](https://www.instagram.com/p/DFVne3WRSbT/?img_index=1): exact selected photograph and caption credits. |
 | Rio de Janeiro · Beach (`rio-beach`) | Photographer: [@soumarianamonteiro](https://www.instagram.com/soumarianamonteiro/) | [DHoF7XLxx8p, image 3](https://www.instagram.com/p/DHoF7XLxx8p/?img_index=3): exact selected photograph and caption credit. |
 | Oahu, Hawaii (`hawaii-coast`) | Photographer: [@hawaii_daytour](https://www.instagram.com/hawaii_daytour/) | [CYHYqURpFhS](https://www.instagram.com/p/CYHYqURpFhS/) tags the account on the image; [CinPNJKj_r0](https://www.instagram.com/p/CinPNJKj_r0/) explicitly credits the photographer for the same pink-shirt coastal-overlook shoot. Attribution uses the image tag plus this cross-post match. |
 
-Charles&M and 78studio are credited names rather than recovered Instagram tags. Roles are kept separate so a clothing credit is not presented as a photography credit.
+All displayed credits now use a leading `@` at the owner's request, including Charles&M, 78studio, Claire Kropie, and the map provider beeneverywhere.net. This is a display convention; it does not establish an Instagram handle. Existing names and verified links are retained, and 78studio stays unlinked. Roles are kept separate so a clothing credit is not presented as a photography credit.
 
 ## Site photographs without a verified credit
 
 | Site photograph | What was found | What remains unresolved |
 | --- | --- | --- |
-| Veste · Latvia, photographed in Estonia (`culture-03`) | No matching credited post was established. | Photographer and clothing-maker tags remain unverified. This is not a finding that no tag exists. |
+| Tautastērps · Latvia, photographed in Estonia (`culture-03`) | No matching credited post was established. | Photographer and clothing-maker tags remain unverified. This is not a finding that no tag exists. |
 | Sarong · Sri Lanka (`culture-05`) | [DUOE-awETCy](https://www.instagram.com/life_of_jiajie/p/DUOE-awETCy/): the same sarong outfit / Colombo series, without a caption credit. | Photographer and clothing-maker credits. |
 | Gho · Bhutan (`culture-09`) | [DSkGVdBEcwK](https://www.instagram.com/life_of_jiajie/p/DSkGVdBEcwK/): the exact photograph, without credits. | Photographer and clothing-maker credits. |
 | Mombasa, Kenya (`mombasa`) | [DCUqrIhvdUc](https://www.instagram.com/life_of_jiajie/p/DCUqrIhvdUc/): the exact photograph; the caption mentions Nairobi and Mombasa but has no credits. | Photographer credit. |
@@ -63,7 +76,7 @@ Charles&M and 78studio are credited names rather than recovered Instagram tags. 
 | Lisbon, Portugal (`lisbon`) | [C7t8h5_xYEY, image 3](https://www.instagram.com/p/C7t8h5_xYEY/?img_index=3): exact owner-selected image, blank caption. | Photographer credit. |
 | Madrid, Spain (`madrid`) | [CjLuW5MuBe5](https://www.instagram.com/p/CjLuW5MuBe5/): exact owner-selected image, blank caption. | Photographer credit. |
 
-Three partially credited photographs also have unresolved roles: **Thread King** and **Banja koto** have no verified photographer credits, and the **Charro suit** has no verified designer credit. Other roles were added only when the evidence identified them.
+Three partially credited photographs also have unresolved roles: **Thread King** and **Banja koto** have no verified photographer credits, and the **Charro Suit** has no verified designer credit. Other roles were added only when the evidence identified them.
 
 ## Credited Instagram photographs absent from the site
 
