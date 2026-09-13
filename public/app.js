@@ -385,6 +385,11 @@
   const travel = config.travel || {};
   const culture = config.culture || {};
   const travelPhotos = (Array.isArray(travel.photos) ? travel.photos : []).filter(p => p && imageURL(p.src));
+  // Shuffle once per page load so each batch and the viewer share the same order.
+  for (let i = travelPhotos.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [travelPhotos[i], travelPhotos[j]] = [travelPhotos[j], travelPhotos[i]];
+  }
   const projectPhotos = (Array.isArray(project.photos) ? project.photos : []).filter(p => p && imageURL(p.src));
   const galleryVideo = $("#gallery-video");
   const culturePhotos = (Array.isArray(culture.photos) ? culture.photos : []).filter(p => p && imageURL(p.src));

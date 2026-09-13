@@ -597,6 +597,169 @@ window.JIAJIE_SITE = {
         "height": 1440,
         "square": true,
         "sourceUrl": "https://www.instagram.com/p/CjLuW5MuBe5/"
+      },
+      {
+        "id": "santiago",
+        "title": "Santiago, Chile",
+        "date": "",
+        "src": "assets/postcards/santiago.webp",
+        "alt": "JiaJie in a black-and-white shirt beside a pond with Santiago’s skyline behind him.",
+        "width": 1440,
+        "height": 1440,
+        "square": true,
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@lola_photo_art",
+            "url": "https://www.instagram.com/lola_photo_art/"
+          }
+        ],
+        "sourceUrl": "https://www.instagram.com/p/DFipzqNRaQ4/?img_index=2",
+        "creditSources": [
+          "https://www.instagram.com/p/DFipzqNRaQ4/?img_index=2"
+        ]
+      },
+      {
+        "id": "panama-city",
+        "title": "Panama City, Panama",
+        "date": "",
+        "src": "assets/postcards/panama-city.webp",
+        "alt": "JiaJie in a turquoise denim outfit on a street lined with balconies in Panama City.",
+        "width": 1440,
+        "height": 1440,
+        "square": true,
+        "sourceUrl": "https://www.instagram.com/p/DFNiYT4RPDZ/?img_index=3"
+      },
+      {
+        "id": "marrakech",
+        "title": "Marrakech, Morocco",
+        "date": "",
+        "src": "assets/postcards/marrakech.webp",
+        "alt": "JiaJie in a patterned jacket beside golden metalwork and colorful stalls in a Marrakech market.",
+        "width": 1440,
+        "height": 1440,
+        "square": true,
+        "credits": [
+          {
+            "role": "Clothing",
+            "name": "@nkandayatu",
+            "url": "https://www.instagram.com/nkandayatu/"
+          }
+        ],
+        "sourceUrl": "https://www.instagram.com/p/DKKrhhDPvC1/?img_index=2",
+        "creditSources": [
+          "https://www.instagram.com/p/DKKrhhDPvC1/?img_index=2"
+        ]
+      },
+      {
+        "id": "tokyo",
+        "title": "Tokyo, Japan",
+        "date": "April 2024",
+        "src": "assets/postcards/tokyo.webp",
+        "alt": "JiaJie in a black shirt and white shorts crossing a busy Tokyo street beneath illuminated signs.",
+        "width": 1440,
+        "height": 1440,
+        "square": true,
+        "sourceUrl": "https://www.instagram.com/p/DLGWHCDR02f/?img_index=2"
+      },
+      {
+        "id": "salvador",
+        "title": "Salvador, Brazil",
+        "date": "",
+        "src": "assets/postcards/salvador.webp",
+        "alt": "JiaJie in a black graphic T-shirt in a square lined with pastel buildings in Salvador.",
+        "width": 1440,
+        "height": 1440,
+        "square": true,
+        "sourceUrl": "https://www.instagram.com/p/DGqcyPDpo6p/?img_index=3"
+      },
+      {
+        "id": "johannesburg",
+        "title": "Johannesburg, South Africa",
+        "date": "",
+        "src": "assets/postcards/johannesburg.webp",
+        "alt": "JiaJie in a yellow shirt with his arms raised beneath the Maboneng sign on a Johannesburg street.",
+        "width": 1440,
+        "height": 1440,
+        "square": true,
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@tyme.media",
+            "url": "https://www.instagram.com/tyme.media/"
+          }
+        ],
+        "sourceUrl": "https://www.instagram.com/p/DELIoCtxW3v/?img_index=2",
+        "creditSources": [
+          "https://www.instagram.com/p/DELIoCtxW3v/?img_index=2"
+        ]
+      },
+      {
+        "id": "taipei",
+        "title": "Taipei, Taiwan",
+        "date": "",
+        "src": "assets/postcards/taipei.webp",
+        "alt": "JiaJie wearing denim overalls beside a brick wall and stone steps in Taipei.",
+        "width": 1440,
+        "height": 1440,
+        "square": true,
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@mason.tpe.photographer"
+          }
+        ],
+        "sourceUrl": "https://www.instagram.com/p/DAJJZNrvAVO/?img_index=1",
+        "creditSources": [
+          "https://www.instagram.com/p/DAJJZNrvAVO/?img_index=1"
+        ]
+      },
+      {
+        "id": "barcelona",
+        "title": "Barcelona, Spain",
+        "date": "",
+        "src": "assets/postcards/barcelona.jpg",
+        "alt": "JiaJie wearing a denim jacket with gray sleeves on a stone-lined street in Barcelona.",
+        "width": 1440,
+        "height": 1440,
+        "square": true,
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@whosyourbrad",
+            "url": "https://www.instagram.com/whosyourbrad/"
+          },
+          {
+            "role": "Barber",
+            "name": "@max_classic_22",
+            "url": "https://www.instagram.com/max_classic_22/"
+          }
+        ],
+        "sourceUrl": "https://www.instagram.com/p/Cz7VXaFsYOM/",
+        "creditSources": [
+          "https://www.instagram.com/p/Cz7VXaFsYOM/"
+        ]
+      },
+      {
+        "id": "amsterdam",
+        "title": "Amsterdam, Netherlands",
+        "date": "",
+        "src": "assets/postcards/amsterdam.jpg",
+        "alt": "JiaJie in a dark coat and knit hat on a bridge above an Amsterdam canal lined with boats and autumn trees.",
+        "width": 1440,
+        "height": 1440,
+        "square": true,
+        "sourceUrl": "https://www.instagram.com/p/C0VbM9YsljX/"
+      },
+      {
+        "id": "shanghai",
+        "title": "Shanghai, China",
+        "date": "May 2024",
+        "src": "assets/postcards/shanghai.jpg",
+        "alt": "JiaJie in a white T-shirt and shorts on a sunny Shanghai street beside historic buildings.",
+        "width": 4000,
+        "height": 6000,
+        "wide": false
       }
     ]
   },
