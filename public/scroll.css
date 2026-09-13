@@ -77,10 +77,12 @@ html { scroll-behavior: smooth; scroll-padding-top: 118px; }
 .culture-open:hover .culture-image { border-color: #96a187; box-shadow: 0 6px 18px -12px #243e3380; }
 .culture-caption { display: flex; align-items: baseline; gap: 10px; margin-top: 11px; }
 .culture-index { flex-shrink: 0; color: #7b856e; font-size: 9px; letter-spacing: 1px; font-variant-numeric: tabular-nums; }
-.culture-caption strong { font: 19px/1.25 var(--serif); letter-spacing: -.35px; overflow-wrap: anywhere; }
+.culture-caption .culture-name { font: 19px/1.25 var(--serif); letter-spacing: -.35px; overflow-wrap: anywhere; }
+.culture-caption strong.culture-name { font-weight: 700; }
 .culture-details { margin-top: 7px; }
 .culture-location { margin: 0; color: #69715e; font-size: 11px; line-height: 1.6; }
 .culture-description { margin: 7px 0 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
+.culture-description strong, #gallery-photo-caption strong { font-weight: 700; }
 .postcards-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px; margin: 44px 0 19px; }
 .postcards-heading h3 { font: 28px var(--serif); margin: 0; letter-spacing: -.8px; }
 .postcards-heading > span { font-size: 10px; color: var(--muted); }
@@ -159,7 +161,8 @@ html { scroll-behavior: smooth; scroll-padding-top: 118px; }
 #gallery-image-error { position: absolute; padding: 24px; color: #dfdfc9; font-size: 13px; text-align: center; }
 .gallery-caption { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; margin-top: 18px; }
 .gallery-caption > div:first-child { min-width: 0; }
-.gallery-caption strong { display: block; font: 23px var(--serif); letter-spacing: -.4px; }
+#gallery-photo-title { display: block; font: 23px var(--serif); letter-spacing: -.4px; }
+#gallery-photo-title.is-garment { font-weight: 700; }
 .gallery-caption p { font-size: 11px; color: #6d755f; margin: 6px 0 0; line-height: 1.7; }
 #gallery-credit .photo-credit { font-size: 10px; color: #627a52; }
 #gallery-credit a { text-decoration: underline; text-underline-offset: 3px; }
@@ -256,7 +259,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 118px; }
  .culture-image { border-radius:10px; }
  .culture-caption { gap:7px; margin-top:9px; }
  .culture-index { font-size:8px; }
- .culture-caption strong { font-size:17px; }
+ .culture-caption .culture-name { font-size:17px; }
  .postcards-heading { margin-top:32px; gap:6px; }
  .postcards-heading h3 { font-size:26px; }
  .postcards-heading > span { font-size:9px; }
@@ -302,7 +305,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 118px; }
  .gallery-dialog.is-project .gallery-stage { height:auto; aspect-ratio:1.353; min-height:0; }
  .gallery-dialog.is-map .gallery-stage { height:auto; aspect-ratio:1000/636; min-height:0; }
  .gallery-caption { gap:13px; margin-top:15px; }
- .gallery-caption strong { font-size:21px; }
+ #gallery-photo-title { font-size:21px; }
  .gallery-caption p { font-size:10px; }
  .gallery-controls { gap:5px; }
  .gallery-controls .icon-button { width:35px; height:35px; min-width:35px; font-size:16px; }

@@ -398,6 +398,17 @@
     if (text !== undefined) node.textContent = String(text ?? "");
     return node;
   }
+  function setCultureCaption(node, caption) {
+    // Double asterisks bold garment names; editable content is never parsed as HTML.
+    const text = String(caption ?? "");
+    node.replaceChildren();
+    let start = 0;
+    for (const match of text.matchAll(/\*\*([^*\n]+)\*\*/g)) {
+      node.append(document.createTextNode(text.slice(start, match.index)), element("strong", "", match[1]));
+      start = match.index + match[0].length;
+    }
+    node.append(document.createTextNode(text.slice(start)));
+  }
   function outgoingLink(href, text, className = "") {
     const a = element("a", className, text);
     a.href = href;
@@ -467,9 +478,11 @@
     }
     setText("#gallery-image-error", isVideo ? "This video couldn’t load. Try opening it below." : "This photo couldn’t load. Try opening the original below.");
     setText("#gallery-photo-title", photo.title || "");
+    $("#gallery-photo-title").classList.toggle("is-garment", mode === "culture" && !photo.isBrand);
     setText("#gallery-photo-location", mode === "culture" ? photo.location : "");
     $("#gallery-photo-location").hidden = mode !== "culture" || !photo.location;
-    setText("#gallery-photo-caption", photo.caption || photo.date || "");
+    if (mode === "culture") setCultureCaption($("#gallery-photo-caption"), photo.caption || photo.date || "");
+    else setText("#gallery-photo-caption", photo.caption || photo.date || "");
     setText("#gallery-count", `${index + 1} / ${items.length}`);
     $("#gallery-count").hidden = items.length < 2;
     renderPhotoCredits($("#gallery-credit"), photo, mode);
@@ -639,7 +652,7 @@
     const caption = element("span", "culture-caption");
     const indexLabel = element("span", "culture-index", number);
     indexLabel.setAttribute("aria-hidden", "true");
-    caption.append(indexLabel, element("strong", "", title));
+    caption.append(indexLabel, element(photo.isBrand ? "span" : "strong", "culture-name", title));
     link.append(frame, caption);
     link.addEventListener("click", event => {
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
@@ -648,7 +661,11 @@
     figure.append(link);
     const details = element("figcaption", "culture-details");
     if (photo.location) details.append(element("p", "culture-location", photo.location));
-    if (photo.caption) details.append(element("p", "culture-description", photo.caption));
+    if (photo.caption) {
+      const description = element("p", "culture-description");
+      setCultureCaption(description, photo.caption);
+      details.append(description);
+    }
     const credits = element("div", "photo-credits");
     if (renderPhotoCredits(credits, photo, "culture")) details.append(credits);
     if (details.hasChildNodes()) figure.append(details);
