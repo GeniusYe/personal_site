@@ -9,14 +9,14 @@ window.JIAJIE_BODY_PHOTOS = {
     {
       "id": "chicago",
       "title": "Chicago, Illinois",
-      "date": "",
+      "date": "September 2025",
       "credit": "photorsh",
       "creditUrl": "https://www.instagram.com/photorsh/",
       "creditSources": ["https://www.instagram.com/p/DXhpNc-kVsd/"]
     },
     {
       "id": "in-the-light",
-      "title": "In a different light.",
+      "title": "Atlanta, Georgia",
       "date": "",
       "credit": "reaux_woods",
       "creditUrl": "https://www.instagram.com/reaux_woods/"
@@ -89,13 +89,40 @@ window.JIAJIE_BODY_PHOTOS = {
       "sourceUrl": "https://www.instagram.com/p/DXhpNc-kVsd/?img_index=3"
     },
     {
+      "id": "chicago-4",
+      "group": "chicago",
+      "src": "assets/bodypositive/chicago-4.jpg",
+      "width": 2025,
+      "height": 2700,
+      "alt": "A smiling rooftop portrait in white briefs, holding a black jacket over one shoulder with the Chicago skyline behind.",
+      "title": "Chicago, Illinois · 04"
+    },
+    {
+      "id": "chicago-5",
+      "group": "chicago",
+      "src": "assets/bodypositive/chicago-5.jpg",
+      "width": 2025,
+      "height": 2700,
+      "alt": "A rooftop portrait in a black leather jacket and jeans, raising one hand in front of the Chicago skyline.",
+      "title": "Chicago, Illinois · 05"
+    },
+    {
+      "id": "chicago-6",
+      "group": "chicago",
+      "src": "assets/bodypositive/chicago-6.jpg",
+      "width": 2025,
+      "height": 2700,
+      "alt": "A shirtless rooftop portrait in jeans, holding a black jacket over one shoulder with skyscrapers behind.",
+      "title": "Chicago, Illinois · 06"
+    },
+    {
       "id": "in-the-light-1",
       "group": "in-the-light",
       "src": "assets/bodypositive/in-the-light-1.jpg",
       "width": 1000,
       "height": 667,
       "alt": "A reclining portrait on a bed, with a cowboy hat.",
-      "title": "In a different light. · 01"
+      "title": "Atlanta, Georgia · 01"
     },
     {
       "id": "in-the-light-2",
@@ -104,7 +131,7 @@ window.JIAJIE_BODY_PHOTOS = {
       "width": 1000,
       "height": 667,
       "alt": "A seated portrait beside a window, draped in a towel.",
-      "title": "In a different light. · 02"
+      "title": "Atlanta, Georgia · 02"
     },
     {
       "id": "in-the-light-3",
@@ -113,7 +140,25 @@ window.JIAJIE_BODY_PHOTOS = {
       "width": 667,
       "height": 1000,
       "alt": "A portrait standing beside a window, wrapped in a towel.",
-      "title": "In a different light. · 03"
+      "title": "Atlanta, Georgia · 03"
+    },
+    {
+      "id": "in-the-light-4",
+      "group": "in-the-light",
+      "src": "assets/bodypositive/in-the-light-4.jpg",
+      "width": 1365,
+      "height": 2048,
+      "alt": "An artistic nude portrait from behind beneath running shower water, with one hand covering the face.",
+      "title": "Atlanta, Georgia · 04"
+    },
+    {
+      "id": "in-the-light-5",
+      "group": "in-the-light",
+      "src": "assets/bodypositive/in-the-light-5.jpg",
+      "width": 1365,
+      "height": 2048,
+      "alt": "A side-profile shower portrait in warm light, with the head tilted back behind glass.",
+      "title": "Atlanta, Georgia · 05"
     },
     {
       "id": "baltimore-1",
@@ -141,6 +186,33 @@ window.JIAJIE_BODY_PHOTOS = {
       "height": 1000,
       "alt": "Body-positive portrait from the Baltimore photo session, third photograph.",
       "title": "Baltimore, Maryland · 03"
+    },
+    {
+      "id": "baltimore-4",
+      "group": "baltimore",
+      "src": "assets/bodypositive/baltimore-4.jpg",
+      "width": 2550,
+      "height": 3300,
+      "alt": "A full-length studio portrait in a black leather harness and denim shorts, gesturing with one hand against a dark background.",
+      "title": "Baltimore, Maryland · 04"
+    },
+    {
+      "id": "baltimore-5",
+      "group": "baltimore",
+      "src": "assets/bodypositive/baltimore-5.jpg",
+      "width": 2550,
+      "height": 3300,
+      "alt": "A studio portrait in a black leather harness, with hands together against a dark background.",
+      "title": "Baltimore, Maryland · 05"
+    },
+    {
+      "id": "baltimore-6",
+      "group": "baltimore",
+      "src": "assets/bodypositive/baltimore-6.jpg",
+      "width": 4000,
+      "height": 6000,
+      "alt": "A rear-view studio portrait in a black leather harness, looking over one shoulder against a dark background.",
+      "title": "Baltimore, Maryland · 06"
     },
     {
       "id": "miami-beach-1",
