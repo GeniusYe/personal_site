@@ -78,3 +78,21 @@ The new captions credit @lola_photo_art for Santiago, @nkandayatu for the Marrak
 The owner directly supplied `C:\Users\JiaJie Ye\OneDrive\2024\Photoshoot\0524 at Shanghai\selected\DSC02858.JPG` and identified the location as Shanghai. Its original bytes are preserved at `assets/postcards/shanghai.jpg`. EXIF `DateTimeOriginal` records May 24, 2024 at 11:00:26 with offset +08:00, supporting the displayed date May 2024. The stored image is 6000 × 4000 with EXIF orientation 8; configuration and HTML use the upright display dimensions, 4000 × 6000. No photographer credit was supplied.
 
 The postcard configuration and static HTML fallback retain editorial/source order. At the owner's request, the live postcard collection shuffles once per page load, with the photo viewer using that same shuffled order. Other photo collections retain their existing order.
+
+## Owner-supplied Bali, bath and Dubai media
+
+The owner supplied four Bali photographs, a Bali pool video, a bath photograph, and a Dubai beach portrait. The Dubai image also arrived as a clipboard attachment with identical bytes; it is included once in Postcards. The remaining media are in the separate NSFW collection, loaded only after viewing consent.
+
+| Supplied filename | Local asset under `public/` |
+| --- | --- |
+| `dji_mimo_20241001_084904_0_1727743798551_video~2.mp4` | `assets/bodypositive/bali-2024-video.mp4` |
+| `dji_mimo_20240930_183858_0_1727693398597_photo.jpg` | `assets/bodypositive/bali-2024-1.jpg` |
+| `dji_mimo_20241001_081206_0_1727741596485_photo~2.jpg` | `assets/bodypositive/bali-2024-2.jpg` |
+| `dji_mimo_20241001_110130_0_1727751716515_photo.jpg` | `assets/bodypositive/bali-2024-3.jpg` |
+| `dji_mimo_20241001_105932_0_1727751718322_photo.jpg` | `assets/bodypositive/bali-2024-4.jpg` |
+| `dji_mimo_20241012_205326_0_1728760709328_photo.jpg` | `assets/bodypositive/bath-2024-1.jpg` |
+| `snapedit_1728905892157.jpg` (also supplied as `codex-clipboard-30bcd6cd-6e1e-40e1-bcd3-b219ef18ab6f.png`) | `assets/postcards/dubai.png` |
+
+All six unique photographs preserve the original file bytes, verified by SHA-256 comparison. The Dubai original has PNG file data despite its `.jpg` source filename, so the bundled file uses `.png`. The SnapEdit watermark is preserved. Bali photo capture dates span September 30–October 1, 2024; the bath photograph records October 12, 2024. The Bali and Dubai locations come from the owner's supplied folder names. Dubai's October 2024 date comes from its `2024/Photoshoot/1004 at Dubai` folder, not from EXIF. The bath location is unknown and its group is labeled “In the bath.” No photographer credits were supplied for these additions.
+
+The 13.25-second source video uses HEVC with rotation metadata. Its web copy uses H.264 video and AAC audio in an MP4, keeps the upright 1080 × 1920 framing, and places the MP4 metadata at the start for playback. It is 24,129,962 bytes, compared with the 48,817,491-byte source. The 720 × 1280 poster at `assets/bodypositive/bali-2024-video-poster.jpg` is extracted at 0.5 seconds from the web copy. The original video file is unchanged.

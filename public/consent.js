@@ -158,7 +158,7 @@
   });
   if (onGallery) {
     cancel.textContent = 'Back to the main page';
-    document.getElementById('consent-privacy').textContent = 'No photographs load until you choose to continue.';
+    document.getElementById('consent-privacy').textContent = 'No photographs or videos load until you choose to continue.';
     document.getElementById('gallery-read-warning').addEventListener('click', e => showWarning(e.currentTarget));
     if (takeTicket()) void revealGallery();
     else showWarning(document.getElementById('gallery-read-warning'));

@@ -760,6 +760,16 @@ window.JIAJIE_SITE = {
         "width": 4000,
         "height": 6000,
         "wide": false
+      },
+      {
+        "id": "dubai",
+        "title": "Dubai, United Arab Emirates",
+        "date": "October 2024",
+        "src": "assets/postcards/dubai.png",
+        "alt": "JiaJie relaxing in a beach chair with the Burj Al Arab behind him in Dubai.",
+        "width": 1792,
+        "height": 2688,
+        "wide": false
       }
     ]
   },
