@@ -12,8 +12,10 @@ A static, two-page personal website. No framework, package install, backend, or 
 - Top navigation links to Home, My story, The world, Dressed for the journey, Postcards, and NSFW, with the current section highlighted while scrolling.
 - A small, image-free “Not safe for work photos” card appears after the travel section. The NSFW navigation item leads to it.
 - The card opens an explicit 18+ content warning. Approval navigates to `bodypositive.html` on the same website, not back to the former website.
-- The separate gallery contains 29 photographs: six in Chicago, five in the second section (Atlanta, Georgia), six in Baltimore, and 12 across the remaining sessions. The Chicago section is dated September 2025 and credited to @photorsh. Eight owner-supplied photographs were appended to their existing sessions in the supplied order, without recompression. The opening portrait remains excluded. Unknown shoot dates remain blank.
-- Dressed for the journey contains 11 photographs and Postcards contains 23, including the owner's selected Instagram additions and a directly supplied Shanghai portrait. The sixteen Instagram homepage additions and three Chicago portraits are bundled locally; exact post and slide references are recorded in `PHOTO-CREDITS-AUDIT.md`. The nine additional Instagram postcards retain their supplied order in the configuration, include caption-supported credits, and preserve the explicit April 2024 date for Tokyo. Shanghai is dated May 2024 from the original image's capture metadata. Square postcards retain their full framing.
+- The separate gallery contains 34 photographs and one video: one opening bath photo, six photos in Chicago, five in Atlanta, Georgia, four photos and one pool video in Bali, six in Baltimore, and 12 photos across the remaining sessions. The Chicago section is dated September 2025 and credited to @photorsh. Eight owner-supplied photographs were appended to their existing sessions in the supplied order, without recompression. The opening portrait remains excluded. Unknown shoot dates remain blank.
+- Dressed for the journey contains 11 photographs and Postcards contains 24, including the owner's selected Instagram additions and a directly supplied Shanghai portrait. The sixteen Instagram homepage additions and three Chicago portraits are bundled locally; exact post and slide references are recorded in `PHOTO-CREDITS-AUDIT.md`. The nine additional Instagram postcards retain their supplied order in the configuration, include caption-supported credits, and preserve the explicit April 2024 date for Tokyo. Shanghai is dated May 2024 from the original image's capture metadata. Square postcards retain their full framing.
+- The owner-supplied Bali and bath photos preserve their original bytes and framing. Bali is dated September–October 2024 and the bath photograph October 2024 from capture metadata; the bath location and new photographer credits were not supplied. The 13-second Bali video uses a local H.264/AAC MP4 and poster, opens with native controls, and stops when closed or when moving to another item. The Dubai beach portrait appears once in Postcards, dated October 2024 from the supplied shoot folder, with matching HTML fallback.
+- “In the bath” opens the NSFW collection and its viewer. The first Atlanta set follows the original photo order 4, 5, 3, 1, 2: the two shower portraits first, then the remaining vertical portrait, then the two landscape photographs.
 - Postcards shuffle once on each page load, and their photo viewer follows that same shuffled order. Configuration and HTML fallback order remain the editorial/source order. Other galleries keep their existing order.
 
 ## Deploy / preview
@@ -41,11 +43,11 @@ The home page sharing helper uses its current URL by default. `siteUrl` in `publ
 
 ## Local assets
 
-All images and the behind-the-scenes video are bundled locally and organized by the part of the site that uses them:
+All images, the behind-the-scenes video, and the Bali pool video are bundled locally and organized by the part of the site that uses them:
 
 ```text
 public/assets/
-  bodypositive/  Gallery photographs, named by session and photo number
+  bodypositive/  Gallery photographs, Bali pool video, and its poster
   culture/       Eleven clothing photographs in “Dressed for the journey.”
   postcards/     Travel photographs named by destination, plus travel-map.png
   movie/         Boys Like Us production/BTS photographs, thumbnails, and video
@@ -89,7 +91,7 @@ The site filenames below are relative to `public/`; `PHOTO-CREDITS-AUDIT.md` rem
 - Each song's `credits` entries use `role`, `name`, and `url` fields and appear in the music dialog. “Arise O’ Compatriots” credits music production to @realpaulallison.
 - `project.credits` stores linked creator, director, and producer credits. `project.photos` contains both production and behind-the-scenes media; BTS entries use `group: "bts"`. Video entries also use `type: "video"`, a local `src`, a `poster`, and a small `thumbnail`. Keep the displayed dimensions matched to the local asset and retain the legacy `blu-cast-and-crew` filenames for the photograph now labeled “Crew.”
 - Photo `credits` lists can contain separate `{ "role": "Photographer", "name": "@handle", "url": "https://www.instagram.com/handle/" }` entries for each contributor. All displayed credit names use one leading `@`, including names without a verified account; omit `url` when no account is verified. `creditSources` records the supporting Instagram posts. Credits appear on collection cards and in the photo viewer; keep the matching `index.html` fallback captions in sync when editing. See `PHOTO-CREDITS-AUDIT.md` for the review and unresolved cases.
-- `bodypositive-data.js`: the separate photography collection, groups, dates, photographer credits, and accessible image descriptions.
+- `bodypositive-data.js`: the separate photo/video collection, groups, dates, photographer credits, and accessible descriptions. Video entries use `type: "video"`, `src`, `poster`, and the upright video dimensions. Posters load only after consent; the video loads on demand in the viewer, without autoplay.
 - `index.html`: homepage markup and content-warning text.
 - `bodypositive.html`: gallery entry page and the matching warning text. Keep the two warnings consistent when editing.
 - `styles.css`, `scroll.css`, `revision.css`: shared visual design and homepage additions.
@@ -111,3 +113,5 @@ The cultural-appreciation section was checked at 320, 390, 768, and 1440 pixels 
 The nine September 13 postcard additions were checked against their exact exported images: all preserve the original bytes and 1440 × 1440 dimensions, and all 22 postcard HTML fallbacks match the configuration. The local asset checker passed with 92 referenced files. Browser checks confirmed progressive loading through all 22 postcards, the nine new viewer images and credits, wraparound, Escape/focus return, and square framing without horizontal overflow at 390 pixels. No browser errors or warnings were reported.
 
 After adding Shanghai and per-load shuffling, browser checks confirmed 23 unique postcards, a new order on reload, and matching card and viewer order through wraparound. Shanghai displayed upright on desktop and mobile with its verified May 2024 date. All 23 HTML fallbacks match the configuration, and the local asset checker passed with 93 referenced files.
+
+The Bali/bath/Dubai additions passed the local asset check with 101 referenced files. Browser checks with the site CSP confirmed 35 NSFW items (34 photos and one video), all six new previews, all five new photo lightboxes, upright video playback with native controls, cleanup on close/navigation/page hide, focus return, restored-page consent, and fresh-tab gating. No NSFW requests occurred before approval. Layouts had no horizontal overflow at 320, 390, 768, and 1440 pixels. The 24 postcards include one Dubai image in both the live gallery and no-JavaScript fallback. No browser errors or failed local responses were reported.

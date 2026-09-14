@@ -32,6 +32,7 @@
 .body-portrait-button .image-failed { visibility: hidden; }
 .body-photo-error { position: absolute; inset: 0; display: grid; align-content: center; text-align: center; padding: 18px; color: #67735a; font-size: 12px; line-height: 1.8; }
 .body-portrait-button .photo-expand { background: #fffdf1e0; }
+.body-video-play { position: absolute; bottom: 12px; left: 12px; padding: 9px 12px; border-radius: 20px; background: #fffdf1ed; color: #263526; font-size: 11px; line-height: 1.2; box-shadow: 0 2px 12px #17291f24; }
 .body-portrait figcaption { color: #788269; font-size: 9px; margin-top: 9px; }
 .body-gallery-end { text-align: center; padding: 48px 0 54px; }
 .body-gallery-end p { font: 33px/1.2 var(--serif); letter-spacing: -.8px; margin: 0 0 27px; }
@@ -40,7 +41,9 @@
 .body-photo-dialog[open] { animation: dialog-in .2s ease-out; }
 .body-lightbox-content { padding: 14px 25px 24px; }
 .body-lightbox-stage { height: min(70dvh,800px); min-height: 160px; background: #17291f; border-radius: 10px; position: relative; overflow: hidden; touch-action: pan-y pinch-zoom; }
-.body-lightbox-stage img { width: 100%; height: 100%; object-fit: contain; }
+.body-lightbox-stage img, .body-lightbox-stage video { width: 100%; height: 100%; object-fit: contain; }
+.body-lightbox-stage video { display: block; touch-action: auto; }
+.body-lightbox-stage [hidden] { display: none; }
 #body-lightbox-error { position: absolute; inset: 0; margin: 0; display: grid; place-items: center; padding: 25px; font-size: 13px; color: var(--paper); text-align: center; }
 .body-lightbox-caption { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 18px; }
 .body-lightbox-caption h2 { font: 25px/1.12 var(--serif); letter-spacing: -.5px; margin: 0; }
@@ -72,6 +75,7 @@
  .body-portrait figcaption { font-size: 8px; }
  .body-portrait-button { border-radius: 9px; }
  .body-portrait-button .photo-expand { width: 26px; height: 26px; font-size: 14px; }
+ .body-video-play { bottom: 9px; left: 9px; padding: 8px 10px; font-size: 10px; }
  .body-photo-dialog { width: calc(100% - 18px); max-height: calc(100dvh - 18px); border-radius: 17px; }
  .body-lightbox-content { padding: 10px 13px 21px; }
  .body-lightbox-stage { height: 61dvh; }

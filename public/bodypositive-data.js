@@ -1,11 +1,17 @@
 /* Loaded only after a visitor explicitly accepts the content warning.
  * Collection migrated from the owner’s Body Positive page; source notes are in README.md.
  * Photo credits and dated shoot captions are preserved. Undated portraits stay undated.
- * Add photos here, using src, group, title, alt, width and height.
+ * Add media here, using src, group, title, alt, width and height.
+ * Videos also use type: "video" and a local poster.
  */
 window.JIAJIE_BODY_PHOTOS = {
   "intro": "It began on impulse. It became a way of learning to love my own body.",
   "groups": [
+    {
+      "id": "bath-2024",
+      "title": "In the bath",
+      "date": "October 2024"
+    },
     {
       "id": "chicago",
       "title": "Chicago, Illinois",
@@ -20,6 +26,11 @@ window.JIAJIE_BODY_PHOTOS = {
       "date": "",
       "credit": "reaux_woods",
       "creditUrl": "https://www.instagram.com/reaux_woods/"
+    },
+    {
+      "id": "bali-2024",
+      "title": "Bali, Indonesia",
+      "date": "September–October 2024"
     },
     {
       "id": "baltimore",
@@ -58,6 +69,15 @@ window.JIAJIE_BODY_PHOTOS = {
     }
   ],
   "photos": [
+    {
+      "id": "bath-2024-1",
+      "group": "bath-2024",
+      "src": "assets/bodypositive/bath-2024-1.jpg",
+      "width": 3840,
+      "height": 2160,
+      "alt": "Reclining in a bubble bath while holding a phone, surrounded by warm stone and copper fixtures.",
+      "title": "In the bath · 01"
+    },
     {
       "id": "chicago-1",
       "group": "chicago",
@@ -116,6 +136,33 @@ window.JIAJIE_BODY_PHOTOS = {
       "title": "Chicago, Illinois · 06"
     },
     {
+      "id": "in-the-light-4",
+      "group": "in-the-light",
+      "src": "assets/bodypositive/in-the-light-4.jpg",
+      "width": 1365,
+      "height": 2048,
+      "alt": "An artistic nude portrait from behind beneath running shower water, with one hand covering the face.",
+      "title": "Atlanta, Georgia · 04"
+    },
+    {
+      "id": "in-the-light-5",
+      "group": "in-the-light",
+      "src": "assets/bodypositive/in-the-light-5.jpg",
+      "width": 1365,
+      "height": 2048,
+      "alt": "A side-profile shower portrait in warm light, with the head tilted back behind glass.",
+      "title": "Atlanta, Georgia · 05"
+    },
+    {
+      "id": "in-the-light-3",
+      "group": "in-the-light",
+      "src": "assets/bodypositive/in-the-light-3.jpg",
+      "width": 667,
+      "height": 1000,
+      "alt": "A portrait standing beside a window, wrapped in a towel.",
+      "title": "Atlanta, Georgia · 03"
+    },
+    {
       "id": "in-the-light-1",
       "group": "in-the-light",
       "src": "assets/bodypositive/in-the-light-1.jpg",
@@ -134,31 +181,51 @@ window.JIAJIE_BODY_PHOTOS = {
       "title": "Atlanta, Georgia · 02"
     },
     {
-      "id": "in-the-light-3",
-      "group": "in-the-light",
-      "src": "assets/bodypositive/in-the-light-3.jpg",
-      "width": 667,
-      "height": 1000,
-      "alt": "A portrait standing beside a window, wrapped in a towel.",
-      "title": "Atlanta, Georgia · 03"
+      "id": "bali-2024-video",
+      "group": "bali-2024",
+      "type": "video",
+      "src": "assets/bodypositive/bali-2024-video.mp4",
+      "poster": "assets/bodypositive/bali-2024-video-poster.jpg",
+      "width": 1080,
+      "height": 1920,
+      "alt": "A video in an outdoor pool surrounded by tropical greenery in Bali.",
+      "title": "Bali, Indonesia · Pool video"
     },
     {
-      "id": "in-the-light-4",
-      "group": "in-the-light",
-      "src": "assets/bodypositive/in-the-light-4.jpg",
-      "width": 1365,
-      "height": 2048,
-      "alt": "An artistic nude portrait from behind beneath running shower water, with one hand covering the face.",
-      "title": "Atlanta, Georgia · 04"
+      "id": "bali-2024-1",
+      "group": "bali-2024",
+      "src": "assets/bodypositive/bali-2024-1.jpg",
+      "width": 1728,
+      "height": 2720,
+      "alt": "A portrait in an open orange shirt, holding white pillows against a pale wall.",
+      "title": "Bali, Indonesia · 01"
     },
     {
-      "id": "in-the-light-5",
-      "group": "in-the-light",
-      "src": "assets/bodypositive/in-the-light-5.jpg",
-      "width": 1365,
-      "height": 2048,
-      "alt": "A side-profile shower portrait in warm light, with the head tilted back behind glass.",
-      "title": "Atlanta, Georgia · 05"
+      "id": "bali-2024-2",
+      "group": "bali-2024",
+      "src": "assets/bodypositive/bali-2024-2.jpg",
+      "width": 2936,
+      "height": 2160,
+      "alt": "A reclining portrait from above on a bed with white sheets and a wooden headboard.",
+      "title": "Bali, Indonesia · 02"
+    },
+    {
+      "id": "bali-2024-3",
+      "group": "bali-2024",
+      "src": "assets/bodypositive/bali-2024-3.jpg",
+      "width": 3840,
+      "height": 2160,
+      "alt": "A reclining portrait from behind on white bedding, beneath a colorful sailboat painting.",
+      "title": "Bali, Indonesia · 03"
+    },
+    {
+      "id": "bali-2024-4",
+      "group": "bali-2024",
+      "src": "assets/bodypositive/bali-2024-4.jpg",
+      "width": 3840,
+      "height": 2160,
+      "alt": "A relaxed portrait on white bedding with one arm resting behind the head.",
+      "title": "Bali, Indonesia · 04"
     },
     {
       "id": "baltimore-1",
