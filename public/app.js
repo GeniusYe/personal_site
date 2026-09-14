@@ -525,7 +525,11 @@
     galleryDialog.classList.toggle("is-culture", mode === "culture");
     const headings = {
       project: ["Behind the scenes", project.title, [project.season, project.format, project.location].filter(Boolean).join(" · ")],
-      map: ["The places so far", travel.map?.title, `As of ${travel.asOf || ""} · ${travel.qualifier || ""}`],
+      map: ["The places so far", travel.map?.title, [
+        travel.asOf && `As of ${travel.asOf}`,
+        [travel.count, travel.unit].filter(Boolean).join(" "),
+        travel.qualifier
+      ].filter(Boolean).join(" · ")],
       culture: [culture.eyebrow || "Clothes & culture", culture.title || "Dressed for the journey.", culture.description || ""],
       travel: ["The photo journal", "Postcards from the road", "A few moments, from a world of places."]
     };
@@ -617,9 +621,16 @@
   setText("#travel-unit", travel.unit);
   setText("#travel-qualifier", travel.qualifier);
   setText("#travel-date", `As of ${travel.asOf || ""}`);
-  setText("#latest-stops-date", travel.latestDate);
   const latest = $("#latest-stops-list"); latest.replaceChildren();
-  (Array.isArray(travel.latest) ? travel.latest : []).forEach(place => latest.append(element("span", "", place)));
+  (Array.isArray(travel.latest) ? travel.latest : []).forEach(trip => {
+    trip.places.forEach(place => {
+      const stop = element("li", "latest-stop", place);
+      stop.tabIndex = 0;
+      stop.dataset.date = trip.date;
+      stop.setAttribute("aria-label", `${place}, ${trip.date}`);
+      latest.append(stop);
+    });
+  });
   $(".latest-stops").hidden = latest.childElementCount === 0;
   const map = travel.map;
   if (map && imageURL(map.src)) {

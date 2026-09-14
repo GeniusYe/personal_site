@@ -368,11 +368,27 @@ window.JIAJIE_SITE = {
       "height": 636
     },
     "latest": [
-      "Estonia",
-      "Latvia",
-      "Lithuania"
+      {
+        "places": ["Estonia", "Latvia", "Lithuania"],
+        "date": "August 2026"
+      },
+      {
+        "places": ["Bangladesh", "Nepal", "Sri Lanka", "Bhutan"],
+        "date": "December 2025"
+      },
+      {
+        "places": ["Rwanda", "Uganda", "Burundi"],
+        "date": "November 2025"
+      },
+      {
+        "places": ["Suriname", "Honduras", "Nicaragua"],
+        "date": "September 2025"
+      },
+      {
+        "places": ["Morocco", "Senegal", "the Gambia", "Cote d'Ivoire"],
+        "date": "May 2025"
+      }
     ],
-    "latestDate": "August 2026",
     "initialPhotos": 5,
     "batchSize": 3,
     "photos": [
