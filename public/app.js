@@ -550,6 +550,7 @@
         const frame = element("span", "gallery-thumbnail-frame");
         const img = element("img");
         img.width = 300; img.height = 200; img.loading = "lazy";
+        img.draggable = false;
         setImage(img, photo.thumbnail || photo.poster || photo.src, "");
         frame.append(img);
         if (photo.group === "bts") {
