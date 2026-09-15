@@ -162,6 +162,8 @@ html { scroll-behavior: smooth; scroll-padding-top: 118px; }
 .gallery-count { font-size: 11px; color: #6c795e; border: 1px solid #d6dccb; border-radius: 20px; padding: 5px 11px; white-space: nowrap; }
 .gallery-figure { margin: 0; }
 .gallery-viewer { position: relative; }
+/* Keep repeated navigation clicks from selecting the photo or gallery controls. */
+.gallery-viewer, .gallery-count, .gallery-thumbnail { -webkit-user-select: none; user-select: none; }
 .gallery-stage { display: grid; place-items: center; height: min(54vh,570px); height: min(54dvh,570px); min-height: 180px; overflow: hidden; background: #16241e; border-radius: 12px; position: relative; touch-action: pan-y pinch-zoom; }
 .gallery-stage img { width: 100%; height: 100%; min-height: 0; object-fit: contain; }
 #gallery-image-error { position: absolute; padding: 24px; color: #dfdfc9; font-size: 13px; text-align: center; }
