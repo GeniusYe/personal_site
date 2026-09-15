@@ -740,6 +740,24 @@
     if (!more) travelObserver?.disconnect();
     scheduleReadingUpdate();
   }
+  function renderRemainingPostcards() {
+    while (travelRendered < travelPhotos.length) {
+      addTravelBatch(travelPhotos.length - travelRendered, false);
+    }
+  }
+  // Finish inserting rows before native anchor scrolling measures the NSFW entry.
+  // Images stay lazy-loaded; normal postcard browsing still uses batches.
+  for (const link of document.querySelectorAll('a[href="#body-positive"]')) {
+    link.addEventListener("click", event => {
+      if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      renderRemainingPostcards();
+    });
+  }
+  window.addEventListener("hashchange", () => {
+    if (location.hash !== "#body-positive" || travelRendered === travelPhotos.length) return;
+    renderRemainingPostcards();
+    $("#body-positive").scrollIntoView({ block: "start" });
+  });
   $("#travel-photos").replaceChildren();
   $("#load-more-photos").addEventListener("click", () => {
     const firstNew = travelRendered;
@@ -749,6 +767,7 @@
     nextLink?.focus({ preventScroll: true });
   });
   addTravelBatch(travel.initialPhotos || 5, false);
+  if (location.hash === "#body-positive") renderRemainingPostcards();
   if ("IntersectionObserver" in window && travelRendered < travelPhotos.length) {
     travelObserver = new IntersectionObserver(entries => {
       if (entries.some(entry => entry.isIntersecting) && !document.body.classList.contains("modal-open")) addTravelBatch(travel.batchSize);
