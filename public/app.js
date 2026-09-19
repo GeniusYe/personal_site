@@ -498,8 +498,16 @@
     setText("#gallery-key-hint", isVideo ? "Press play to watch. Use the buttons to explore." : "Use the arrows or swipe to explore.");
     $(".gallery-controls", galleryDialog).hidden = items.length < 2;
     $("#gallery-key-hint").hidden = items.length < 2;
-    for (const [i, thumb] of [...$("#gallery-thumbnails").children].entries()) {
+    const thumbnails = $("#gallery-thumbnails");
+    for (const [i, thumb] of [...thumbnails.children].entries()) {
       thumb.setAttribute("aria-pressed", String(i === index));
+    }
+    if (mode === "project" && thumbnails.clientHeight) {
+      // Follow the selection inside the rail without moving the outer dialog.
+      const selected = thumbnails.children[index].getBoundingClientRect();
+      const rail = thumbnails.getBoundingClientRect();
+      if (selected.top < rail.top + 4) thumbnails.scrollTop += selected.top - rail.top - 4;
+      else if (selected.bottom > rail.bottom - 4) thumbnails.scrollTop += selected.bottom - rail.bottom + 4;
     }
   }
   $("#gallery-image").addEventListener("error", () => { $("#gallery-image-error").hidden = false; });
@@ -562,13 +570,13 @@
         button.addEventListener("click", () => {
           galleryState.index = i;
           renderGalleryImage();
-          galleryDialog.scrollTop = 0;
         });
         thumbnails.append(button);
       });
     }
     renderGalleryImage();
     if (!galleryDialog.open) { lockScroll(); galleryDialog.showModal(); }
+    thumbnails.scrollTop = 0;
     galleryDialog.scrollTop = 0;
     $("#close-gallery").focus({ preventScroll: true });
     if (mode === "project" && syncURL) updateProjectURL(project.id);
