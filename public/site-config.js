@@ -14,7 +14,7 @@ window.JIAJIE_SITE = {
     "photoAlt": "JiaJie in a white and gold wrap, standing beside a stone column.",
     "instagram": "https://www.instagram.com/life_of_jiajie/",
     "instagramHandle": "@life_of_jiajie",
-    "email": "hi@geniusye.com"
+    "facebook": "https://www.facebook.com/yejiajie/"
   },
   "songs": [
     {
@@ -905,7 +905,6 @@ window.JIAJIE_SITE = {
   },
   "contact": {
     "title": "The next chapter?",
-    "subtitle": "There’s always room for a good conversation.",
-    "email": "hi@geniusye.com"
+    "subtitle": "There’s always room for a good conversation."
   }
 };

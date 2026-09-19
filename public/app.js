@@ -350,9 +350,11 @@
   const instagram = webURL(profile.instagram);
   if (instagram) $("#instagram-link").href = instagram;
   else $("#instagram-link").hidden = true;
-  if (typeof profile.email === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(profile.email)) {
-    $("#email-link").href = `mailto:${encodeURIComponent(profile.email).replace(/%40/g, "@")}`;
-  } else $("#email-link").hidden = true;
+  const facebook = webURL(profile.facebook);
+  if (facebook) {
+    $("#facebook-link").href = facebook;
+    $("#facebook-link").hidden = false;
+  } else $("#facebook-link").hidden = true;
 
   const songs = config.songs.filter(song => song && /^[a-z0-9-]+$/.test(song.id) && song.title && song.artist);
   const songList = $("#song-list");
@@ -832,10 +834,8 @@
   const contact = config.contact || {};
   if (contact.title) setText("#closing-title", contact.title);
   if (contact.subtitle) setText("#closing-subtitle", contact.subtitle);
-  const contactEmail = contact.email || profile.email;
-  if (typeof contactEmail === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactEmail)) {
-    $("#closing-email").href = `mailto:${encodeURIComponent(contactEmail).replace(/%40/g, "@")}`;
-  } else $("#closing-email").hidden = true;
+  if (instagram) $("#closing-instagram").href = instagram;
+  else $("#closing-instagram").hidden = true;
 
   // Scrolling remains completely native: no scroll hijacking or fullscreen panels.
   // A thin progress line and a current-chapter indicator provide orientation.
