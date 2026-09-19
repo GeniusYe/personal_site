@@ -130,7 +130,6 @@ body.consent-open { position: fixed; top: var(--consent-scroll-offset); width: 1
 .project-bts-copy { display: flex; flex-direction: column; gap: 2px; }
 .project-bts-label { font-size: 18px; line-height: 1; letter-spacing: 1.6px; }
 #project-photo-count { font-size: 9px; line-height: 1.4; }
-.gallery-thumbnails { grid-template-columns: repeat(4,minmax(0,1fr)); }
 .gallery-thumbnail > .gallery-thumbnail-frame { position: relative; display: block; margin: 0; }
 .gallery-thumbnail-frame img { aspect-ratio: 4/3; object-fit: contain; background: #16241e; }
 .gallery-bts-badge { position: absolute; bottom: 5px; left: 5px; padding: 4px 7px; border: 1px solid #f5e6b55c; border-radius: 5px; background: #17281feb; color: #f5e6b5; font-size: 12px; font-weight: 700; line-height: 1.2; letter-spacing: .7px; }
@@ -143,7 +142,6 @@ body.consent-open { position: fixed; top: var(--consent-scroll-offset); width: 1
 .project-credits a, .project-media-fallback a { text-decoration: underline; text-underline-offset: 3px; }
 .project-media-fallback { font-size: 11px; line-height: 1.8; }
 @media (max-width:700px) {
- .gallery-thumbnails { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
  .project-card-featured .project-photo-tag { padding: 10px 13px; }
  .project-photo-tag .bts-clapperboard { width: 36px; height: 36px; flex-basis: 36px; }
  .project-bts-label { font-size: 20px; }
