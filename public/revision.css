@@ -1,6 +1,8 @@
 /* Homepage features: the same cream, forest and quiet serif typography. */
 @media (min-width: 701px) {
- .home-chapter.main-grid { grid-template-columns: minmax(0,.78fr) minmax(0,1.27fr); gap: 44px; }
+ .home-chapter.main-grid { grid-template-columns: minmax(0,.78fr) minmax(0,1.27fr); grid-template-rows: max-content 1fr; gap: 18px 44px; }
+ .home-chapter .content-column { grid-column: 2; grid-row: 1 / 3; }
+ .home-chapter > .social-links { grid-column: 1; grid-row: 2; margin-top: 0; }
  .home-chapter .portrait-frame { aspect-ratio: .77; }
  .home-chapter .bio { max-width: 400px; }
 }
@@ -63,7 +65,8 @@ body.consent-open { position: fixed; top: var(--consent-scroll-offset); width: 1
 .consent-actions .hello-button { gap: 12px; }
 .consent-dialog.consent-fallback { position: fixed; inset: 0; margin: auto; z-index: 100; box-shadow: 0 0 0 100vmax #11261ded; }
 @media (min-width:701px) and (max-width:950px) {
- .home-chapter.main-grid { grid-template-columns: minmax(0,.7fr) minmax(0,1.3fr); gap: 29px; }
+ .home-chapter.main-grid { grid-template-columns: minmax(0,.7fr) minmax(0,1.3fr); column-gap: 29px; }
+ .home-chapter > .social-links { grid-template-columns: 1fr; }
  .featured-pair { gap: 11px; }
  .featured-pair .section-heading h2 { font-size: 20px; }
  .featured-pair .music-card { padding: 17px; min-height: 314px; }
