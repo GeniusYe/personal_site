@@ -349,6 +349,17 @@ window.JIAJIE_SITE = {
         "creditSources": [
           "https://www.instagram.com/p/DczBAaQmOCg/?img_index=1"
         ]
+      },
+      {
+        "id": "galabeya-egypt",
+        "src": "assets/culture/galabeya-egypt.jpg",
+        "width": 2048,
+        "height": 1430,
+        "title": "Galabeya",
+        "alt": "JiaJie in a white Galabeya and patterned headscarf beside a camel, with the pyramids of Giza behind him.",
+        "location": "Giza, Egypt",
+        "caption": "The **Galabeya** (**جلابية** in Arabic) is a long, loose robe worn in Egypt and beyond, among the diverse robe traditions across Africa and the Middle East, where names and styles vary by region.",
+        "wide": true
       }
     ]
   },

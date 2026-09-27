@@ -79,6 +79,14 @@ The owner directly supplied `C:\Users\JiaJie Ye\OneDrive\2024\Photoshoot\0524 at
 
 The postcard configuration and static HTML fallback retain editorial/source order. At the owner's request, the live postcard collection shuffles once per page load, with the photo viewer using that same shuffled order. Other photo collections retain their existing order.
 
+## Owner-supplied Egypt clothing photograph
+
+The owner supplied `ChatGPT Image Sep 27, 2026, 11_59_58 AM.jpg` on September 27, 2026 for “Dressed for the journey.” Its original 2048 × 1430 JPEG bytes are preserved at `assets/culture/galabeya-egypt.jpg`. The photograph appears as the twelfth clothing card, with the full landscape framing, the location Giza, Egypt, and matching content in the shared viewer and HTML fallback. No shoot date or photographer credit was supplied.
+
+The garment is labeled **Galabeya**, with **جلابية** inline in the caption following the existing local-name style. [Reading Museum](https://collections.readingmuseum.org.uk/pdfs/G149A.pdf) describes the Egyptian galabeya as a long, loose robe with sleeves; [The Zay Initiative’s Egyptian men’s robe record](https://thezay.org/product/30756) documents the garment, while its [Arabic Egyptian collection record](https://thezay.org/product/21528?lang=ar) supports the spelling جلابية. The brief introduction describes the general clothing tradition without claiming a fabric, maker, or regional subtype.
+
+The owner subsequently approved this wider context: “The Galabeya (جلابية in Arabic) is a long, loose robe worn in Egypt and beyond, among the diverse robe traditions across Africa and the Middle East, where names and styles vary by region.” [Khalifa House Museum](https://www.sslh.info/en/posts/the-jibba) documents a Sudanese jalabiya variant; [Paul Thissen’s UC Berkeley fieldwork in Chad](https://escholarship.org/uc/item/4mp5j8qg), printed page 57, records a Chadian host wearing a jalabiya in N’Djamena. The Zay Initiative record above documents related regional robe terms and differences. [Powerhouse Museum’s Nigerian robe record](https://collection.powerhouse.com.au/object/198484) provides context for West African boubou/agbada traditions, which the caption does not equate with the galabeya.
+
 ## Owner-supplied Bali, bath and Dubai media
 
 The owner supplied four Bali photographs, a Bali pool video, a bath photograph, and a Dubai beach portrait. The Dubai image also arrived as a clipboard attachment with identical bytes; it is included once in Postcards. The remaining media are in the separate NSFW collection, loaded only after viewing consent.
