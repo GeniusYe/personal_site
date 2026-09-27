@@ -20,7 +20,7 @@
     youtube: '<rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor"/><path d="m10 9 6 3-6 3Z" fill="white"/>',
     youtubeMusic: '<circle cx="12" cy="12" r="10" fill="currentColor"/><circle cx="12" cy="12" r="7" fill="none" stroke="white" stroke-width="1"/><path d="m10 8 6 4-6 4Z" fill="white"/>',
     amazon: '<path d="M11 3v11.5a3.2 3.2 0 1 1-2-2.9V4l10-2v10.5a3.2 3.2 0 1 1-2-2.9V5l-6 1.2Z" fill="currentColor"/><path d="M4 20c4.5 2 10 2 15-1M16 18l4 .5-1.2 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>',
-    anghami: '<g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 8a8 8 0 1 1 0 8M8 10a4.5 4.5 0 1 1 0 4M11 12a1.2 1.2 0 1 1 0 .1"/></g>',
+    pandora: '<path d="M6 3h7a7 7 0 0 1 0 14h-2v4H6V3Zm5 4v6h2a3 3 0 0 0 0-6h-2Z" fill="currentColor"/>',
     music: '<path d="M9 5v12M9 7l10-3v11" fill="none" stroke="currentColor" stroke-width="2"/><ellipse cx="6" cy="17" rx="3" ry="2.5" fill="currentColor"/><ellipse cx="16" cy="15" rx="3" ry="2.5" fill="currentColor"/>'
   };
   const SEARCH = {

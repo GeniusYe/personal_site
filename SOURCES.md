@@ -29,6 +29,8 @@ https://developers.cloudflare.com/pages/get-started/direct-upload/
 
 The direct platform links were verified against the official pages for “Arise O’ Compatriots” by JiaJie, released June 26, 2026: [Spotify](https://open.spotify.com/track/4LkmD5IaiM5hZSLY1Nyqbo), [Apple Music](https://music.apple.com/us/song/arise-o-compatriots/6788196829), [YouTube](https://www.youtube.com/watch?v=OQnRSwWDuuI), and [YouTube Music](https://music.youtube.com/watch?v=OQnRSwWDuuI).
 
+The broken Anghami link was replaced with [Pandora](https://www.pandora.com/TR:207032774) on September 27, 2026. The destination was matched through [Songlink](https://song.link/s/4LkmD5IaiM5hZSLY1Nyqbo) and verified in the browser to redirect to Pandora’s “Arise O' Compatriots by JiaJie” track page. Audio playback was not verified.
+
 The owner supplied the music production credit [@realpaulallison](https://www.instagram.com/realpaulallison/). It is stored in the song's `credits` list with the role “Music production” and displayed in the music dialog.
 
 ## Clothing caption references

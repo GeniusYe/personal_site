@@ -64,9 +64,9 @@ window.JIAJIE_SITE = {
           "action": "Open"
         },
         {
-          "id": "anghami",
-          "label": "Anghami",
-          "url": "https://play.anghami.com/song/1281914505",
+          "id": "pandora",
+          "label": "Pandora",
+          "url": "https://www.pandora.com/TR:207032774",
           "action": "Listen"
         }
       ]
