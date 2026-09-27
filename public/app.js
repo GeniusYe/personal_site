@@ -382,19 +382,37 @@
     } else if (!song && musicDialog.open) musicDialog.close();
   }
   // ---- The scrolling story, photo collections, and project gallery. ----
+  function shuffled(items) {
+    const result = [...items];
+    for (let i = result.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [result[i], result[j]] = [result[j], result[i]];
+    }
+    return result;
+  }
+
+  function shuffledCulturePhotos(photos) {
+    const wide = shuffled(photos.filter(photo => photo.wide));
+    const single = shuffled(photos.filter(photo => !photo.wide));
+    const rows = [];
+    // Complete desktop rows: a wide photo and a portrait, or three portraits.
+    while (wide.length && single.length) {
+      rows.push(shuffled([wide.pop(), single.pop()]));
+    }
+    while (single.length >= 3) rows.push(single.splice(0, 3));
+    // Keep any incomplete rows at the end so they cannot split a later pair.
+    return shuffled(rows).flat().concat(wide, single);
+  }
+
   const galleryDialog = $("#gallery-dialog");
   const project = config.project || {};
   const travel = config.travel || {};
   const culture = config.culture || {};
-  const travelPhotos = (Array.isArray(travel.photos) ? travel.photos : []).filter(p => p && imageURL(p.src));
   // Shuffle once per page load so each batch and the viewer share the same order.
-  for (let i = travelPhotos.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [travelPhotos[i], travelPhotos[j]] = [travelPhotos[j], travelPhotos[i]];
-  }
+  const travelPhotos = shuffled((Array.isArray(travel.photos) ? travel.photos : []).filter(p => p && imageURL(p.src)));
   const projectPhotos = (Array.isArray(project.photos) ? project.photos : []).filter(p => p && imageURL(p.src));
   const galleryVideo = $("#gallery-video");
-  const culturePhotos = (Array.isArray(culture.photos) ? culture.photos : []).filter(p => p && imageURL(p.src));
+  const culturePhotos = shuffledCulturePhotos((Array.isArray(culture.photos) ? culture.photos : []).filter(p => p && imageURL(p.src)));
   let galleryState = { items: [], index: 0, mode: "travel", opener: null };
   let travelRendered = 0;
   let travelObserver = null;
