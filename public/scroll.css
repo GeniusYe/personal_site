@@ -97,7 +97,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 118px; }
 .postcard-open { display: block; }
 .postcard-image { display: block; aspect-ratio: .79; border-radius: 13px; background: #e0e4d7; border: 1px solid #e2e1d6; }
 .postcard-square .postcard-image { aspect-ratio: 1; }
-.postcard-wide .postcard-image { aspect-ratio: auto; height: 100%; }
+.postcard-wide .postcard-image { aspect-ratio: 1.5; height: auto; }
 .postcard-wide .postcard-open { display: grid; grid-template-rows: 1fr auto; flex: 1; min-height: 0; }
 .postcard-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .65s cubic-bezier(.2,.6,.2,1); }
 .postcard-wide .postcard-image img { position: absolute; inset: 0; }

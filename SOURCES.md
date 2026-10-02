@@ -106,3 +106,22 @@ The owner supplied four Bali photographs, a Bali pool video, a bath photograph, 
 All six unique photographs preserve the original file bytes, verified by SHA-256 comparison. The Dubai original has PNG file data despite its `.jpg` source filename, so the bundled file uses `.png`. The SnapEdit watermark is preserved. Bali photo capture dates span September 30–October 1, 2024; the bath photograph records October 12, 2024. The Bali and Dubai locations come from the owner's supplied folder names. Dubai's October 2024 date comes from its `2024/Photoshoot/1004 at Dubai` folder, not from EXIF. The bath location is unknown and its group is labeled “In the bath.” No photographer credits were supplied for these additions.
 
 The 13.25-second source video uses HEVC with rotation metadata. Its web copy uses H.264 video and AAC audio in an MP4, keeps the upright 1080 × 1920 framing, and places the MP4 metadata at the start for playback. It is 24,129,962 bytes, compared with the 48,817,491-byte source. The 720 × 1280 poster at `assets/bodypositive/bali-2024-video-poster.jpg` is extracted at 0.5 seconds from the web copy. The original video file is unchanged.
+
+## Owner-supplied postcards — October 2, 2026
+
+The owner supplied eight originals, the destination for each, and four photographer accounts. They are appended to the Postcards configuration and HTML fallback in the following order; the live collection retains its existing per-visit shuffle. All eight local files preserve the supplied original bytes, verified by SHA-256 comparison, with their original dimensions and orientation.
+
+| # | Supplied filename | Local asset under `public/` | Location | Photographer |
+| --- | --- | --- | --- | --- |
+| 1 | `DSC03245.jpg` | `assets/postcards/london.jpg` | London, United Kingdom | [@shane_kchung](https://www.instagram.com/shane_kchung/) |
+| 2 | `JJ-242.jpg` | `assets/postcards/dublin.jpg` | Dublin, Ireland | [@fabricejolivetphotography](https://www.instagram.com/fabricejolivetphotography/) |
+| 3 | `IMG-20220530-WA0016.jpg` | `assets/postcards/miami.jpg` | Miami, Florida | Not supplied |
+| 4 | `F6A21EF7-E383-4C23-88C4-F4B12E389D8C.jpeg` | `assets/postcards/brooklyn.jpg` | Brooklyn, New York | [@iamchadbailey](https://www.instagram.com/iamchadbailey/) |
+| 5 | `Copy of 8.jpg` | `assets/postcards/san-francisco.jpg` | San Francisco, California | [@sanfrancisco.photo](https://www.instagram.com/sanfrancisco.photo/) |
+| 6 | `-+(5).jpg` | `assets/postcards/machu-picchu.jpg` | Machu Picchu, Peru | Explicitly no photographer credit |
+| 7 | `-+(19).jpg` | `assets/postcards/bogota.jpg` | Bogotá, Colombia | Not supplied |
+| 8 | `PXL_20231028_005048275.NIGHT (1).jpg` | `assets/postcards/joshua-tree.jpg` | Joshua Tree, California | Not supplied |
+
+These photographer credits come directly from the owner; they were not inferred from Instagram posts or transferred from other sessions. Credits appear on postcard cards, in the shared viewer, and in the static HTML fallback. The six landscape photographs use the existing wide postcard layout.
+
+EXIF capture timestamps support April 2022 for London (April 23) and Dublin (April 30), September 2023 for Machu Picchu (September 24) and Bogotá (September 30), and October 2023 for Joshua Tree (October 27). Miami has no capture timestamp; its May 2022 date is supported by the supplied `2022/Photoshoot/0528 at Miami` folder. Brooklyn's EXIF timestamp is invalid (`2022:11:13 23:14:78`) and conflicts with the `2022/Photoshoot/1031 at DUMBO` folder. San Francisco's EXIF says December 13, 2018, conflicting with the `2021/Photoshoots/0618 at San Francisco` folder. Both conflicting date fields stay blank pending owner clarification. None of these embedded timestamps overrides the owner's location or credit identifications.

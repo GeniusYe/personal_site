@@ -797,6 +797,114 @@ window.JIAJIE_SITE = {
         "width": 1792,
         "height": 2688,
         "wide": false
+      },
+      {
+        "id": "london",
+        "title": "London, United Kingdom",
+        "date": "April 2022",
+        "src": "assets/postcards/london.jpg",
+        "alt": "JiaJie in a black hat and leather jacket beside Big Ben in London.",
+        "width": 4000,
+        "height": 6000,
+        "wide": false,
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@shane_kchung",
+            "url": "https://www.instagram.com/shane_kchung/"
+          }
+        ]
+      },
+      {
+        "id": "dublin",
+        "title": "Dublin, Ireland",
+        "date": "April 2022",
+        "src": "assets/postcards/dublin.jpg",
+        "alt": "JiaJie in a black jacket and white trousers beneath a stone archway in Dublin.",
+        "width": 1400,
+        "height": 2000,
+        "wide": false,
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@fabricejolivetphotography",
+            "url": "https://www.instagram.com/fabricejolivetphotography/"
+          }
+        ]
+      },
+      {
+        "id": "miami",
+        "title": "Miami, Florida",
+        "date": "May 2022",
+        "src": "assets/postcards/miami.jpg",
+        "alt": "JiaJie walking along a palm-lined sidewalk beside colorful buildings in Miami.",
+        "width": 1600,
+        "height": 1200,
+        "wide": true
+      },
+      {
+        "id": "brooklyn",
+        "title": "Brooklyn, New York",
+        "date": "",
+        "src": "assets/postcards/brooklyn.jpg",
+        "alt": "JiaJie seated on waterfront rocks with the Manhattan Bridge behind him in Brooklyn, New York.",
+        "width": 1920,
+        "height": 1280,
+        "wide": true,
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@iamchadbailey",
+            "url": "https://www.instagram.com/iamchadbailey/"
+          }
+        ]
+      },
+      {
+        "id": "san-francisco",
+        "title": "San Francisco, California",
+        "date": "",
+        "src": "assets/postcards/san-francisco.jpg",
+        "alt": "JiaJie with his arms folded beside a mint-green streetcar in San Francisco.",
+        "width": 7952,
+        "height": 5304,
+        "wide": true,
+        "credits": [
+          {
+            "role": "Photographer",
+            "name": "@sanfrancisco.photo",
+            "url": "https://www.instagram.com/sanfrancisco.photo/"
+          }
+        ]
+      },
+      {
+        "id": "machu-picchu",
+        "title": "Machu Picchu, Peru",
+        "date": "September 2023",
+        "src": "assets/postcards/machu-picchu.jpg",
+        "alt": "JiaJie in a red varsity jacket overlooking the stone terraces and mountains of Machu Picchu, Peru.",
+        "width": 4080,
+        "height": 3072,
+        "wide": true
+      },
+      {
+        "id": "bogota",
+        "title": "Bogotá, Colombia",
+        "date": "September 2023",
+        "src": "assets/postcards/bogota.jpg",
+        "alt": "JiaJie beside the Bogotá sign at a hilltop overlook above the city in Colombia.",
+        "width": 4080,
+        "height": 3072,
+        "wide": true
+      },
+      {
+        "id": "joshua-tree",
+        "title": "Joshua Tree, California",
+        "date": "October 2023",
+        "src": "assets/postcards/joshua-tree.jpg",
+        "alt": "JiaJie holding a mug on a desert patio at dusk in Joshua Tree, California.",
+        "width": 4080,
+        "height": 3072,
+        "wide": true
       }
     ]
   },
