@@ -38,6 +38,7 @@ The owner supplied the music production credit [@realpaulallison](https://www.in
 The owner reviewed and approved the exact caption wording before publication. Charles&M and Thread King captions are editorial appreciations of contemporary Ivorian and Nigerian design, based on the owner's maker identifications; the caftan caption reflects the owner-provided West African style and Kigali provenance. These do not assign historic ceremonial symbolism to the individual designs.
 
 - Áo dài: Vietnam National Authority of Tourism — https://vietnam.travel/node/1216
+- Áo dài is already the Vietnamese name. Its caption now identifies the meaning “long shirt”; see [Matsudo City's Vietnamese cultural column](https://www.city.matsudo.chiba.jp/InternationalPortal/en/MatsudoCityCIR/ColumnCatalogueLan/July2023.html).
 - Latvian veste: Latvian Cultural Canon, folk costume — https://kulturaskanons.lv/archive/tautasterps/ (the cultural significance applies to the wider folk-dress tradition); dictionary name — https://tezaurs.lv/veste%3A1
 - Charles&M: owner-supplied designer page — https://www.facebook.com/CharlesEtMode
 - Sarong: Sri Lankan clothing retailer Lakpura — https://www.lakpura.com/pages/sarongs
@@ -125,3 +126,33 @@ The owner supplied eight originals, the destination for each, and four photograp
 These photographer credits come directly from the owner; they were not inferred from Instagram posts or transferred from other sessions. Credits appear on postcard cards, in the shared viewer, and in the static HTML fallback. The six landscape photographs use the existing wide postcard layout.
 
 EXIF capture timestamps support April 2022 for London (April 23) and Dublin (April 30), September 2023 for Machu Picchu (September 24) and Bogotá (September 30), and October 2023 for Joshua Tree (October 27). Miami has no capture timestamp; its May 2022 date is supported by the supplied `2022/Photoshoot/0528 at Miami` folder. Brooklyn's EXIF timestamp is invalid (`2022:11:13 23:14:78`) and conflicts with the `2022/Photoshoot/1031 at DUMBO` folder. San Francisco's EXIF says December 13, 2018, conflicting with the `2021/Photoshoots/0618 at San Francisco` folder. Both conflicting date fields stay blank pending owner clarification. None of these embedded timestamps overrides the owner's location or credit identifications.
+
+
+## Original replacements — October 2, 2026
+
+The owner requested exact matches for the Instagram-derived images in the 2022–2026 photo library. Matching was limited by location folder names, followed by image comparison and visual confirmation of the exact pose and scene. Eighteen of the nineteen Instagram-derived photographs were matched: fourteen postcards, the Lagos Agbada portrait, and three Chicago portraits. The Rio replacements use the high-resolution folder rather than its web-size duplicates.
+
+Seventeen replacements preserve the source bytes, verified by SHA-256. Amsterdam uses a JPEG web copy at quality 95 with 4:4:4 chroma, retaining all 9504 × 6336 pixels and the full frame; the 41,640,944-byte source is unchanged in OneDrive, and its web copy is 23,276,572 bytes. No image was cropped or upscaled. Dimensions, local references, landscape layout, full-frame postcard cards, viewers, and homepage HTML fallbacks were updated. Existing dates and credits were retained, including where folder names differ from previously confirmed dates.
+
+| Website photo | Original in OneDrive | Full display dimensions |
+| --- | --- | --- |
+| agbada-lagos | `2026/Photoshoots/0814 at Lagos/Willens9619 copy.jpg` | 4480 × 6720 |
+| rio-patchwork-jacket | `2025/Photoshoots/0104 at Rio de Janeiro/high resolution/JiaJie-8.jpg` | 3624 × 5436 |
+| rio-beach | `2025/Photoshoots/0104 at Rio de Janeiro/high resolution/JiaJie-12.jpg` | 5472 × 3648 |
+| copenhagen | `2024/Photoshoot/0824 at Copenhagen/dji_mimo_20240824_100744_0_1724486880421_photo~2.jpg` | 3840 × 2160 |
+| lisbon | `2024/Photoshoot/0410 at Lisbon/Lisbon Memories-23.JPG` | 5472 × 3648 |
+| madrid | `2022/Photoshoot/0923 at Madrid/JIA JIE-15.jpg` | 6016 × 4016 |
+| santiago | `2025/Photoshoots/0114 at Santiago/LLA_0137.jpg` | 4000 × 6000 |
+| panama-city | `2025/Photoshoots/0101 at Panama City/dji_mimo_20250101_135748_0_1735873394778_photo.jpg` | 3840 × 2160 |
+| marrakech | `2025/Photoshoots/0513 at Marrakech/DSC09943.jpg` | 4000 × 6000 |
+| tokyo | `2024/Photoshoot/0529 at Tokyo/JiaJie_048.jpg` | 3351 × 5026 |
+| salvador | `2025/Photoshoots/0108 at Salvador/IMG_9833.jpg` | 3648 × 5472 |
+| johannesburg | `2024/Photoshoot/1123 at Johannesburg/IMG_5477.jpg` | 3456 × 5184 |
+| taipei | `2024/Photoshoot/0917 at Taipei/DSC04033.jpg` | 4000 × 6000 |
+| barcelona | `2023/Photoshoot/1117 at Barcelona/0P3A7988.JPG` | 4480 × 6720 |
+| amsterdam | `2023/Photoshoot/1122 at Amsterdam/DSC02961.jpg` | 9504 × 6336 |
+| chicago-1 | `2025/Photoshoots/1025 at Chicago/RSH_JJ_10.jpg` | 2025 × 2700 |
+| chicago-2 | `2025/Photoshoots/1025 at Chicago/RSH_JJ_9.jpg` | 2025 × 2700 |
+| chicago-3 | `2025/Photoshoots/1025 at Chicago/RSH_JJ_7B.jpg` | 2025 × 2700 |
+
+The Hawaii original was not found in the specified years; its existing photo remains while the owner identifies its folder. The original-file mapping and source/site hashes are recorded in `docs/photo-originals.json`. Existing Instagram source links remain as selection and credit evidence.

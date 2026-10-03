@@ -4,6 +4,7 @@ A static, two-page personal website. No framework, package install, backend, or 
 
 ## This revision
 
+- Eighteen Instagram-derived photos now use exact matches from the owner's 2022–2026 photo library: fourteen postcards, the Lagos Agbada portrait, and three Chicago portraits. The postcard cards show their full original framing, and landscape originals use the wide layout. Seventeen source files are copied byte for byte; Amsterdam has a lighter JPEG copy with its full 9504 × 6336 dimensions. The Hawaii original is still awaiting its folder location. Original filenames and hashes are recorded in `docs/photo-originals.json` and `SOURCES.md`.
 - The outbound “my website” card has been removed. This is the main website.
 - Music and Boys Like Us Season 2 sit together in the welcome section, side by side on desktop and stacked on mobile.
 - The film still opens a dialog with project details, linked creator/director/producer credits, and the show's Instagram account. The gallery includes the three supplied production photographs, four behind-the-scenes photographs, and one behind-the-scenes video. The third original group portrait is labeled “Crew,” following the owner's correction.

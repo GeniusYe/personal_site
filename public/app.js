@@ -712,13 +712,16 @@
   }
 
   function makePostcard(photo, index) {
-    const figure = element("figure", `postcard${photo.wide ? " postcard-wide" : ""}${photo.square ? " postcard-square" : ""}`);
+    const figure = element("figure", `postcard${photo.wide ? " postcard-wide" : ""}${photo.square ? " postcard-square" : ""}${photo.originalFraming ? " postcard-original" : ""}`);
     figure.style.setProperty("--photo-columns", travelSpans[index]);
     const link = outgoingLink(imageURL(photo.src), undefined, "postcard-open");
     link.setAttribute("aria-haspopup", "dialog");
     link.setAttribute("aria-controls", "gallery-dialog");
     link.setAttribute("aria-label", `View ${photo.title} photograph and details`);
     const frame = element("span", "postcard-image image-frame");
+    if (photo.originalFraming && photo.width && photo.height) {
+      frame.style.setProperty("--photo-aspect", `${photo.width} / ${photo.height}`);
+    }
     const placeholder = element("span", "image-placeholder", (photo.title || "Travel").split(",")[0]);
     placeholder.setAttribute("aria-hidden", "true");
     const img = element("img");

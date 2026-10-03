@@ -81,9 +81,9 @@ window.JIAJIE_BODY_PHOTOS = {
     {
       "id": "chicago-1",
       "group": "chicago",
-      "src": "assets/bodypositive/chicago-1.webp",
-      "width": 1440,
-      "height": 1920,
+      "src": "assets/bodypositive/chicago-1-original.jpg",
+      "width": 2025,
+      "height": 2700,
       "alt": "A shirtless studio portrait with folded arms and a gold chain against a black background.",
       "title": "Chicago, Illinois · 01",
       "sourceUrl": "https://www.instagram.com/p/DXhpNc-kVsd/?img_index=1"
@@ -91,9 +91,9 @@ window.JIAJIE_BODY_PHOTOS = {
     {
       "id": "chicago-2",
       "group": "chicago",
-      "src": "assets/bodypositive/chicago-2.webp",
-      "width": 1440,
-      "height": 1920,
+      "src": "assets/bodypositive/chicago-2-original.jpg",
+      "width": 2025,
+      "height": 2700,
       "alt": "A studio portrait in blue briefs, standing with hands behind the back.",
       "title": "Chicago, Illinois · 02",
       "sourceUrl": "https://www.instagram.com/p/DXhpNc-kVsd/?img_index=2"
@@ -101,9 +101,9 @@ window.JIAJIE_BODY_PHOTOS = {
     {
       "id": "chicago-3",
       "group": "chicago",
-      "src": "assets/bodypositive/chicago-3.webp",
-      "width": 1440,
-      "height": 1920,
+      "src": "assets/bodypositive/chicago-3-original.jpg",
+      "width": 2025,
+      "height": 2700,
       "alt": "A black-and-white artistic nude portrait, looking aside with one hand at the chest and the other covering the groin.",
       "title": "Chicago, Illinois · 03",
       "sourceUrl": "https://www.instagram.com/p/DXhpNc-kVsd/?img_index=3"
