@@ -382,37 +382,22 @@
     } else if (!song && musicDialog.open) musicDialog.close();
   }
   // ---- The scrolling story, photo collections, and project gallery. ----
-  function shuffled(items) {
-    const result = [...items];
-    for (let i = result.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [result[i], result[j]] = [result[j], result[i]];
-    }
-    return result;
-  }
-
-  function shuffledCulturePhotos(photos) {
-    const wide = shuffled(photos.filter(photo => photo.wide));
-    const single = shuffled(photos.filter(photo => !photo.wide));
-    const rows = [];
-    // Complete desktop rows: a wide photo and a portrait, or three portraits.
-    while (wide.length && single.length) {
-      rows.push(shuffled([wide.pop(), single.pop()]));
-    }
-    while (single.length >= 3) rows.push(single.splice(0, 3));
-    // Keep any incomplete rows at the end so they cannot split a later pair.
-    return shuffled(rows).flat().concat(wide, single);
-  }
+  const { shuffledPhotoRows, photoRowSpans, photoRowEnds, photoBatchEnd } = window.JIAJIE_PHOTO_LAYOUT;
 
   const galleryDialog = $("#gallery-dialog");
   const project = config.project || {};
   const travel = config.travel || {};
   const culture = config.culture || {};
   // Shuffle once per page load so each batch and the viewer share the same order.
-  const travelPhotos = shuffled((Array.isArray(travel.photos) ? travel.photos : []).filter(p => p && imageURL(p.src)));
+  const travelRows = shuffledPhotoRows((Array.isArray(travel.photos) ? travel.photos : []).filter(p => p && imageURL(p.src)));
+  const travelPhotos = travelRows.flat();
+  const travelSpans = photoRowSpans(travelRows);
+  const travelRowEnds = photoRowEnds(travelRows);
   const projectPhotos = (Array.isArray(project.photos) ? project.photos : []).filter(p => p && imageURL(p.src));
   const galleryVideo = $("#gallery-video");
-  const culturePhotos = shuffledCulturePhotos((Array.isArray(culture.photos) ? culture.photos : []).filter(p => p && imageURL(p.src)));
+  const cultureRows = shuffledPhotoRows((Array.isArray(culture.photos) ? culture.photos : []).filter(p => p && imageURL(p.src)));
+  const culturePhotos = cultureRows.flat();
+  const cultureSpans = photoRowSpans(cultureRows);
   let galleryState = { items: [], index: 0, mode: "travel", opener: null };
   let travelRendered = 0;
   let travelObserver = null;
@@ -679,6 +664,7 @@
   function makeCultureCard(photo, index) {
     const title = photo.title || `Photograph ${index + 1}`;
     const figure = element("figure", `culture-card${photo.wide ? " culture-card-wide" : ""}`);
+    figure.style.setProperty("--photo-columns", cultureSpans[index]);
     const link = outgoingLink(imageURL(photo.src), undefined, "culture-open");
     link.setAttribute("aria-haspopup", "dialog");
     link.setAttribute("aria-controls", "gallery-dialog");
@@ -727,6 +713,7 @@
 
   function makePostcard(photo, index) {
     const figure = element("figure", `postcard${photo.wide ? " postcard-wide" : ""}${photo.square ? " postcard-square" : ""}`);
+    figure.style.setProperty("--photo-columns", travelSpans[index]);
     const link = outgoingLink(imageURL(photo.src), undefined, "postcard-open");
     link.setAttribute("aria-haspopup", "dialog");
     link.setAttribute("aria-controls", "gallery-dialog");
@@ -755,8 +742,8 @@
   // A finite, honest collection with infinite-scroll-style progressive loading.
   // Adding more travel.photos makes the feed longer; nothing is repeated.
   function addTravelBatch(size, announce = true) {
-    const count = Math.max(1, Math.min(Number(size) || 3, 100));
-    const end = Math.min(travelPhotos.length, travelRendered + count);
+    // Finish the desktop row so progressive loading never strands a wide photo.
+    const end = photoBatchEnd(travelRowEnds, travelRendered, size);
     const fragment = document.createDocumentFragment();
     for (let i = travelRendered; i < end; i++) fragment.append(makePostcard(travelPhotos[i], i));
     $("#travel-photos").append(fragment);

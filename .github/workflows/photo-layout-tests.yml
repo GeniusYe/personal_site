@@ -1,0 +1,16 @@
+name: Photo layout tests
+on: [push, pull_request]
+jobs:
+  photo-layout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test tests/photo-layout.test.cjs
+      - run: node --check public/photo-layout.js && node --check public/app.js
+      - run: python3 tools/check_local_assets.py
+      - run: npm install --no-save --package-lock=false playwright@1.62.1
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/photo-layout.browser.cjs
