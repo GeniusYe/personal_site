@@ -1,0 +1,200 @@
+[
+  {
+    "id": "agbada-lagos",
+    "oldsrc": "assets/culture/agbada-lagos.webp",
+    "src": "assets/culture/agbada-lagos-original.jpg",
+    "original": "2026\\Photoshoots\\0814 at Lagos\\Willens9619 copy.jpg",
+    "width": 4480,
+    "height": 6720,
+    "originalSha256": "54032b192641ae6450805cf7bf1a2ea9c4ddde74815dee3f02b4124ff2f6dc7c",
+    "byteIdentical": true,
+    "siteSha256": "54032b192641ae6450805cf7bf1a2ea9c4ddde74815dee3f02b4124ff2f6dc7c"
+  },
+  {
+    "id": "rio-patchwork-jacket",
+    "oldsrc": "assets/postcards/rio-patchwork-jacket.webp",
+    "src": "assets/postcards/rio-patchwork-jacket-original.jpg",
+    "original": "2025\\Photoshoots\\0104 at Rio de Janeiro\\high resolution\\JiaJie-8.jpg",
+    "width": 3624,
+    "height": 5436,
+    "originalSha256": "79322faca6315b3ed117aae69ba33308911ca7deacd5f8517b1da911a0469130",
+    "byteIdentical": true,
+    "siteSha256": "79322faca6315b3ed117aae69ba33308911ca7deacd5f8517b1da911a0469130"
+  },
+  {
+    "id": "rio-beach",
+    "oldsrc": "assets/postcards/rio-beach.webp",
+    "src": "assets/postcards/rio-beach-original.jpg",
+    "original": "2025\\Photoshoots\\0104 at Rio de Janeiro\\high resolution\\JiaJie-12.jpg",
+    "width": 5472,
+    "height": 3648,
+    "originalSha256": "48b47bfa1070c89d0217b830cb6c4f99b8d8b97b49debaf3d963c136c6fc0e1a",
+    "byteIdentical": true,
+    "siteSha256": "48b47bfa1070c89d0217b830cb6c4f99b8d8b97b49debaf3d963c136c6fc0e1a"
+  },
+  {
+    "id": "copenhagen",
+    "oldsrc": "assets/postcards/copenhagen.webp",
+    "src": "assets/postcards/copenhagen-original.jpg",
+    "original": "2024\\Photoshoot\\0824 at Copenhagen\\dji_mimo_20240824_100744_0_1724486880421_photo~2.jpg",
+    "width": 3840,
+    "height": 2160,
+    "originalSha256": "389b4f421571e9e672cc34cdc5916b74046bd5942b3789f04e98f463741e3e1c",
+    "byteIdentical": true,
+    "siteSha256": "389b4f421571e9e672cc34cdc5916b74046bd5942b3789f04e98f463741e3e1c"
+  },
+  {
+    "id": "lisbon",
+    "oldsrc": "assets/postcards/lisbon.webp",
+    "src": "assets/postcards/lisbon-original.jpg",
+    "original": "2024\\Photoshoot\\0410 at Lisbon\\Lisbon Memories-23.JPG",
+    "width": 5472,
+    "height": 3648,
+    "originalSha256": "2db913fc2c4b376ccbe0e48c0aee7fc46fb89c562dfabc7813cc6ef068d2c1fe",
+    "byteIdentical": true,
+    "siteSha256": "2db913fc2c4b376ccbe0e48c0aee7fc46fb89c562dfabc7813cc6ef068d2c1fe"
+  },
+  {
+    "id": "madrid",
+    "oldsrc": "assets/postcards/madrid.webp",
+    "src": "assets/postcards/madrid-original.jpg",
+    "original": "2022\\Photoshoot\\0923 at Madrid\\JIA JIE-15.jpg",
+    "width": 6016,
+    "height": 4016,
+    "originalSha256": "0de9b7b9a2f2623c33eb52725028b54cac97c4f650fdba72de7e3d00ce5e4291",
+    "byteIdentical": true,
+    "siteSha256": "0de9b7b9a2f2623c33eb52725028b54cac97c4f650fdba72de7e3d00ce5e4291"
+  },
+  {
+    "id": "santiago",
+    "oldsrc": "assets/postcards/santiago.webp",
+    "src": "assets/postcards/santiago-original.jpg",
+    "original": "2025\\Photoshoots\\0114 at Santiago\\LLA_0137.jpg",
+    "width": 4000,
+    "height": 6000,
+    "originalSha256": "da26bf58a53d3d5b3c21ecc3b56baefb8f7b392b5220aa408acf8b8c816da475",
+    "byteIdentical": true,
+    "siteSha256": "da26bf58a53d3d5b3c21ecc3b56baefb8f7b392b5220aa408acf8b8c816da475"
+  },
+  {
+    "id": "panama-city",
+    "oldsrc": "assets/postcards/panama-city.webp",
+    "src": "assets/postcards/panama-city-original.jpg",
+    "original": "2025\\Photoshoots\\0101 at Panama City\\dji_mimo_20250101_135748_0_1735873394778_photo.jpg",
+    "width": 3840,
+    "height": 2160,
+    "originalSha256": "2b0e86133a038c983b291c2ab56cb090ff1a79988d9d6cb1f8ca3d4df4851e8f",
+    "byteIdentical": true,
+    "siteSha256": "2b0e86133a038c983b291c2ab56cb090ff1a79988d9d6cb1f8ca3d4df4851e8f"
+  },
+  {
+    "id": "marrakech",
+    "oldsrc": "assets/postcards/marrakech.webp",
+    "src": "assets/postcards/marrakech-original.jpg",
+    "original": "2025\\Photoshoots\\0513 at Marrakech\\DSC09943.jpg",
+    "width": 4000,
+    "height": 6000,
+    "originalSha256": "40d8f79e4a8b5d119470e9aa21d96a5cfb79f2b5ce7722c6f384d33083067a42",
+    "byteIdentical": true,
+    "siteSha256": "40d8f79e4a8b5d119470e9aa21d96a5cfb79f2b5ce7722c6f384d33083067a42"
+  },
+  {
+    "id": "tokyo",
+    "oldsrc": "assets/postcards/tokyo.webp",
+    "src": "assets/postcards/tokyo-original.jpg",
+    "original": "2024\\Photoshoot\\0529 at Tokyo\\JiaJie_048.jpg",
+    "width": 3351,
+    "height": 5026,
+    "originalSha256": "f0cb8e978b781dd8962ec89d3c2d1fa8c9a8c758df4df48995e06cf6b3d220e2",
+    "byteIdentical": true,
+    "siteSha256": "f0cb8e978b781dd8962ec89d3c2d1fa8c9a8c758df4df48995e06cf6b3d220e2"
+  },
+  {
+    "id": "salvador",
+    "oldsrc": "assets/postcards/salvador.webp",
+    "src": "assets/postcards/salvador-original.jpg",
+    "original": "2025\\Photoshoots\\0108 at Salvador\\IMG_9833.jpg",
+    "width": 3648,
+    "height": 5472,
+    "originalSha256": "fca6c49cd2b2e5795cac0cef2b5d94e2f2fb2a339cc49a7330cfd18569fd8147",
+    "byteIdentical": true,
+    "siteSha256": "fca6c49cd2b2e5795cac0cef2b5d94e2f2fb2a339cc49a7330cfd18569fd8147"
+  },
+  {
+    "id": "johannesburg",
+    "oldsrc": "assets/postcards/johannesburg.webp",
+    "src": "assets/postcards/johannesburg-original.jpg",
+    "original": "2024\\Photoshoot\\1123 at Johannesburg\\IMG_5477.jpg",
+    "width": 3456,
+    "height": 5184,
+    "originalSha256": "4d57786a0fb080542c0b019a39a5052e5fd79871107dd9b6456f3009225f59b2",
+    "byteIdentical": true,
+    "siteSha256": "4d57786a0fb080542c0b019a39a5052e5fd79871107dd9b6456f3009225f59b2"
+  },
+  {
+    "id": "taipei",
+    "oldsrc": "assets/postcards/taipei.webp",
+    "src": "assets/postcards/taipei-original.jpg",
+    "original": "2024\\Photoshoot\\0917 at Taipei\\DSC04033.jpg",
+    "width": 4000,
+    "height": 6000,
+    "originalSha256": "7c2ec0d233b7721a3307d325a1afc3cb0d6fdc58cd6780e75466de951694fa26",
+    "byteIdentical": true,
+    "siteSha256": "7c2ec0d233b7721a3307d325a1afc3cb0d6fdc58cd6780e75466de951694fa26"
+  },
+  {
+    "id": "barcelona",
+    "oldsrc": "assets/postcards/barcelona.jpg",
+    "src": "assets/postcards/barcelona-original.jpg",
+    "original": "2023\\Photoshoot\\1117 at Barcelona\\0P3A7988.JPG",
+    "width": 4480,
+    "height": 6720,
+    "originalSha256": "b160f1cd8d6402d3c0f743aa104046e0d17aa1cdb8016185ae9773d1ed84d966",
+    "byteIdentical": true,
+    "siteSha256": "b160f1cd8d6402d3c0f743aa104046e0d17aa1cdb8016185ae9773d1ed84d966"
+  },
+  {
+    "id": "amsterdam",
+    "oldsrc": "assets/postcards/amsterdam.jpg",
+    "src": "assets/postcards/amsterdam-original.jpg",
+    "original": "2023\\Photoshoot\\1122 at Amsterdam\\DSC02961.jpg",
+    "width": 9504,
+    "height": 6336,
+    "originalSha256": "f135ebc2283b8289cfcb1f91f73535ac3f347a006ee283530a6297eddf1cdf01",
+    "byteIdentical": false,
+    "siteSha256": "a2324b7dddcb66db3dcdd936065de3c3e86782ce576a3e8abe9b236998b86d28"
+  },
+  {
+    "id": "chicago-1",
+    "oldsrc": "assets/bodypositive/chicago-1.webp",
+    "src": "assets/bodypositive/chicago-1-original.jpg",
+    "original": "2025\\Photoshoots\\1025 at Chicago\\RSH_JJ_10.jpg",
+    "width": 2025,
+    "height": 2700,
+    "originalSha256": "3e099dec98b7d1da0dd31f61fcad4228628e3b2382387eaef2f34ee3e616b605",
+    "byteIdentical": true,
+    "siteSha256": "3e099dec98b7d1da0dd31f61fcad4228628e3b2382387eaef2f34ee3e616b605"
+  },
+  {
+    "id": "chicago-2",
+    "oldsrc": "assets/bodypositive/chicago-2.webp",
+    "src": "assets/bodypositive/chicago-2-original.jpg",
+    "original": "2025\\Photoshoots\\1025 at Chicago\\RSH_JJ_9.jpg",
+    "width": 2025,
+    "height": 2700,
+    "originalSha256": "1d4f1d23af187de6d8231ae36571fe89d2c8e5f09f0cdfb16096f44148b0f14c",
+    "byteIdentical": true,
+    "siteSha256": "1d4f1d23af187de6d8231ae36571fe89d2c8e5f09f0cdfb16096f44148b0f14c"
+  },
+  {
+    "id": "chicago-3",
+    "oldsrc": "assets/bodypositive/chicago-3.webp",
+    "src": "assets/bodypositive/chicago-3-original.jpg",
+    "original": "2025\\Photoshoots\\1025 at Chicago\\RSH_JJ_7B.jpg",
+    "width": 2025,
+    "height": 2700,
+    "originalSha256": "4140feeb1da5652a83c4691b177568d26040cfcd026c4185af7717590b430545",
+    "byteIdentical": true,
+    "siteSha256": "4140feeb1da5652a83c4691b177568d26040cfcd026c4185af7717590b430545"
+  }
+]
