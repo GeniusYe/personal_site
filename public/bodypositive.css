@@ -25,6 +25,7 @@
 .body-shoot-header a { text-decoration: underline; text-underline-offset: 3px; }
 .body-photo-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); align-items: start; gap: 18px; }
 .body-photo-grid.has-one { grid-template-columns: minmax(0,480px); justify-content: center; }
+.body-shoot:first-child .body-photo-grid.has-one { grid-template-columns: minmax(0,1fr); }
 .body-portrait { margin: 0; min-width: 0; }
 .body-portrait-button { display: block; position: relative; width: 100%; border-radius: 12px; background: #e1e4d7; border: 1px solid #d5daca; padding: 0; overflow: hidden; text-align: left; }
 .body-portrait-button:hover { border-color: #81906f; }
