@@ -2,6 +2,12 @@
 
 Site paths in this document are relative to `public/`, the deployment folder.
 
+## Interactive travel globe — October 11, 2026
+
+The owner requested a rotatable globe based on [his BeenEverywhere profile](https://beeneverywhere.net/user/GeniusYe). The globe uses a local snapshot of the profile's [public visit data](https://beeneverywhere.net/query-visits/GeniusYe): 274 point locations and the source's visited country codes. Country shapes come from the public-domain [Natural Earth 1:50m boundaries](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_50m_admin_0_countries.geojson). Only geometry and the small set of display properties are retained. Small territories may be simplified at this scale.
+
+The renderer is [MapLibre GL JS](https://maplibre.org/maplibre-gl-js/docs/), pinned to version 6.14.0 and bundled with its worker, stylesheet, and license in `vendor/maplibre/`. All globe data and rendering assets load from this site. The profile link remains available for the live source; the separately maintained travel count and date retain their original values. Refresh instructions are in `README.md`, and snapshot provenance is in `docs/travel-globe-source.json`.
+
 Home biography, dated travel map, and travel-image captions were carried over from the existing build and the owner's website:
 https://www.geniusye.com/
 

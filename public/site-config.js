@@ -369,14 +369,11 @@ window.JIAJIE_SITE = {
     "asOf": "September 3, 2026",
     "qualifier": "Depending on how you count.",
     "map": {
-      "src": "assets/postcards/travel-map.png",
       "title": "My steps around the world",
-      "alt": "My travel map, showing visited places around the world.",
-      "credit": "Map by @beeneverywhere.net",
-      "creditUrl": "https://beeneverywhere.net/",
-      "date": "As shared on September 3, 2026",
-      "width": 1000,
-      "height": 636
+      "countries": "assets/globe/countries.geojson",
+      "visits": "assets/globe/visits.geojson",
+      "credit": "Travel data from BeenEverywhere",
+      "creditUrl": "https://beeneverywhere.net/user/GeniusYe"
     },
     "latest": [
       {
