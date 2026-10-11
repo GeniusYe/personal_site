@@ -17,9 +17,11 @@
 <link href="assets/apple-touch-icon.png?v=leaf" rel="apple-touch-icon" sizes="180x180"/>
 <link href="styles.css" rel="stylesheet"/>
 <link href="scroll.css" rel="stylesheet"/>
+<link href="vendor/maplibre/maplibre-gl.css" rel="stylesheet"/>
 <script defer="" src="site-config.js"></script>
 <script defer="" src="photo-layout.js"></script>
 <script defer="" src="app.js"></script>
+<script defer="" src="travel-globe.js"></script>
 <link href="revision.css" rel="stylesheet"/><script defer="" src="consent.js"></script></head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -97,9 +99,17 @@
 <section aria-labelledby="world-title" class="chapter world-chapter" id="world">
 <div class="chapter-topline"><div><p class="eyebrow chapter-number"><span>02</span> The world, a little closer</p><h2 class="chapter-title" id="world-title">My way<br/><em>around the world.</em></h2></div><p class="chapter-description">Some places on a map.<br/>A few moments to keep.</p></div>
 <div class="world-map-card">
-<div class="world-map-visual"><a aria-haspopup="dialog" aria-label="Expand my travel map" class="map-link" href="assets/postcards/travel-map.png" id="open-map" rel="noopener noreferrer" target="_blank"><span aria-hidden="true" class="map-fallback">A world of possibilities.</span><img alt="My travel map, showing visited places around the world." decoding="async" height="636" id="travel-map" loading="lazy" src="assets/postcards/travel-map.png" width="1000"/><span class="expand-map"><span aria-hidden="true">⤢</span> Explore the map</span></a></div>
-<div class="world-map-copy"><p class="eyebrow">The places so far</p><p class="world-count" id="travel-count">84–88</p><p class="world-unit" id="travel-unit">countries &amp; regions</p><p class="world-qualifier" id="travel-qualifier">Depending on how you count.</p><div class="world-date"><span aria-hidden="true" class="room-dot"></span><span id="travel-date">As of September 3, 2026</span></div><p class="map-credit"><a href="https://beeneverywhere.net/" id="map-credit-link" rel="noopener noreferrer" target="_blank">Map by @beeneverywhere.net ↗</a></p></div>
+<div class="world-map-visual">
+<a class="globe-fallback" href="assets/postcards/travel-map.png" id="globe-fallback" rel="noopener noreferrer" target="_blank"><img alt="JiaJie's visited places around the world. Open the static travel map." decoding="async" height="636" loading="lazy" src="assets/postcards/travel-map.png" width="1000"/></a>
+<div aria-describedby="globe-hint" hidden="" id="travel-globe"></div>
+<div class="globe-controls" hidden="" id="globe-controls"><button id="globe-americas" type="button">The Americas</button><button id="globe-europe-africa" type="button">Europe &amp; Africa</button><button id="globe-asia" type="button">Asia</button></div>
 </div>
+<div class="world-map-copy">
+<p class="eyebrow">The places so far</p>
+<p class="world-count" id="travel-count">84–88</p>
+<p class="world-unit" id="travel-unit">countries &amp; regions</p>
+<p class="world-qualifier" id="travel-qualifier">Depending on how you count.</p>
+<div class="world-date"><span aria-hidden="true" class="room-dot"></span><span id="travel-date">As of September 3, 2026</span></div>
 <div class="latest-stops"><span class="eyebrow" id="latest-stops-heading">Latest additions</span><ul id="latest-stops-list" aria-labelledby="latest-stops-heading">
 <li aria-label="Estonia, August 2026" class="latest-stop" data-date="August 2026" tabindex="0">Estonia</li>
 <li aria-label="Latvia, August 2026" class="latest-stop" data-date="August 2026" tabindex="0">Latvia</li>
@@ -119,6 +129,11 @@
 <li aria-label="the Gambia, May 2025" class="latest-stop" data-date="May 2025" tabindex="0">the Gambia</li>
 <li aria-label="Cote d'Ivoire, May 2025" class="latest-stop" data-date="May 2025" tabindex="0">Cote d'Ivoire</li>
 </ul></div>
+<p class="globe-hint" id="globe-hint">Drag to rotate. Use + / − to zoom.</p>
+<p class="map-credit"><a href="https://beeneverywhere.net/user/GeniusYe" id="map-credit-link" rel="noopener noreferrer" target="_blank">Travel data from BeenEverywhere ↗</a></p>
+<p class="map-credit">Globe powered by <a href="https://maplibre.org/" rel="noopener noreferrer" target="_blank">MapLibre GL JS ↗</a></p>
+</div>
+</div>
 <section class="culture-section" id="culture" aria-labelledby="culture-title">
 <div class="culture-heading"><div><p class="eyebrow" id="culture-eyebrow">Clothes &amp; culture</p><h3 id="culture-title">Dressed for the journey.</h3></div><p id="culture-description" hidden></p></div>
 <div class="culture-grid" id="culture-photos">

@@ -34,13 +34,13 @@ The existing Cloudflare project uses Workers Builds. Run Wrangler from the repos
 
 The committed root `wrangler.jsonc` identifies the `personal-site` Worker and sets `assets.directory` to `./public`. Wrangler uses that configuration for both commands; no Worker script is required. The configuration itself is not a public asset. Files such as `README.md`, `SOURCES.md`, and `PHOTO-CREDITS-AUDIT.md` remain outside the published directory.
 
-For a local preview, open `public/index.html` in a browser, or run from the repository root:
+For a local preview, run from the repository root (the globe needs an HTTP server):
 
 ```sh
 python -m http.server 8080 --directory public
 ```
 
-Then open `http://localhost:8080/`. Keep the files and folders together. All photographs, music artwork, the travel map, scripts, styles, and icons are bundled locally. Both pages and their photo galleries work without access to third-party hosts. SoundCloud playback and outbound links still require internet access.
+Then open `http://localhost:8080/`. Keep the files and folders together. All photographs, music artwork, globe data, the MapLibre renderer, scripts, styles, and icons are bundled locally. Both pages, their photo galleries, and the interactive travel globe work without third-party requests. SoundCloud playback and outbound links require internet access. The travel globe opens in 3D with drag and keyboard rotation, zoom buttons, and shortcuts for The Americas, Europe & Africa, and Asia. It uses a snapshot of the owner's 274 public BeenEverywhere places and simplified Natural Earth country boundaries; the original static map remains available if JavaScript, WebGL, or globe data fails.
 
 The home page sharing helper uses its current URL by default. `siteUrl` in `public/site-config.js` can optionally hold your final, absolute home URL. The body gallery has generic sharing metadata; no NSFW photograph is used as a social thumbnail.
 
@@ -69,11 +69,13 @@ Check local asset references before deployment with Python 3.10+ (no packages or
 python tools/check_local_assets.py
 ```
 
-Deploy `public/` as a unit: both HTML pages, all JavaScript/CSS files, `_headers`, and the entire `assets/` folder inside it. The host's content security policy allows images only from the site itself or embedded data.
+Deploy `public/` as a unit: both HTML pages, all JavaScript/CSS files, `_headers`, and the entire `assets/` and `vendor/` folders inside it. The host's content security policy allows images only from the site itself or embedded data. MapLibre uses its bundled worker from the same origin, with no iframe or external tiles.
 
 For future imports, `python tools/localize_images.py` downloads configured remote images into the matching content folders under `public/assets/`, updates configuration and HTML references in `public/`, and keeps ignored backups in `tools/backups/` outside the deployment folder. Failed downloads retain their original URL and return a nonzero exit status; the asset check will also flag them. Prefer adding new files directly to the matching asset folder with descriptive filenames and referencing their local paths.
 
 For the most reliable social preview, set the homepage `og:image` to the absolute URL of its bundled portrait on your final domain. Never use a body-positive photo as the homepage sharing thumbnail.
+
+To refresh the public travel snapshot and pinned MapLibre assets, run `python tools/prepare_travel_globe.py` from the repository root. This requires internet access, updates the two files in `public/assets/globe/`, and records source URLs and snapshot metadata in `docs/travel-globe-source.json`. The country boundaries are simplified for a globe view; small territories may be represented only by visit points. Refreshing the snapshot does not change the separately maintained travel count or its date.
 
 ## Content warning behavior
 

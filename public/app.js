@@ -647,15 +647,9 @@
   });
   $(".latest-stops").hidden = latest.childElementCount === 0;
   const map = travel.map;
-  if (map && imageURL(map.src)) {
-    setImage($("#travel-map"), map.src, map.alt);
-    $("#open-map").href = imageURL(map.src);
-    $("#open-map").addEventListener("click", event => {
-      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-      if (openGallery([map], 0, "map", event.currentTarget)) event.preventDefault();
-    });
+  if (map?.countries && map?.visits) {
     if (webURL(map.creditUrl)) $("#map-credit-link").href = webURL(map.creditUrl);
-    setText("#map-credit-link", `${map.credit || "Map source"} ↗`);
+    setText("#map-credit-link", `${map.credit || "Travel data from BeenEverywhere"} ↗`);
   } else $(".world-map-card").hidden = true;
   if (instagram) {
     $("#travel-instagram").href = instagram;
