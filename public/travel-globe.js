@@ -39,22 +39,29 @@
               "fill-color": ["case", ["get", "visited"], "#f5d7b8", "#efede7"], "fill-opacity": 1
             } },
             { id: "borders", type: "line", source: "countries", paint: { "line-color": "#ae8caa", "line-width": 0.6, "line-opacity": 0.8 } },
-            { id: "visit-glow", type: "circle", source: "visits", paint: {
-              "circle-radius": ["interpolate", ["linear"], ["zoom"], 0, 5, 5, 12],
-              "circle-color": "#ffbc54", "circle-opacity": 0.65, "circle-blur": 0.55
-            } },
-            { id: "visited-places", type: "circle", source: "visits", paint: {
-              "circle-radius": ["interpolate", ["linear"], ["zoom"], 0, 1.6, 5, 4],
-              "circle-color": "#f7883e", "circle-stroke-color": "#fff2ce", "circle-stroke-width": 1.2
+            { id: "visited-places", type: "heatmap", source: "visits", paint: {
+              // Tight kernels keep single cities local, even in the globe overview.
+              "heatmap-radius": ["interpolate", ["linear"], ["zoom"], 0, 4, 1.4, 7, 3, 11, 5, 16],
+              "heatmap-weight": 1,
+              "heatmap-intensity": 1.2,
+              "heatmap-color": ["interpolate", ["linear"], ["heatmap-density"],
+                0, "rgba(230, 190, 125, 0)",
+                0.03, "rgba(230, 190, 125, 0)",
+                0.1, "rgba(230, 190, 125, 0.55)",
+                0.25, "#d9ab5c",
+                0.5, "#b9863c",
+                1, "#8a602d"
+              ],
+              "heatmap-opacity": 0.9
             } }
           ]
         }
       });
-      // Wheel scrolling keeps moving the page; buttons and pinch gestures zoom.
-      map.scrollZoom.disable();
+      // Wheel and trackpad scrolling over the globe zoom instead of moving the page.
+      map.scrollZoom.enable();
       map.dragRotate.disable();
       map.addControl(new NavigationControl({ showCompass: false }), "top-right");
-      map.getCanvas().setAttribute("aria-label", "Interactive globe of JiaJie's visited places. Drag or use the arrow keys to rotate; use plus and minus to zoom.");
+      map.getCanvas().setAttribute("aria-label", "Interactive globe of JiaJie's visited places. Drag or use the arrow keys to rotate; scroll, pinch, or use plus and minus to zoom.");
       map.once("load", () => {
         fallback.hidden = true;
         controls.hidden = false;
