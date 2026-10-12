@@ -40,7 +40,7 @@ For a local preview, run from the repository root (the globe needs an HTTP serve
 python -m http.server 8080 --directory public
 ```
 
-Then open `http://localhost:8080/`. Keep the files and folders together. All photographs, music artwork, globe data, the MapLibre renderer, scripts, styles, and icons are bundled locally. Both pages, their photo galleries, and the interactive travel globe work without third-party requests. SoundCloud playback and outbound links require internet access. The travel globe opens in 3D with drag and keyboard rotation, zoom buttons, and shortcuts for The Americas, Europe & Africa, and Asia. It uses a snapshot of the owner's 274 public BeenEverywhere places and simplified Natural Earth country boundaries; the original static map remains available if JavaScript, WebGL, or globe data fails.
+Then open `http://localhost:8080/`. Keep the files and folders together. All photographs, music artwork, globe data, the MapLibre renderer, scripts, styles, and icons are bundled locally. Both pages, their photo galleries, and the interactive travel globe work without third-party requests. SoundCloud playback and outbound links require internet access. The travel globe opens in 3D with drag and keyboard rotation, zoom buttons, and shortcuts for The Americas, Europe & Africa, and Asia. It uses a snapshot of the owner's 274 public BeenEverywhere places and simplified Natural Earth country boundaries. If JavaScript, WebGL, or globe data is unavailable, a text link opens the BeenEverywhere profile.
 
 The home page sharing helper uses its current URL by default. `siteUrl` in `public/site-config.js` can optionally hold your final, absolute home URL. The body gallery has generic sharing metadata; no NSFW photograph is used as a social thumbnail.
 
@@ -52,7 +52,7 @@ All images, the behind-the-scenes video, and the Bali pool video are bundled loc
 public/assets/
   bodypositive/  Gallery photographs, Bali pool video, and its poster
   culture/       Twelve clothing photographs in “Dressed for the journey.”
-  postcards/     Travel photographs named by destination, plus travel-map.png
+  postcards/     Travel photographs named by destination
   movie/         Boys Like Us production/BTS photographs, thumbnails, and video
   music/         Release artwork
   profile/       Homepage portrait
@@ -112,6 +112,8 @@ The site filenames below are relative to `public/`; `PHOTO-CREDITS-AUDIT.md` rem
 Run the dependency-free gallery layout regression tests with `node --test tests/photo-layout.test.cjs`. They cover full rows, two-photo endings, three-plus-one rebalancing, preservation of every photo, the real collections, and complete progressive-loading batches. GitHub Actions runs these checks on pushes and pull requests.
 
 The browser regression test is `node tests/photo-layout.browser.cjs`; it starts its own local server and requires Playwright and its Chromium browser. Set `BROWSER_CHANNEL=msedge` to use an installed Microsoft Edge browser instead. It checks actual desktop row widths, reduced landscape sizing, every loading batch, mobile overflow, and viewer order/wraparound at 1440, 950, 768, 701, 700, 390, and 320 pixels.
+
+Run `node tests/travel-globe.browser.cjs` with the same browser setup to check globe startup. It checks three refreshes with delayed scripts and data at desktop and mobile sizes, verifies that the first visible map frame is fully rendered as a globe, exercises region buttons and zoom, and checks the text link when JavaScript, WebGL, or map data is unavailable.
 
 The migration was verified in headless Chromium against a local HTTP server using the site's content security policy, with all requests to other origins blocked. The homepage images, travel map, all eight travel lightbox photos, all 19 separate gallery photos and their lightbox, warning accept/cancel, one-use consent navigation, and fresh-entry gating passed. No gallery data or photographs were requested before consent. The homepage HTML image fallbacks also loaded with JavaScript disabled. There were no script errors or failed local HTTP responses. Opening the music dialog requested only its expected external SoundCloud player; its artwork loaded locally.
 

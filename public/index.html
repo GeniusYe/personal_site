@@ -100,7 +100,9 @@
 <div class="chapter-topline"><div><p class="eyebrow chapter-number"><span>02</span> The world, a little closer</p><h2 class="chapter-title" id="world-title">My way<br/><em>around the world.</em></h2></div><p class="chapter-description">Some places on a map.<br/>A few moments to keep.</p></div>
 <div class="world-map-card">
 <div class="world-map-visual">
-<a class="globe-fallback" href="assets/postcards/travel-map.png" id="globe-fallback" rel="noopener noreferrer" target="_blank"><img alt="JiaJie's visited places around the world. Open the static travel map." decoding="async" height="636" loading="lazy" src="assets/postcards/travel-map.png" width="1000"/></a>
+<p class="globe-loading" id="globe-loading" role="status">Loading globe…</p>
+<div class="globe-unavailable" hidden="" id="globe-unavailable"><p>The interactive globe is unavailable.</p><a href="https://beeneverywhere.net/user/GeniusYe" rel="noopener noreferrer" target="_blank">Explore my travels on BeenEverywhere ↗</a></div>
+<noscript><style>#globe-unavailable[hidden] { display:flex !important; } #globe-loading { display:none; }</style></noscript>
 <div aria-describedby="globe-hint" hidden="" id="travel-globe"></div>
 <div class="globe-controls" hidden="" id="globe-controls"><button id="globe-americas" type="button">The Americas</button><button id="globe-europe-africa" type="button">Europe &amp; Africa</button><button id="globe-asia" type="button">Asia</button></div>
 </div>

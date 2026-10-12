@@ -1,7 +1,8 @@
 /* A locally served globe using the owner's public BeenEverywhere snapshot. */
 (() => {
   const container = document.querySelector("#travel-globe");
-  const fallback = document.querySelector("#globe-fallback");
+  const unavailable = document.querySelector("#globe-unavailable");
+  const loading = document.querySelector("#globe-loading");
   const controls = document.querySelector("#globe-controls");
   const hint = document.querySelector("#globe-hint");
   const config = window.JIAJIE_SITE?.travel?.map;
@@ -12,9 +13,14 @@
     if (started) return;
     started = true;
     let map;
-    function showFallback() {
+    let failed = false;
+    function showUnavailable() {
+      if (failed) return;
+      failed = true;
+      map?.remove();
       container.hidden = true;
-      fallback.hidden = false;
+      loading.hidden = true;
+      unavailable.hidden = false;
       controls.hidden = true;
       hint.textContent = "Explore the map on BeenEverywhere.";
     }
@@ -62,14 +68,17 @@
       map.dragRotate.disable();
       map.addControl(new NavigationControl({ showCompass: false }), "top-right");
       map.getCanvas().setAttribute("aria-label", "Interactive globe of JiaJie's visited places. Drag or use the arrow keys to rotate; scroll, pinch, or use plus and minus to zoom.");
-      map.once("load", () => {
-        fallback.hidden = true;
+      // Keep startup frames hidden until the globe and its data have finished rendering.
+      map.once("idle", () => {
+        if (failed) return;
+        loading.hidden = true;
+        unavailable.hidden = true;
         controls.hidden = false;
         container.dataset.globeReady = "true";
       });
       map.on("error", event => {
         console.warn("Travel globe:", event.error?.message || "Map data could not load.");
-        if (container.dataset.globeReady !== "true") showFallback();
+        if (container.dataset.globeReady !== "true") showUnavailable();
       });
       const regions = [
         { id: "globe-americas", center: [-90, 15] },
@@ -81,11 +90,10 @@
           map.easeTo({ ...initial, center: region.center, duration: 700 });
         });
       });
-      window.addEventListener("pagehide", event => { if (!event.persisted) map.remove(); }, { once: true });
+      window.addEventListener("pagehide", event => { if (!event.persisted && !failed) map.remove(); }, { once: true });
     } catch (error) {
       console.warn("Travel globe:", error.message);
-      map?.remove();
-      showFallback();
+      showUnavailable();
     }
   }
   if ("IntersectionObserver" in window) {
