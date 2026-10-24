@@ -962,6 +962,15 @@ window.JIAJIE_SITE = {
         "height": 1512
       },
       {
+        "title": "Season 2 poster",
+        "caption": "The landscape poster for Boys Like Us Season 2.",
+        "src": "assets/movie/blu-season-2-poster.png",
+        "thumbnail": "assets/movie/blu-season-2-poster-small.webp",
+        "alt": "Boys Like Us Season 2 poster featuring four cast members against a red wall, with the series title and production credits.",
+        "width": 3072,
+        "height": 1728
+      },
+      {
         "title": "Creative team",
         "caption": "The above-the-line team: director, producer, writer, showrunner, and fellow creative collaborators.",
         "src": "assets/movie/blu-creative-team.webp",
