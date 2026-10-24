@@ -28,8 +28,7 @@
 .project-card-featured .project-format { font-size: 8px; }
 .project-card-featured .upcoming-pill { border: 0; border-radius: 0; padding: 0; font-size: 7px; letter-spacing: 1.4px; }
 .project-card-featured .project-card-title { font-size: 30px; line-height: 1.1; letter-spacing: -.8px; margin-top: 10px; }
-.project-card-featured .project-season { font-size: 19px; margin-top: 2px; }
-.project-card-featured .project-role { font-size: 9px; line-height: 1.5; margin: 10px 0 16px; }
+.project-card-featured .project-season { font-size: 19px; margin: 2px 0 20px; }
 .project-card-featured .project-discover { margin-top: auto; font-size: 9px; padding-top: 12px; gap: 8px; }
 .project-card-featured .project-arrow { width: 25px; height: 25px; font-size: 14px; }
 /* Discreet, image-free entry. There is no blurred NSFW image underneath. */
@@ -93,7 +92,6 @@ body.consent-open { position: fixed; top: var(--consent-scroll-offset); width: 1
  .project-card-featured .project-card-copy { padding: 20px 23px; }
  .project-card-featured .project-card-title { font-size: 37px; }
  .project-card-featured .project-season { font-size: 23px; }
- .project-card-featured .project-role { font-size: 11px; margin-top: 12px; }
  .project-card-featured .project-discover { font-size: 11px; }
  .project-card-featured .project-photo-tag { left: 14px; bottom: 14px; font-size: 9px; padding: 7px 11px; }
  .body-positive-entry { padding: 25px 0 33px; }
@@ -127,11 +125,9 @@ body.consent-open { position: fixed; top: var(--consent-scroll-offset); width: 1
 @media (max-width:700px) { .featured-pair .song-card-description { display:none; } }
 .consent-dialog:not([open]), .body-photo-dialog:not([open]) { display: none; }
 
-/* A visible clapperboard mark leads into the production and personal BTS gallery. */
-.project-card-featured .project-photo-tag { gap: 9px; padding: 9px 12px; border-radius: 11px; background: #17281feb; }
-.project-photo-tag .bts-clapperboard { width: 32px; height: 32px; flex: 0 0 32px; color: #ead8a5; }
-.project-bts-copy { display: flex; flex-direction: column; gap: 2px; }
-.project-bts-label { font-size: 18px; line-height: 1; letter-spacing: 1.6px; }
+/* The photo overlay highlights JiaJie's role and the gallery contents. */
+.project-card-featured .project-photo-tag { flex-direction: column; align-items: flex-start; gap: 3px; max-width: calc(100% - 20px); padding: 9px 12px; border-radius: 11px; background: #17281feb; }
+.project-card-featured .project-role { font-size: 12px; font-weight: 400; line-height: 1.4; margin: 0; }
 #project-photo-count { font-size: 9px; line-height: 1.4; }
 .gallery-thumbnail > .gallery-thumbnail-frame { position: relative; display: block; margin: 0; }
 .gallery-thumbnail-frame img { aspect-ratio: 4/3; object-fit: contain; background: #16241e; }
@@ -145,9 +141,8 @@ body.consent-open { position: fixed; top: var(--consent-scroll-offset); width: 1
 .project-credits a, .project-media-fallback a { text-decoration: underline; text-underline-offset: 3px; }
 .project-media-fallback { font-size: 11px; line-height: 1.8; }
 @media (max-width:700px) {
- .project-card-featured .project-photo-tag { padding: 10px 13px; }
- .project-photo-tag .bts-clapperboard { width: 36px; height: 36px; flex-basis: 36px; }
- .project-bts-label { font-size: 20px; }
+ .project-card-featured .project-photo-tag { max-width: calc(100% - 28px); padding: 10px 13px; }
+ .project-card-featured .project-role { font-size: 13px; }
  #project-photo-count { font-size: 10px; }
  .project-credits { gap: 10px 20px; }
 }
