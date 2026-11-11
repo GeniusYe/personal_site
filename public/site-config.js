@@ -364,8 +364,8 @@ window.JIAJIE_SITE = {
     ]
   },
   "travel": {
-    "count": "84–88",
-    "unit": "countries & regions",
+    "count": "85–89",
+    "unit": "countries",
     "asOf": "September 3, 2026",
     "qualifier": "Depending on how you count.",
     "map": {
